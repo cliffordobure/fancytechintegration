@@ -10,6 +10,7 @@ A professional MERN stack application for FancyTech Kenya, featuring a marketpla
 - 🔍 **SEO Ready** - Meta tags, structured data, and optimized URLs
 - 🔐 **Authentication** - Secure admin authentication system
 - 📱 **Responsive Design** - Modern, mobile-friendly UI
+- ☁️ **Cloudinary Integration** - Cloud-based image storage and optimization
 
 ## Tech Stack
 
@@ -17,6 +18,7 @@ A professional MERN stack application for FancyTech Kenya, featuring a marketpla
 - **Backend**: Express.js + MongoDB + Mongoose
 - **State Management**: Redux Toolkit
 - **SEO**: React Helmet Async
+- **Image Storage**: Cloudinary
 
 ## Installation
 
@@ -30,6 +32,12 @@ A professional MERN stack application for FancyTech Kenya, featuring a marketpla
    **Backend:**
    - Copy `backend/.env.example` to `backend/.env`
    - Update MongoDB URI and JWT secret
+   - Add Cloudinary credentials:
+     ```env
+     CLOUDINARY_CLOUD_NAME=your-cloud-name
+     CLOUDINARY_API_KEY=your-api-key
+     CLOUDINARY_API_SECRET=your-api-secret
+     ```
    
    **Frontend (for production):**
    - Create `frontend/.env` file
@@ -50,17 +58,20 @@ A professional MERN stack application for FancyTech Kenya, featuring a marketpla
 ### Backend (Render.com)
 - **URL**: `https://fancytechintegration.onrender.com`
 - **CORS**: Configured to allow requests from `https://fancytechintegration.vercel.app`
+- **Environment Variables**: Set CLOUDINARY credentials in Render dashboard
 
 ### Frontend (Vercel)
 - **URL**: `https://fancytechintegration.vercel.app`
 - **API**: Automatically uses production backend URL in production builds
 - **Environment Variable**: Set `VITE_API_URL=https://fancytechintegration.onrender.com/api` in Vercel
+- **SPA Routing**: Configured via `frontend/vercel.json` to handle React Router routes
 
 ### Image URLs
 All image URLs are automatically configured to use the production backend URL in production builds. The app uses a utility function (`getImageUrl`) that:
 - Uses production backend URL (`https://fancytechintegration.onrender.com`) in production
 - Uses localhost for development
 - Handles both absolute and relative image paths
+- Supports Cloudinary URLs (full URLs are used as-is)
 
 ## Project Structure
 
@@ -70,7 +81,8 @@ fancyTechKenya/
 │   ├── models/          # MongoDB models
 │   ├── routes/          # API routes
 │   ├── middleware/      # Auth middleware
-│   ├── uploads/         # Uploaded images
+│   ├── config/          # Cloudinary configuration
+│   ├── uploads/         # Uploaded images (legacy, now using Cloudinary)
 │   └── server.js        # Express server
 ├── frontend/
 │   ├── src/
@@ -79,6 +91,7 @@ fancyTechKenya/
 │   │   ├── store/       # Redux store
 │   │   ├── services/    # API services
 │   │   └── utils/       # Utilities
+│   ├── vercel.json      # Vercel SPA routing config
 │   └── public/          # Static assets
 └── package.json
 ```
@@ -130,6 +143,20 @@ Default credentials:
 - Password: `admin123`
 
 **⚠️ IMPORTANT:** Change the default password immediately after first login!
+
+## Troubleshooting
+
+### Image Upload Fails
+1. **Check Cloudinary credentials** - Ensure all three environment variables are set in your backend `.env` file
+2. **Check backend logs** - Look for Cloudinary configuration warnings
+3. **Check browser console** - Detailed error messages are logged
+4. **Verify file size** - Maximum file size is 5MB
+5. **Verify file type** - Only jpg, jpeg, png, gif, webp are allowed
+
+### Vercel 404 Errors
+- Ensure `frontend/vercel.json` is present and configured correctly
+- Redeploy after adding the vercel.json file
+- Check that the build output directory is `dist` (Vite default)
 
 For detailed setup instructions, see [SETUP.md](./SETUP.md)
 

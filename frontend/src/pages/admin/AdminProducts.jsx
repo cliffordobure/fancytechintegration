@@ -53,26 +53,66 @@ const AdminProducts = () => {
     setUploading(true);
 
     try {
-      const uploadPromises = files.map((file) => {
-        const formData = new FormData();
-        formData.append('image', file);
-        // Don't set Content-Type header - axios will set it automatically with boundary
-        return api.post('/upload', formData);
+      const uploadPromises = files.map(async (file) => {
+        try {
+          const formData = new FormData();
+          formData.append('image', file);
+          
+          console.log('Uploading file:', file.name, 'Size:', file.size, 'Type:', file.type);
+          
+          const response = await api.post('/upload', formData);
+          console.log('Upload response:', response.data);
+          
+          return response.data;
+        } catch (fileError) {
+          console.error('Error uploading file:', file.name, fileError);
+          throw fileError;
+        }
       });
 
       const responses = await Promise.all(uploadPromises);
-      const imagePaths = responses.map((res) => res.data.path || res.data.url || res.data.secure_url);
+      console.log('All uploads completed:', responses);
+      
+      const imagePaths = responses.map((res) => {
+        // Try multiple possible response formats
+        return res.path || res.url || res.secure_url || res.data?.path || res.data?.url;
+      }).filter(Boolean); // Remove any undefined values
+      
+      if (imagePaths.length === 0) {
+        throw new Error('No image URLs returned from server');
+      }
+      
       setFormData({
         ...formData,
         images: [...formData.images, ...imagePaths],
       });
-      toast.success('Images uploaded successfully');
+      toast.success(`${imagePaths.length} image(s) uploaded successfully`);
     } catch (error) {
-      console.error('Upload error:', error);
-      const errorMessage = error.response?.data?.message || error.message || 'Failed to upload images';
+      console.error('Upload error details:', {
+        message: error.message,
+        response: error.response?.data,
+        status: error.response?.status,
+        statusText: error.response?.statusText,
+        config: error.config,
+      });
+      
+      let errorMessage = 'Failed to upload images';
+      
+      if (error.response?.data?.message) {
+        errorMessage = error.response.data.message;
+      } else if (error.response?.status === 500) {
+        errorMessage = 'Server error. Please check if Cloudinary is configured.';
+      } else if (error.response?.status === 401) {
+        errorMessage = 'Authentication failed. Please login again.';
+      } else if (error.message) {
+        errorMessage = error.message;
+      }
+      
       toast.error(errorMessage);
     } finally {
       setUploading(false);
+      // Reset file input
+      e.target.value = '';
     }
   };
 

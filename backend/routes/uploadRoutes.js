@@ -22,31 +22,54 @@ if (!upload) {
   // @desc    Upload single image to Cloudinary
   // @access  Private/Admin
   router.post('/', protect, admin, (req, res, next) => {
+    console.log('Upload request received:', {
+      hasFile: !!req.file,
+      contentType: req.headers['content-type'],
+      contentLength: req.headers['content-length'],
+    });
+    
     upload.single('image')(req, res, (err) => {
       if (err) {
-        console.error('Upload error:', err);
+        console.error('Upload error details:', {
+          message: err.message,
+          code: err.code,
+          field: err.field,
+          stack: err.stack,
+        });
+        
         if (err.message === 'Only image files are allowed!') {
           return res.status(400).json({ message: 'Only image files are allowed (jpg, jpeg, png, gif, webp)' });
         }
         if (err.code === 'LIMIT_FILE_SIZE') {
           return res.status(400).json({ message: 'File too large. Maximum size is 5MB.' });
         }
-        return res.status(400).json({ message: err.message || 'Upload failed' });
+        return res.status(400).json({ message: err.message || 'Upload failed', error: err.code || 'UNKNOWN' });
       }
       
       if (!req.file) {
-        return res.status(400).json({ message: 'No file uploaded' });
+        console.error('No file in request after multer processing');
+        return res.status(400).json({ message: 'No file uploaded. Please select an image file.' });
       }
 
       try {
-        res.json({
+        console.log('File uploaded successfully:', {
+          filename: req.file.filename,
+          path: req.file.path,
+          size: req.file.size,
+          mimetype: req.file.mimetype,
+        });
+        
+        const response = {
           message: 'File uploaded successfully',
           filename: req.file.filename,
           path: req.file.path, // Cloudinary URL
           url: req.file.path, // Cloudinary URL (same as path)
           public_id: req.file.filename, // Cloudinary public_id
           secure_url: req.file.path, // Cloudinary secure URL
-        });
+        };
+        
+        console.log('Sending response:', response);
+        res.json(response);
       } catch (error) {
         console.error('Error processing upload:', error);
         res.status(500).json({ message: 'Error processing upload', error: error.message });
