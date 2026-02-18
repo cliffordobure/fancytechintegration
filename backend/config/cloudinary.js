@@ -20,18 +20,14 @@ if (hasCloudinaryConfig) {
 }
 
 // Configure storage for Cloudinary
+// Use minimal params to avoid signature issues
 const storage = hasCloudinaryConfig
   ? new CloudinaryStorage({
       cloudinary: cloudinary,
-      params: (req, file) => {
-        // Make it synchronous - async can cause signature issues
-        return {
-          folder: 'fancytech-kenya', // Folder name in Cloudinary
-          allowed_formats: ['jpg', 'jpeg', 'png', 'gif', 'webp'],
-          // Don't include transformation in params - it causes signature issues
-          // Transformations can be applied via URL parameters when displaying images
-          resource_type: 'auto', // Let Cloudinary detect the resource type
-        };
+      params: {
+        folder: 'fancytech-kenya', // Folder name in Cloudinary
+        // Don't include allowed_formats or transformation here - they cause signature issues
+        // File validation is handled by multer fileFilter instead
       },
     })
   : null;
