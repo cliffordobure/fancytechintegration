@@ -23,18 +23,14 @@ if (hasCloudinaryConfig) {
 const storage = hasCloudinaryConfig
   ? new CloudinaryStorage({
       cloudinary: cloudinary,
-      params: async (req, file) => {
+      params: (req, file) => {
+        // Make it synchronous - async can cause signature issues
         return {
           folder: 'fancytech-kenya', // Folder name in Cloudinary
           allowed_formats: ['jpg', 'jpeg', 'png', 'gif', 'webp'],
-          transformation: [
-            {
-              width: 1000,
-              height: 1000,
-              crop: 'limit',
-              quality: 'auto',
-            },
-          ],
+          // Don't include transformation in params - it causes signature issues
+          // Transformations can be applied via URL parameters when displaying images
+          resource_type: 'auto', // Let Cloudinary detect the resource type
         };
       },
     })
