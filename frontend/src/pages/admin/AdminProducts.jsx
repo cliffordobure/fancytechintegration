@@ -48,26 +48,29 @@ const AdminProducts = () => {
 
   const handleImageUpload = async (e) => {
     const files = Array.from(e.target.files);
+    if (files.length === 0) return;
+    
     setUploading(true);
 
     try {
       const uploadPromises = files.map((file) => {
         const formData = new FormData();
         formData.append('image', file);
-        return api.post('/upload', formData, {
-          headers: { 'Content-Type': 'multipart/form-data' },
-        });
+        // Don't set Content-Type header - axios will set it automatically with boundary
+        return api.post('/upload', formData);
       });
 
       const responses = await Promise.all(uploadPromises);
-      const imagePaths = responses.map((res) => res.data.path);
+      const imagePaths = responses.map((res) => res.data.path || res.data.url || res.data.secure_url);
       setFormData({
         ...formData,
         images: [...formData.images, ...imagePaths],
       });
       toast.success('Images uploaded successfully');
     } catch (error) {
-      toast.error('Failed to upload images');
+      console.error('Upload error:', error);
+      const errorMessage = error.response?.data?.message || error.message || 'Failed to upload images';
+      toast.error(errorMessage);
     } finally {
       setUploading(false);
     }

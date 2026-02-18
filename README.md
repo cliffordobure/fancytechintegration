@@ -105,8 +105,11 @@ fancyTechKenya/
 - `GET /api/auth/me` - Get current user
 
 ### Upload
-- `POST /api/upload` - Upload single image (Admin)
-- `POST /api/upload/multiple` - Upload multiple images (Admin)
+- `POST /api/upload` - Upload single image to Cloudinary (Admin)
+- `POST /api/upload/multiple` - Upload multiple images to Cloudinary (Admin)
+- `DELETE /api/upload/:publicId` - Delete image from Cloudinary (Admin)
+
+**Note:** Images are stored in Cloudinary. You need to configure Cloudinary credentials in your `.env` file. See [SETUP.md](./SETUP.md) for details.
 
 ## Creating Admin Account
 

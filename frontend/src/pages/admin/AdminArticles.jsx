@@ -49,16 +49,17 @@ const AdminArticles = () => {
     try {
       const uploadFormData = new FormData();
       uploadFormData.append('image', file);
-      const response = await api.post('/upload', uploadFormData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
-      });
+      // Don't set Content-Type header - axios will set it automatically with boundary
+      const response = await api.post('/upload', uploadFormData);
       setFormData({
         ...formData,
-        featuredImage: response.data.path,
+        featuredImage: response.data.path || response.data.url || response.data.secure_url,
       });
       toast.success('Image uploaded successfully');
     } catch (error) {
-      toast.error('Failed to upload image');
+      console.error('Upload error:', error);
+      const errorMessage = error.response?.data?.message || error.message || 'Failed to upload image';
+      toast.error(errorMessage);
     } finally {
       setUploading(false);
     }

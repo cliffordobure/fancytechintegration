@@ -39,16 +39,27 @@ This will install dependencies for:
    MONGODB_URI=mongodb://localhost:27017/fancytech-kenya
    JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
    NODE_ENV=development
+   
+   # Cloudinary Configuration (for image storage)
+   CLOUDINARY_CLOUD_NAME=your-cloudinary-cloud-name
+   CLOUDINARY_API_KEY=your-cloudinary-api-key
+   CLOUDINARY_API_SECRET=your-cloudinary-api-secret
    ```
 
    **Important:** 
    - Change `JWT_SECRET` to a strong, random string in production
    - Update `MONGODB_URI` if using MongoDB Atlas or a different MongoDB instance
+   - Get your Cloudinary credentials from [cloudinary.com](https://cloudinary.com):
+     1. Sign up for a free account at cloudinary.com
+     2. Go to your Dashboard
+     3. Copy your Cloud Name, API Key, and API Secret
+     4. Add them to your `.env` file
 
-4. Create the uploads directory (if it doesn't exist):
+4. (Optional) Create the uploads directory for local storage fallback:
    ```bash
    mkdir uploads
    ```
+   Note: With Cloudinary integration, images are stored in the cloud, but this directory can be kept for backward compatibility.
 
 ### 3. Frontend Setup
 
