@@ -26,8 +26,15 @@ A professional MERN stack application for FancyTech Kenya, featuring a marketpla
    ```
 
 2. **Set up environment variables:**
+   
+   **Backend:**
    - Copy `backend/.env.example` to `backend/.env`
    - Update MongoDB URI and JWT secret
+   
+   **Frontend (for production):**
+   - Create `frontend/.env` file
+   - Add: `VITE_API_URL=https://fancytechintegration.onrender.com/api`
+   - For development, the app will use the proxy configured in `vite.config.js`
 
 3. **Start development servers:**
    ```bash
@@ -37,6 +44,23 @@ A professional MERN stack application for FancyTech Kenya, featuring a marketpla
    This will start:
    - Backend server on `http://localhost:5000`
    - Frontend server on `http://localhost:3000`
+
+## Production Deployment
+
+### Backend (Render.com)
+- **URL**: `https://fancytechintegration.onrender.com`
+- **CORS**: Configured to allow requests from `https://fancytechintegration.vercel.app`
+
+### Frontend (Vercel)
+- **URL**: `https://fancytechintegration.vercel.app`
+- **API**: Automatically uses production backend URL in production builds
+- **Environment Variable**: Set `VITE_API_URL=https://fancytechintegration.onrender.com/api` in Vercel
+
+### Image URLs
+All image URLs are automatically configured to use the production backend URL in production builds. The app uses a utility function (`getImageUrl`) that:
+- Uses production backend URL (`https://fancytechintegration.onrender.com`) in production
+- Uses localhost for development
+- Handles both absolute and relative image paths
 
 ## Project Structure
 

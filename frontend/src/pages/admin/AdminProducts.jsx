@@ -6,6 +6,7 @@ import {
   updateProduct,
   deleteProduct,
 } from '../../store/slices/productSlice';
+import { getImageUrl } from '../../utils/constants';
 import toast from 'react-hot-toast';
 import api from '../../services/api';
 
@@ -216,7 +217,7 @@ const AdminProducts = () => {
                   <td className="px-6 py-4 whitespace-nowrap">
                     {product.images && product.images.length > 0 ? (
                       <img
-                        src={`http://localhost:5000${product.images[0]}`}
+                        src={getImageUrl(product.images[0])}
                         alt={product.name}
                         className="h-12 w-12 object-cover rounded"
                       />
@@ -421,7 +422,7 @@ const AdminProducts = () => {
                       {formData.images.map((img, index) => (
                         <div key={index} className="relative">
                           <img
-                            src={`http://localhost:5000${img}`}
+                            src={getImageUrl(img)}
                             alt={`Preview ${index + 1}`}
                             className="w-full h-20 object-cover rounded"
                           />

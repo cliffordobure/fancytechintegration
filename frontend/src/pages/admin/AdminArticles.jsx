@@ -6,6 +6,7 @@ import {
   updateArticle,
   deleteArticle,
 } from '../../store/slices/articleSlice';
+import { getImageUrl } from '../../utils/constants';
 import toast from 'react-hot-toast';
 import api from '../../services/api';
 
@@ -357,7 +358,7 @@ const AdminArticles = () => {
                   )}
                   {formData.featuredImage && (
                     <img
-                      src={`http://localhost:5000${formData.featuredImage}`}
+                      src={getImageUrl(formData.featuredImage)}
                       alt="Featured"
                       className="mt-2 h-32 w-auto object-cover rounded"
                     />

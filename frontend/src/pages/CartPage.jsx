@@ -7,6 +7,7 @@ import {
   updateQuantity,
   clearCart,
 } from '../store/slices/cartSlice';
+import { getImageUrl } from '../utils/constants';
 import toast from 'react-hot-toast';
 import SEO from '../components/SEO';
 
@@ -81,7 +82,7 @@ const CartPage = () => {
                   <div className="w-full md:w-32 h-32 bg-gray-200 rounded-lg overflow-hidden flex-shrink-0">
                     {item.images && item.images.length > 0 ? (
                       <img
-                        src={`http://localhost:5000${item.images[0]}`}
+                        src={getImageUrl(item.images[0])}
                         alt={item.name}
                         className="w-full h-full object-cover"
                       />

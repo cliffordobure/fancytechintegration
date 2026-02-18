@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchProduct } from '../store/slices/productSlice';
 import { addToCart } from '../store/slices/cartSlice';
 import { selectCartItems } from '../store/slices/cartSlice';
+import { getImageUrl } from '../utils/constants';
 import toast from 'react-hot-toast';
 import SEO from '../components/SEO';
 
@@ -49,7 +50,7 @@ const ProductDetailPage = () => {
         title={product.seoTitle || product.name}
         description={product.seoDescription || product.description}
         keywords={product.seoKeywords || []}
-        image={product.images?.[0] ? `http://localhost:5000${product.images[0]}` : null}
+        image={product.images?.[0] ? getImageUrl(product.images[0]) : null}
         url={`${window.location.origin}/products/${product.slug}`}
         type="product"
       />
@@ -61,7 +62,7 @@ const ProductDetailPage = () => {
             {product.images && product.images.length > 0 ? (
               <div className="bg-white rounded-lg shadow-md p-4">
                 <img
-                  src={`http://localhost:5000${product.images[0]}`}
+                  src={getImageUrl(product.images[0])}
                   alt={product.name}
                   className="w-full h-96 object-contain rounded-lg"
                 />
@@ -70,7 +71,7 @@ const ProductDetailPage = () => {
                     {product.images.slice(1, 5).map((image, index) => (
                       <img
                         key={index}
-                        src={`http://localhost:5000${image}`}
+                        src={getImageUrl(image)}
                         alt={`${product.name} ${index + 2}`}
                         className="w-full h-20 object-cover rounded cursor-pointer hover:opacity-75"
                       />

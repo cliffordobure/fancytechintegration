@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchArticle } from '../store/slices/articleSlice';
+import { getImageUrl } from '../utils/constants';
 import SEO from '../components/SEO';
 
 const ArticleDetailPage = () => {
@@ -56,7 +57,7 @@ const ArticleDetailPage = () => {
         title={article.seoTitle || article.title}
         description={article.seoDescription || article.excerpt}
         keywords={article.seoKeywords || []}
-        image={article.featuredImage ? `http://localhost:5000${article.featuredImage}` : null}
+        image={article.featuredImage ? getImageUrl(article.featuredImage) : null}
         url={`${window.location.origin}/articles/${article.slug}`}
         type="article"
       />
@@ -85,7 +86,7 @@ const ArticleDetailPage = () => {
         {article.featuredImage && (
           <div className="mb-8">
             <img
-              src={`http://localhost:5000${article.featuredImage}`}
+              src={getImageUrl(article.featuredImage)}
               alt={article.title}
               className="w-full h-96 object-cover rounded-lg shadow-md"
             />

@@ -7,6 +7,7 @@ import {
   clearCart,
 } from '../store/slices/cartSlice';
 import { createOrder } from '../store/slices/orderSlice';
+import { getImageUrl } from '../utils/constants';
 import toast from 'react-hot-toast';
 import SEO from '../components/SEO';
 
@@ -418,7 +419,7 @@ const CheckoutPage = () => {
                   <div key={item._id} className="flex gap-3">
                     {item.images && item.images.length > 0 ? (
                       <img
-                        src={`http://localhost:5000${item.images[0]}`}
+                        src={getImageUrl(item.images[0])}
                         alt={item.name}
                         className="w-16 h-16 object-cover rounded"
                       />

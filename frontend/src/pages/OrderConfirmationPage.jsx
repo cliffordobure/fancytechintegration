@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchOrder } from '../store/slices/orderSlice';
+import { getImageUrl } from '../utils/constants';
 import SEO from '../components/SEO';
 
 const OrderConfirmationPage = () => {
@@ -127,7 +128,7 @@ const OrderConfirmationPage = () => {
                   <div key={index} className="flex gap-4 pb-4 border-b last:border-0">
                     {item.image && (
                       <img
-                        src={`http://localhost:5000${item.image}`}
+                        src={getImageUrl(item.image)}
                         alt={item.name}
                         className="w-20 h-20 object-cover rounded"
                       />

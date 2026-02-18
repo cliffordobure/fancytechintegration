@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { getImageUrl } from '../utils/constants';
 
 const ArticleCard = ({ article }) => {
   const categoryLabels = {
@@ -25,7 +26,7 @@ const ArticleCard = ({ article }) => {
       {article.featuredImage && (
         <div className="h-48 bg-gray-200 overflow-hidden">
           <img
-            src={`http://localhost:5000${article.featuredImage}`}
+            src={getImageUrl(article.featuredImage)}
             alt={article.title}
             className="w-full h-full object-cover"
           />

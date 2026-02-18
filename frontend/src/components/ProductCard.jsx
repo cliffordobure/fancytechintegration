@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../store/slices/cartSlice';
+import { getImageUrl } from '../utils/constants';
 import toast from 'react-hot-toast';
 
 const ProductCard = ({ product }) => {
@@ -31,7 +32,7 @@ const ProductCard = ({ product }) => {
         <div className="relative h-48 bg-gray-200 overflow-hidden">
           {product.images && product.images.length > 0 ? (
             <img
-              src={`http://localhost:5000${product.images[0]}`}
+              src={getImageUrl(product.images[0])}
               alt={product.name}
               className="w-full h-full object-cover"
             />
