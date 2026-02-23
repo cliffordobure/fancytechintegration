@@ -1,3 +1,4 @@
+import dotenv from 'dotenv';
 import express from 'express';
 import multer from 'multer';
 import { protect, admin } from '../middleware/authMiddleware.js';
@@ -5,6 +6,7 @@ import cloudinary, { deleteImage } from '../config/cloudinary.js';
 import { v2 as cloudinaryV2 } from 'cloudinary';
 import { Readable } from 'stream';
 
+dotenv.config();
 const router = express.Router();
 
 // Configure multer for memory storage (we'll upload directly to Cloudinary)
