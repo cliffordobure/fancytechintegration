@@ -210,7 +210,7 @@ const AdminProducts = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 pt-24 pb-8">
+    <div className="container mx-auto px-4 pt-32 pb-8">
       <div className="flex justify-between items-center mb-8">
         <h1 className="text-4xl font-bold">Manage Products</h1>
         <button
