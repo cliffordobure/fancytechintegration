@@ -126,15 +126,35 @@ const AdminProducts = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      // Validate required fields
+      if (!formData.name || !formData.description || !formData.price) {
+        toast.error('Please fill in all required fields: Name, Description, and Price');
+        return;
+      }
+
+      // Parse price - use existing price if editing and new price is invalid
+      const priceValue = formData.price 
+        ? parseFloat(formData.price) 
+        : (editingProduct?.price || 0);
+      
+      if (isNaN(priceValue) || priceValue <= 0) {
+        toast.error('Please enter a valid price');
+        return;
+      }
+
       const productData = {
         ...formData,
-        price: parseFloat(formData.price),
-        originalPrice: formData.originalPrice
+        name: formData.name.trim(),
+        description: formData.description.trim(),
+        price: priceValue,
+        originalPrice: formData.originalPrice && formData.originalPrice !== ''
           ? parseFloat(formData.originalPrice)
           : undefined,
-        stockQuantity: parseInt(formData.stockQuantity) || 0,
+        stockQuantity: formData.stockQuantity && formData.stockQuantity !== ''
+          ? parseInt(formData.stockQuantity) || 0
+          : 0,
         seoKeywords: formData.seoKeywords
-          ? formData.seoKeywords.split(',').map((k) => k.trim())
+          ? formData.seoKeywords.split(',').map((k) => k.trim()).filter(k => k)
           : [],
       };
 
@@ -151,7 +171,8 @@ const AdminProducts = () => {
       setShowModal(false);
       resetForm();
     } catch (error) {
-      toast.error(error || 'Failed to save product');
+      const errorMessage = error?.message || error || 'Failed to save product';
+      toast.error(errorMessage);
     }
   };
 
