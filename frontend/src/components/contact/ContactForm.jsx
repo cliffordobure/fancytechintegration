@@ -86,7 +86,7 @@ const ContactForm = () => {
               onBlur={() => setFocusedField(null)}
               required
               className="w-full bg-white/5 border border-white/10 rounded-lg pl-12 pr-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 transition-colors"
-              placeholder="John Doe"
+              placeholder="John Sebit"
             />
           </div>
           {focusedField === "name" && (
@@ -136,7 +136,7 @@ const ContactForm = () => {
               onFocus={() => setFocusedField("phone")}
               onBlur={() => setFocusedField(null)}
               className="w-full bg-white/5 border border-white/10 rounded-lg pl-12 pr-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 transition-colors"
-              placeholder="+254 712 345 678"
+              placeholder="+211 929 097 920"
             />
           </div>
         </div>

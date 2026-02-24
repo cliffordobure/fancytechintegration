@@ -36,7 +36,7 @@ const SupportCTA = () => {
             className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl shadow-purple-500/30 hover:shadow-2xl transition-all"
           >
             <Phone size={20} />
-            Call Us Now: +254 759 466 446
+            Call Us Now: +211 920 532 819
           </motion.a>
         </div>
       </div>

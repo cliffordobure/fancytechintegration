@@ -129,11 +129,11 @@ const ProductCard = ({ product }) => {
                 <span
                   className={`text-2xl font-bold bg-gradient-to-r ${gradient} text-transparent bg-clip-text`}
                 >
-                  KES {product.price?.toLocaleString()}
+                  ${product.price?.toLocaleString()}
                 </span>
                 {product.originalPrice && (
                   <span className="text-sm text-gray-500 line-through ml-2">
-                    KES {product.originalPrice.toLocaleString()}
+                    ${product.originalPrice.toLocaleString()}
                   </span>
                 )}
               </div>

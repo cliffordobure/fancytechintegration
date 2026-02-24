@@ -8,8 +8,8 @@ const ContactInfoCards = () => {
     {
       icon: Phone,
       title: "Phone",
-      details: ["+254 759 466 446", "+254 712 345 678"],
-      action: "tel:+254759466446",
+      details: ["+211 929 097 920", "+211 924 710 022"],
+      action: "tel:+211929097920",
       actionText: "Call Now",
       color: "from-green-400 to-emerald-400",
       delay: 0.1,
@@ -17,8 +17,8 @@ const ContactInfoCards = () => {
     {
       icon: Mail,
       title: "Email",
-      details: ["sales@fancytechintegration-kenya.com", "support@fti.co.ke"],
-      action: "mailto:sales@fancytechintegration-kenya.com",
+      details: ["sales@fancytechintegration.com", "support@fti.com"],
+      action: "mailto:sales@fancytechintegration.com",
       actionText: "Send Email",
       color: "from-blue-400 to-cyan-400",
       delay: 0.2,
@@ -26,7 +26,7 @@ const ContactInfoCards = () => {
     {
       icon: MapPin,
       title: "Office",
-      details: ["Bishop Magua Centre,", "Nairobi, Kenya"],
+      details: ["Hai cinema, Yaro plaza", "Juba, South Sudan"],
       action: "https://maps.google.com",
       actionText: "Get Directions",
       color: "from-purple-400 to-indigo-400",
@@ -35,7 +35,7 @@ const ContactInfoCards = () => {
     {
       icon: Clock,
       title: "Working Hours",
-      details: ["Mon - Fri: 8:00 AM - 6:00 PM", "Sat: 9:00 AM - 2:00 PM"],
+      details: ["Sun - Fri: 8:00 AM - 5:00 PM", "Closed on Saturday"],
       color: "from-orange-400 to-red-400",
       delay: 0.4,
     },
