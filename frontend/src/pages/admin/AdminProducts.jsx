@@ -65,27 +65,11 @@ const AdminProducts = () => {
   };
 
   return (
-<<<<<<< HEAD
     <>
       <SEO
         title="Product Management"
         description="Manage products for Fancy Tech Integration Kenya"
       />
-=======
-    <div className="container mx-auto px-4 pt-32 pb-8">
-      <div className="flex justify-between items-center mb-8">
-        <h1 className="text-4xl font-bold">Manage Products</h1>
-        <button
-          onClick={() => {
-            resetForm();
-            setShowModal(true);
-          }}
-          className="btn-primary"
-        >
-          Add New Product
-        </button>
-      </div>
->>>>>>> 62e7a9450517633c2efecd6bb5f0e7199f15ecba
 
       <div className="min-h-screen bg-gray-900 pt-24 pb-16">
         <div className="container mx-auto px-4">
