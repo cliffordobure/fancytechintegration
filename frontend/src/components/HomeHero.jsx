@@ -6,14 +6,12 @@ import {
   Code2,
   Cloud,
   Shield,
-  Zap,
   ArrowRight,
   ChevronDown,
   Github,
   Twitter,
   Linkedin,
   Sparkles,
-  CircuitBoard,
   Cpu,
   Globe2,
   Database,
@@ -22,6 +20,7 @@ import {
   Workflow,
   Fingerprint,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const HomeHero = () => {
   const [ref, inView] = useInView({
@@ -281,7 +280,7 @@ const HomeHero = () => {
               className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 backdrop-blur-sm border border-white/10 px-6 py-2 rounded-full"
             >
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 font-semibold">
-                ✦ POWERING THE FUTURE OF TECH ✦
+                ✦ POWERING THE FUTURE OF SOUTH SUDAN TECH ✦
               </span>
             </motion.div>
           </motion.div>
@@ -324,7 +323,7 @@ const HomeHero = () => {
             <span className="text-white">Build</span>
             <br />
             <span className="bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 text-transparent bg-clip-text">
-              Transform
+              Integrate
             </span>
           </motion.h1>
 
@@ -338,33 +337,37 @@ const HomeHero = () => {
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-6 justify-center mb-16"
           >
-            <motion.button
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0 0 30px rgba(139, 92, 246, 0.6)",
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="group relative px-8 py-4 rounded-full font-semibold text-lg overflow-hidden"
-            >
-              <span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600" />
-              <span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <span className="relative text-white flex items-center gap-2">
-                Start Your Journey
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </span>
-            </motion.button>
+            <Link to="/contact">
+              <motion.button
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 0 30px rgba(139, 92, 246, 0.6)",
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="group relative px-8 py-4 rounded-full font-semibold text-lg overflow-hidden"
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600" />
+                <span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <span className="relative text-white flex items-center gap-2">
+                  Start Your Journey
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </motion.button>
+            </Link>
 
-            <motion.button
-              whileHover={{ scale: 1.05, borderColor: "#8b5cf6" }}
-              whileTap={{ scale: 0.95 }}
-              className="group relative px-8 py-4 rounded-full font-semibold text-lg bg-transparent border-2 border-white/30 hover:border-purple-500 transition-all duration-300 overflow-hidden"
-            >
-              <span className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-all duration-300" />
-              <span className="relative text-white flex items-center gap-2">
-                <Sparkles className="w-5 h-5" />
-                See Our Work
-              </span>
-            </motion.button>
+            <Link to="/about">
+              <motion.button
+                whileHover={{ scale: 1.05, borderColor: "#8b5cf6" }}
+                whileTap={{ scale: 0.95 }}
+                className="group relative px-8 py-4 rounded-full font-semibold text-lg bg-transparent border-2 border-white/30 hover:border-purple-500 transition-all duration-300 overflow-hidden"
+              >
+                <span className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-all duration-300" />
+                <span className="relative text-white flex items-center gap-2">
+                  <Sparkles className="w-5 h-5" />
+                  See Our Work
+                </span>
+              </motion.button>
+            </Link>
           </motion.div>
 
           {/* Tech stack showcase */}
@@ -432,7 +435,7 @@ const TypewriterText = () => {
   const [loopNum, setLoopNum] = useState(0);
   const phrases = [
     "We turn complex problems into elegant solutions",
-    "Your vision, our expertise, amazing results",
+    "Your vision, our software, amazing results",
     "Building the future, one line of code at a time",
     "Where creativity meets technology",
   ];

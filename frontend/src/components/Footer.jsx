@@ -8,13 +8,14 @@ import {
   Phone,
   MapPin,
   Facebook,
-  Twitter,
-  Linkedin,
+  YoutubeIcon,
   Instagram,
   ArrowRight,
   Sparkles,
   Heart,
+  Youtube,
 } from "lucide-react";
+import logo from "../assets/logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -36,10 +37,27 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: "#", color: "hover:text-blue-400" },
-    { icon: Twitter, href: "#", color: "hover:text-blue-300" },
-    { icon: Linkedin, href: "#", color: "hover:text-blue-500" },
-    { icon: Instagram, href: "#", color: "hover:text-pink-400" },
+    {
+      icon: Facebook,
+      href: "https://www.facebook.com/share/1C5boUNkPB/?mibextid=wwXIfr&ref=share",
+      color: "hover:text-blue-400",
+    },
+    {
+      icon: Youtube,
+      href: "https://www.tiktok.com/@fancy_tech_integration?_r=1&_t=ZS-94BqRrCsEm9",
+      color: "hover:text-blue-300",
+    },
+    {
+      icon: YoutubeIcon,
+      href: "https://youtube.com/@fancytechintegration?si=Co4IE5-BIU5EW-Cx",
+      color: "hover:text-blue-500",
+    },
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/fancy_tech_juba?igsh=cWI2c3QxYjJjZWpp&utm_source=qr_code_scanner",
+      color: "hover:text-pink-400",
+    },
+    // { icon: Whatsapp, href: "https" },
   ];
 
   return (
@@ -96,13 +114,18 @@ const Footer = () => {
             transition={{ duration: 0.5 }}
             className="space-y-4"
           >
-            <div className="flex items-center gap-3 mb-4">
+            <Link to="/" className="flex items-center gap-3 group">
               <motion.div
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.5 }}
                 className="relative"
               >
-                <Code2 className="w-10 h-10 text-purple-400" />
+                {/* Logo Image */}
+                <img
+                  src={logo}
+                  alt="F.T.I. Logo"
+                  className="w-12 h-12 object-contain"
+                />
                 <motion.div
                   animate={{
                     boxShadow: [
@@ -114,17 +137,19 @@ const Footer = () => {
                   className="absolute inset-0 rounded-full"
                 />
               </motion.div>
-              <div>
-                <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
-                  F.T.I.
+
+              <div className="flex flex-col">
+                <span className="text-lg font-semibold text-white">
+                  Fancy Tech
                 </span>
-                <p className="text-sm text-gray-400">Fancy Tech Integration</p>
+                <span className="text-s text-gray-400">Integration</span>
               </div>
-            </div>
+            </Link>
 
             <p className="text-gray-400 leading-relaxed">
-              Leading provider of technology solutions, Starlink Kits,
-              Networking Equipment, Laptops, and Phones in Kenya.
+              Leading provider of technology solutions, Software products,
+              Starlink Kits, Networking Equipment, Laptops, and Phones in South
+              Sudan.
             </p>
 
             {/* Social Links */}
@@ -227,7 +252,7 @@ const Footer = () => {
                   href="mailto:sales@fancytechintegration-kenya.com"
                   className="hover:text-white transition-colors break-all"
                 >
-                  sales@fancytechintegration-kenya.com
+                  sales@fancytechintegration.com
                 </a>
               </motion.li>
 
@@ -240,7 +265,7 @@ const Footer = () => {
                   href="tel:+254759466446"
                   className="hover:text-white transition-colors"
                 >
-                  +254 759 466 446
+                  +211 929 097 920
                 </a>
               </motion.li>
 
@@ -249,7 +274,7 @@ const Footer = () => {
                 className="flex items-center gap-3 text-gray-400 group"
               >
                 <MapPin size={18} className="text-purple-400 flex-shrink-0" />
-                <span>Nairobi, Kenya</span>
+                <span>Juba, South Sudan</span>
               </motion.li>
             </ul>
 
@@ -285,7 +310,7 @@ const Footer = () => {
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm flex items-center gap-2">
-              © {currentYear} Fancy Tech Integration Kenya.
+              © {currentYear} Fancy Tech Integration.
               <span className="hidden md:inline">All rights reserved.</span>
               <motion.span
                 animate={{ scale: [1, 1.2, 1] }}
@@ -294,7 +319,7 @@ const Footer = () => {
               >
                 Made with{" "}
                 <Heart size={14} className="text-red-400 fill-red-400" /> in
-                Kenya
+                South Sudan
               </motion.span>
             </p>
 

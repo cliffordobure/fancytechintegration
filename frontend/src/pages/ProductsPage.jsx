@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { motion } from "framer-motion";
 import { fetchProducts } from "../store/slices/productSlice";
 import SEO from "../components/SEO";
 import ProductsHero from "../components/products/ProductsHero";

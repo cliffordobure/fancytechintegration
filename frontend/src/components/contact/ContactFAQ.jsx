@@ -8,9 +8,9 @@ const ContactFAQ = () => {
 
   const faqs = [
     {
-      question: "How quickly do you respond to inquiries?",
+      question: "Where are you located in Juba, South Sudan?",
       answer:
-        "We typically respond within 2-4 hours during business hours. For urgent matters, please call us directly.",
+        "We are located in Yaro Plaza, near Hai Cinema in Juba, South Sudan. Our office is easily accessible from all major areas of the city.",
     },
     {
       question: "Do you offer on-site consultations?",
@@ -18,9 +18,9 @@ const ContactFAQ = () => {
         "Yes! We provide free on-site consultations for businesses in Nairobi and surrounding areas.",
     },
     {
-      question: "What payment methods do you accept?",
+      question: "What payment methods and currencies do you accept?",
       answer:
-        "We accept M-Pesa, bank transfers, and major credit cards. For corporate clients, we also offer invoice-based payments.",
+        "We accept payments in South Sudanese Pounds (SSP) and US Dollars (USD) through bank transfers, cash, and major credit cards.",
     },
     {
       question: "Do you provide installation services?",
@@ -30,7 +30,7 @@ const ContactFAQ = () => {
     {
       question: "What is your warranty policy?",
       answer:
-        "All our products come with a minimum 1-year warranty. Extended warranty options are available for most products.",
+        "Most of our products come with a minimum 1-year warranty. Extended warranty options are available for most products.",
     },
   ];
 

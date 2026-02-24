@@ -9,17 +9,15 @@ import {
   Menu,
   X,
   ShoppingCart,
-  ChevronDown,
-  Code2,
   LogOut,
   LayoutDashboard,
   Shield,
 } from "lucide-react";
+import logo from "../assets/logo.png";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
   const { userInfo } = useSelector((state) => state.auth);
   const cartItemsCount = useSelector(selectCartItemsCount);
   const dispatch = useDispatch();
@@ -98,7 +96,7 @@ const Header = () => {
     >
       <nav className="container mx-auto px-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo with Image */}
           <motion.div
             variants={logoVariants}
             initial="hidden"
@@ -110,7 +108,12 @@ const Header = () => {
                 transition={{ duration: 0.5 }}
                 className="relative"
               >
-                <Code2 className="w-8 h-8 text-purple-400" />
+                {/* Logo Image */}
+                <img
+                  src={logo}
+                  alt="F.T.I. Logo"
+                  className="w-12 h-12 object-contain"
+                />
                 <motion.div
                   animate={{
                     boxShadow: [
@@ -124,17 +127,10 @@ const Header = () => {
               </motion.div>
 
               <div className="flex flex-col">
-                <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 text-transparent bg-clip-text bg-[length:200%] animate-gradient">
-                  F.T.I.
+                <span className="text-lg font-semibold text-white">
+                  Fancy Tech
                 </span>
-                <div className="flex items-center gap-1">
-                  <span className="text-xs font-medium text-gray-400 hidden sm:inline">
-                    Fancy Tech Integration
-                  </span>
-                  <span className="text-xs text-gray-500 hidden md:inline">
-                    Kenya
-                  </span>
-                </div>
+                <span className="text-s text-gray-400">Integration</span>
               </div>
             </Link>
           </motion.div>
@@ -266,10 +262,10 @@ const Header = () => {
               initial="closed"
               animate="open"
               exit="closed"
-              className="md:hidden mt-4 overflow-hidden"
+              className="md:hidden mt-4 overflow-hidden rounded-2xl bg-slate-900/95 backdrop-blur-xl border border-white/10 shadow-2xl"
             >
-              <div className="py-4 border-t border-white/10">
-                <div className="flex flex-col space-y-2">
+              <div className="py-4">
+                <div className="flex flex-col space-y-2 px-4">
                   {navItems.map((item, index) => (
                     <motion.div
                       key={item.name}
@@ -337,24 +333,6 @@ const Header = () => {
           )}
         </AnimatePresence>
       </nav>
-
-      {/* Add this CSS to your global styles for the gradient animation */}
-      <style jsx>{`
-        @keyframes gradient {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
-        }
-        .animate-gradient {
-          animation: gradient 3s ease infinite;
-        }
-      `}</style>
     </motion.header>
   );
 };
