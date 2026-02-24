@@ -1,5 +1,5 @@
 // components/admin/ProductModal.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   X,
@@ -36,6 +36,30 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
   });
   const [uploading, setUploading] = useState(false);
   const [activeTab, setActiveTab] = useState("basic");
+
+  // Update formData when product changes or modal opens
+  useEffect(() => {
+    if (isOpen) {
+      setFormData({
+        name: product?.name || "",
+        description: product?.description || "",
+        category: product?.category || "starlink",
+        price: product?.price || "",
+        originalPrice: product?.originalPrice || "",
+        inStock: product?.inStock !== false,
+        stockQuantity: product?.stockQuantity || "",
+        brand: product?.brand || "",
+        model: product?.model || "",
+        featured: product?.featured || false,
+        status: product?.status || "active",
+        seoTitle: product?.seoTitle || "",
+        seoDescription: product?.seoDescription || "",
+        seoKeywords: product?.seoKeywords?.join(", ") || "",
+        images: product?.images || [],
+      });
+      setActiveTab("basic");
+    }
+  }, [product, isOpen]);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -98,17 +122,53 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // Validate required fields
+    if (!formData.name || !formData.name.trim()) {
+      toast.error('Product name is required');
+      setActiveTab('basic');
+      return;
+    }
+    
+    if (!formData.description || !formData.description.trim()) {
+      toast.error('Product description is required');
+      setActiveTab('basic');
+      return;
+    }
+    
+    if (!formData.price || formData.price === '') {
+      toast.error('Product price is required');
+      setActiveTab('pricing');
+      return;
+    }
+    
+    // Parse price - use existing price if editing and new price is invalid
+    const priceValue = formData.price 
+      ? parseFloat(formData.price) 
+      : (product?.price || 0);
+    
+    if (isNaN(priceValue) || priceValue <= 0) {
+      toast.error('Please enter a valid price');
+      setActiveTab('pricing');
+      return;
+    }
+    
     const productData = {
       ...formData,
-      price: parseFloat(formData.price),
-      originalPrice: formData.originalPrice
+      name: formData.name.trim(),
+      description: formData.description.trim(),
+      price: priceValue,
+      originalPrice: formData.originalPrice && formData.originalPrice !== ''
         ? parseFloat(formData.originalPrice)
         : undefined,
-      stockQuantity: parseInt(formData.stockQuantity) || 0,
+      stockQuantity: formData.stockQuantity && formData.stockQuantity !== ''
+        ? parseInt(formData.stockQuantity) || 0
+        : 0,
       seoKeywords: formData.seoKeywords
-        ? formData.seoKeywords.split(",").map((k) => k.trim())
+        ? formData.seoKeywords.split(",").map((k) => k.trim()).filter(k => k)
         : [],
     };
+    
     onSubmit(productData);
   };
 
