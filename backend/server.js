@@ -50,7 +50,7 @@ app.use('/api/upload', uploadRoutes);
 app.use('/api/orders', orderRoutes);
 
 // Health check
-app.get('/api/health', (req, res) => {
+app.get('/api/health', (req, res) => {I
   res.json({ status: 'OK', message: 'FancyTech Kenya API is running' });
 });
 

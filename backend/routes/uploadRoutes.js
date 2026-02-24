@@ -4,6 +4,8 @@ import { protect, admin } from '../middleware/authMiddleware.js';
 import cloudinary, { deleteImage } from '../config/cloudinary.js';
 import { v2 as cloudinaryV2 } from 'cloudinary';
 import { Readable } from 'stream';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const router = express.Router();
 
@@ -14,7 +16,7 @@ const uploadMemory = multer({
   limits: { fileSize: 5 * 1024 * 1024 }, // 5MB
   fileFilter: (req, file, cb) => {
     const allowedTypes = /jpeg|jpg|png|gif|webp/;
-    const mimetype = allowedTypes.test(file.mimetype);
+    const mimetype = allowedTypes.test(file.mimetype); 
     if (mimetype) {
       return cb(null, true);
     } else {
