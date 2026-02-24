@@ -10,10 +10,17 @@
     "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
     "build": "cd frontend && npm run build"
   },
-  "keywords": ["ecommerce", "marketplace", "starlink", "networking", "laptops"],
+  "keywords": [
+    "ecommerce",
+    "marketplace",
+    "starlink",
+    "networking",
+    "laptops"
+  ],
   "author": "FancyTech Kenya",
   "license": "MIT",
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.13"
   }
 }

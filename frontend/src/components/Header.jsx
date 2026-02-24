@@ -1,253 +1,361 @@
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { logout } from '../store/slices/authSlice';
-import { selectCartItemsCount } from '../store/slices/cartSlice';
+// components/Header.jsx
+import { useState, useEffect } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { motion, AnimatePresence } from "framer-motion";
+import { logout } from "../store/slices/authSlice";
+import { selectCartItemsCount } from "../store/slices/cartSlice";
+import {
+  Menu,
+  X,
+  ShoppingCart,
+  ChevronDown,
+  Code2,
+  LogOut,
+  LayoutDashboard,
+  Shield,
+} from "lucide-react";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
   const { userInfo } = useSelector((state) => state.auth);
   const cartItemsCount = useSelector(selectCartItemsCount);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location]);
 
   const handleLogout = () => {
     dispatch(logout());
-    navigate('/');
+    navigate("/");
     setIsMobileMenuOpen(false);
   };
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+  const navItems = [
+    { name: "Home", path: "/" },
+    { name: "Products", path: "/products" },
+    { name: "Articles", path: "/articles" },
+    { name: "About", path: "/about" },
+    { name: "Contact", path: "/contact" },
+  ];
+
+  // Animation variants
+  const logoVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { type: "spring", stiffness: 100 },
+    },
   };
 
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
+  const navItemVariants = {
+    hidden: { opacity: 0, y: -10 },
+    visible: (custom) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: custom * 0.1 },
+    }),
+  };
+
+  const mobileMenuVariants = {
+    closed: {
+      opacity: 0,
+      height: 0,
+      transition: { duration: 0.3 },
+    },
+    open: {
+      opacity: 1,
+      height: "auto",
+      transition: { duration: 0.3 },
+    },
   };
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
-      <nav className="container mx-auto px-4 py-4">
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5, type: "spring", stiffness: 100 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-slate-900/95 backdrop-blur-lg shadow-lg shadow-purple-500/10 py-2"
+          : "bg-transparent py-4"
+      }`}
+    >
+      <nav className="container mx-auto px-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
-            <span className="text-2xl font-bold text-orange-500">F.T.I.</span>
-            <span className="text-sm font-semibold text-primary-700 hidden sm:inline">
-              Fancy Tech Integration
-            </span>
-            <span className="text-sm text-gray-600 hidden md:inline">Kenya</span>
-          </Link>
-
-          <div className="hidden md:flex items-center space-x-6">
-            <Link
-              to="/"
-              className="text-gray-700 hover:text-orange-500 transition-colors"
-            >
-              Home
-            </Link>
-            <Link
-              to="/products"
-              className="text-gray-700 hover:text-orange-500 transition-colors"
-            >
-              Products
-            </Link>
-            <Link
-              to="/articles"
-              className="text-gray-700 hover:text-orange-500 transition-colors"
-            >
-              Articles
-            </Link>
-            <Link
-              to="/about"
-              className="text-gray-700 hover:text-orange-500 transition-colors"
-            >
-              About
-            </Link>
-            <Link
-              to="/contact"
-              className="text-gray-700 hover:text-orange-500 transition-colors"
-            >
-              Contact
-            </Link>
-            <Link
-              to="/cart"
-              className="relative text-gray-700 hover:text-orange-500 transition-colors"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+          {/* Logo */}
+          <motion.div
+            variants={logoVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <Link to="/" className="flex items-center gap-3 group">
+              <motion.div
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.5 }}
+                className="relative"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                <Code2 className="w-8 h-8 text-purple-400" />
+                <motion.div
+                  animate={{
+                    boxShadow: [
+                      "0 0 0 0 rgba(139, 92, 246, 0.4)",
+                      "0 0 0 10px rgba(139, 92, 246, 0)",
+                    ],
+                  }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="absolute inset-0 rounded-full"
                 />
-              </svg>
-              {cartItemsCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  {cartItemsCount}
+              </motion.div>
+
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 text-transparent bg-clip-text bg-[length:200%] animate-gradient">
+                  F.T.I.
                 </span>
-              )}
+                <div className="flex items-center gap-1">
+                  <span className="text-xs font-medium text-gray-400 hidden sm:inline">
+                    Fancy Tech Integration
+                  </span>
+                  <span className="text-xs text-gray-500 hidden md:inline">
+                    Kenya
+                  </span>
+                </div>
+              </div>
             </Link>
-            {userInfo && userInfo.role === 'admin' ? (
-              <>
-                <Link
-                  to="/admin/dashboard"
-                  className="text-orange-500 hover:text-orange-600 font-medium"
-                >
-                  Dashboard
-                </Link>
-                <button
-                  onClick={handleLogout}
-                  className="btn-secondary text-sm"
-                >
-                  Logout
-                </button>
-              </>
-            ) : (
-              <Link
-                to="/admin/login"
-                className="btn-primary text-sm"
+          </motion.div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-1">
+            {navItems.map((item, index) => (
+              <motion.div
+                key={item.name}
+                custom={index}
+                variants={navItemVariants}
+                initial="hidden"
+                animate="visible"
               >
-                Admin Login
-              </Link>
-            )}
+                <Link
+                  to={item.path}
+                  className={`relative px-4 py-2 text-sm font-medium transition-colors group ${
+                    location.pathname === item.path
+                      ? "text-purple-400"
+                      : "text-gray-300 hover:text-white"
+                  }`}
+                >
+                  {item.name}
+                  {location.pathname === item.path && (
+                    <motion.div
+                      layoutId="activeNav"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400"
+                      initial={false}
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 30,
+                      }}
+                    />
+                  )}
+                </Link>
+              </motion.div>
+            ))}
           </div>
 
-          {/* Mobile cart and menu buttons */}
-          <div className="md:hidden flex items-center gap-4">
-            <Link
-              to="/cart"
-              className="relative text-gray-700 hover:text-orange-500 transition-colors"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+          {/* Right side icons and buttons */}
+          <motion.div
+            className="flex items-center gap-3"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.5 }}
+          >
+            {/* Cart */}
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                to="/cart"
+                className="relative p-2 text-gray-300 hover:text-purple-400 transition-colors"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                />
-              </svg>
-              {cartItemsCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  {cartItemsCount}
-                </span>
-              )}
-            </Link>
-            <button 
-              className="text-gray-700 focus:outline-none"
-              onClick={toggleMobileMenu}
+                <ShoppingCart className="w-5 h-5" />
+                {cartItemsCount > 0 && (
+                  <motion.span
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    className="absolute -top-1 -right-1 bg-gradient-to-r from-purple-500 to-blue-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center shadow-lg"
+                  >
+                    {cartItemsCount}
+                  </motion.span>
+                )}
+              </Link>
+            </motion.div>
+
+            {/* Admin Section */}
+            {userInfo && userInfo.role === "admin" ? (
+              <div className="flex items-center gap-2">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Link
+                    to="/admin/dashboard"
+                    className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500/20 to-blue-500/20 backdrop-blur-sm border border-white/10 rounded-lg text-purple-400 hover:text-purple-300 transition-all"
+                  >
+                    <LayoutDashboard className="w-4 h-4" />
+                    <span className="text-sm font-medium">Dashboard</span>
+                  </Link>
+                </motion.div>
+
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={handleLogout}
+                  className="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-all"
+                >
+                  <LogOut className="w-4 h-4" />
+                  <span className="text-sm font-medium">Logout</span>
+                </motion.button>
+              </div>
+            ) : (
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link
+                  to="/admin/login"
+                  className="flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg font-medium text-sm shadow-lg shadow-purple-500/30 hover:shadow-xl hover:shadow-purple-500/40 transition-all"
+                >
+                  <Shield className="w-4 h-4" />
+                  Admin Login
+                </Link>
+              </motion.div>
+            )}
+
+            {/* Mobile menu button */}
+            <motion.button
+              className="md:hidden p-2 text-gray-300 hover:text-purple-400 transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              whileTap={{ scale: 0.9 }}
               aria-label="Toggle mobile menu"
             >
               {isMobileMenuOpen ? (
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
+                <X className="w-6 h-6" />
               ) : (
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
+                <Menu className="w-6 h-6" />
               )}
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </div>
 
         {/* Mobile menu dropdown */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-gray-200">
-            <div className="flex flex-col space-y-4 pt-4">
-              <Link
-                to="/"
-                onClick={closeMobileMenu}
-                className="text-gray-700 hover:text-orange-500 transition-colors py-2"
-              >
-                Home
-              </Link>
-              <Link
-                to="/products"
-                onClick={closeMobileMenu}
-                className="text-gray-700 hover:text-orange-500 transition-colors py-2"
-              >
-                Products
-              </Link>
-              <Link
-                to="/articles"
-                onClick={closeMobileMenu}
-                className="text-gray-700 hover:text-orange-500 transition-colors py-2"
-              >
-                Articles
-              </Link>
-              <Link
-                to="/about"
-                onClick={closeMobileMenu}
-                className="text-gray-700 hover:text-orange-500 transition-colors py-2"
-              >
-                About
-              </Link>
-              <Link
-                to="/contact"
-                onClick={closeMobileMenu}
-                className="text-gray-700 hover:text-orange-500 transition-colors py-2"
-              >
-                Contact
-              </Link>
-              {userInfo && userInfo.role === 'admin' ? (
-                <>
-                  <Link
-                    to="/admin/dashboard"
-                    onClick={closeMobileMenu}
-                    className="text-orange-500 hover:text-orange-600 font-medium py-2"
-                  >
-                    Dashboard
-                  </Link>
-                  <button
-                    onClick={handleLogout}
-                    className="btn-secondary text-sm text-left py-2"
-                  >
-                    Logout
-                  </button>
-                </>
-              ) : (
-                <Link
-                  to="/admin/login"
-                  onClick={closeMobileMenu}
-                  className="btn-primary text-sm text-center py-2"
-                >
-                  Admin Login
-                </Link>
-              )}
-            </div>
-          </div>
-        )}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              variants={mobileMenuVariants}
+              initial="closed"
+              animate="open"
+              exit="closed"
+              className="md:hidden mt-4 overflow-hidden"
+            >
+              <div className="py-4 border-t border-white/10">
+                <div className="flex flex-col space-y-2">
+                  {navItems.map((item, index) => (
+                    <motion.div
+                      key={item.name}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      <Link
+                        to={item.path}
+                        className={`block px-4 py-3 rounded-lg transition-all ${
+                          location.pathname === item.path
+                            ? "bg-gradient-to-r from-purple-500/20 to-blue-500/20 text-purple-400"
+                            : "text-gray-300 hover:bg-white/5 hover:text-white"
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
+                    </motion.div>
+                  ))}
+
+                  {/* Mobile admin section */}
+                  <div className="pt-4 mt-2 border-t border-white/10">
+                    {userInfo && userInfo.role === "admin" ? (
+                      <>
+                        <motion.div
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 0.5 }}
+                        >
+                          <Link
+                            to="/admin/dashboard"
+                            className="block px-4 py-3 text-purple-400 hover:bg-white/5 rounded-lg transition-all"
+                          >
+                            Dashboard
+                          </Link>
+                        </motion.div>
+                        <motion.button
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 0.6 }}
+                          onClick={handleLogout}
+                          className="w-full text-left px-4 py-3 text-gray-300 hover:bg-white/5 rounded-lg transition-all"
+                        >
+                          Logout
+                        </motion.button>
+                      </>
+                    ) : (
+                      <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.5 }}
+                      >
+                        <Link
+                          to="/admin/login"
+                          className="block px-4 py-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg font-medium text-center"
+                        >
+                          Admin Login
+                        </Link>
+                      </motion.div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
-    </header>
+
+      {/* Add this CSS to your global styles for the gradient animation */}
+      <style jsx>{`
+        @keyframes gradient {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+        .animate-gradient {
+          animation: gradient 3s ease infinite;
+        }
+      `}</style>
+    </motion.header>
   );
 };
 
