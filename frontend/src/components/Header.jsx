@@ -112,7 +112,7 @@ const Header = () => {
                 <img
                   src={logo}
                   alt="F.T.I. Logo"
-                  className="w-12 h-12 object-contain"
+                  className="w-10 h-10 md:w-12 md:h-12 object-contain"
                 />
                 <motion.div
                   animate={{
@@ -126,7 +126,8 @@ const Header = () => {
                 />
               </motion.div>
 
-              <div className="flex flex-col">
+              {/* Hidden on mobile, visible on medium screens and up */}
+              <div className="hidden md:flex flex-col">
                 <span className="text-lg font-semibold text-white">
                   Fancy Tech
                 </span>
@@ -233,7 +234,7 @@ const Header = () => {
                   className="flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg font-medium text-sm shadow-lg shadow-purple-500/30 hover:shadow-xl hover:shadow-purple-500/40 transition-all"
                 >
                   <Shield className="w-4 h-4" />
-                  Admin Login
+                  Admin
                 </Link>
               </motion.div>
             )}

@@ -185,7 +185,7 @@ const HomeHero = () => {
   ];
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
+    <section className="relative pt-8 md:pt-2 min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
       {/* Animated background particles */}
       <div className="absolute inset-0">
         {[...Array(50)].map((_, i) => (
