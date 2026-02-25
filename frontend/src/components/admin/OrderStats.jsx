@@ -59,7 +59,7 @@ const OrderStats = ({ orders }) => {
     },
     {
       title: "Total Revenue",
-      value: `KES ${orders
+      value: `$ ${orders
         .filter((o) => o.paymentStatus === "paid")
         .reduce((sum, o) => sum + o.total, 0)
         .toLocaleString()}`,

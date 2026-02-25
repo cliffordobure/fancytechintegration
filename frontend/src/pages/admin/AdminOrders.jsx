@@ -59,7 +59,7 @@ const AdminOrders = () => {
     <>
       <SEO
         title="Order Management"
-        description="Manage customer orders for Fancy Tech Integration Kenya"
+        description="Manage customer orders for Fancy Tech Integration South Sudan"
       />
 
       <div className="min-h-screen bg-gray-900 pt-24 pb-16">

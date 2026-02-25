@@ -109,7 +109,7 @@ const AdminArticles = () => {
     <>
       <SEO
         title="Article Management"
-        description="Manage articles for Fancy Tech Integration Kenya"
+        description="Manage articles for Fancy Tech Integration South Sudan"
       />
 
       <div className="min-h-screen bg-gray-900 pt-24 pb-16">

@@ -84,11 +84,11 @@ const ProductInfo = ({ product }) => {
       >
         <div className="flex items-baseline gap-4 mb-4">
           <span className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
-            KES {product.price?.toLocaleString()}
+            $ {product.price?.toLocaleString()}
           </span>
           {product.originalPrice && (
             <span className="text-xl text-gray-500 line-through">
-              KES {product.originalPrice.toLocaleString()}
+              $ {product.originalPrice.toLocaleString()}
             </span>
           )}
         </div>

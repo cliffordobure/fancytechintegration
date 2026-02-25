@@ -249,7 +249,7 @@ const Footer = () => {
                   className="text-purple-400 mt-1 flex-shrink-0"
                 />
                 <a
-                  href="mailto:sales@fancytechintegration-kenya.com"
+                  href="mailto:sales@fancytechintegration.com"
                   className="hover:text-white transition-colors break-all"
                 >
                   sales@fancytechintegration.com

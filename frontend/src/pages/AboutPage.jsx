@@ -10,13 +10,13 @@ const AboutPage = () => {
     <>
       <SEO
         title="About Us"
-        description="Learn about Fancy Tech Integration Kenya - A leading technology company providing Starlink Kits, Networking Equipment, Laptops, Phones, and Software Solutions across Kenya."
+        description="Learn about Fancy Tech Integration South Sudan - A leading technology company providing Starlink Kits, Networking Equipment, Laptops, Phones, and Software Solutions across South Sudan."
         keywords={[
           "About Fancy Tech Integration",
-          "F.T.I. Kenya",
+          "F.T.I. South Sudan",
           "Company",
           "Technology Solutions",
-          "Kenya",
+          "South Sudan",
         ]}
       />
 
@@ -53,17 +53,22 @@ const AboutPage = () => {
                   Fancy Tech Integration (F.T.I.)
                 </span>{" "}
                 is a leading technology company that has been serving customers
-                in South Sudan and is now expanding its operations to Kenya. We
-                specialize in providing cutting-edge technology solutions,
-                including software development, Starlink satellite internet
-                kits, networking equipment, laptops, and mobile phones.
+                in South Sudan and South Sudan since 2021. We specialize in
+                providing cutting-edge technology solutions, including software
+                development, Starlink satellite internet kits, networking
+                equipment, laptops, and mobile phones.
               </p>
 
               <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 border-l-4 border-purple-500 p-6 rounded-r-lg">
                 <p className="text-lg text-gray-200 font-medium">
-                  Our mission is to bridge the digital divide in Kenya by making
-                  advanced technology accessible and affordable to businesses
-                  and individuals across the country.
+                  Our mission is to bridge the digital divide in South Sudan by
+                  making advanced technology accessible and affordable to
+                  businesses and individuals across the country. This is where
+                  the word "Integration" in our name comes from - we integrate
+                  the latest technology into the lives of our customers,
+                  empowering them to achieve more and connect with the world. We
+                  are committed to delivering exceptional products and services
+                  that drive innovation and growth in the region.
                 </p>
               </div>
             </div>

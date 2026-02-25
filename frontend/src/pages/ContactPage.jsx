@@ -15,11 +15,11 @@ const ContactPage = () => {
     <>
       <SEO
         title="Contact Us"
-        description="Get in touch with Fancy Tech Integration Kenya. Contact us for inquiries about our products and services including Starlink Kits, Networking Equipment, Laptops, and Phones."
+        description="Get in touch with Fancy Tech Integration South Sudan. Contact us for inquiries about our products and services including Starlink Kits, Networking Equipment, Laptops, and Phones."
         keywords={[
           "Contact",
-          "Fancy Tech Integration Kenya",
-          "F.T.I. Kenya",
+          "Fancy Tech Integration South Sudan",
+          "F.T.I. South Sudan",
           "Support",
           "Inquiry",
         ]}

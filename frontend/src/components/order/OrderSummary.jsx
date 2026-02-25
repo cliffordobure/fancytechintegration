@@ -94,7 +94,7 @@ const OrderSummary = ({ order }) => {
           <div className="flex justify-between text-gray-400">
             <span>Subtotal</span>
             <span className="text-white font-medium">
-              KES {order.subtotal.toLocaleString()}
+              $ {order.subtotal.toLocaleString()}
             </span>
           </div>
 
@@ -105,7 +105,7 @@ const OrderSummary = ({ order }) => {
             >
               {order.shipping === 0
                 ? "Free"
-                : `KES ${order.shipping.toLocaleString()}`}
+                : `$ ${order.shipping.toLocaleString()}`}
             </span>
           </div>
 
@@ -130,7 +130,7 @@ const OrderSummary = ({ order }) => {
           <div className="border-t border-white/10 pt-3 flex justify-between text-lg font-bold">
             <span className="text-white">Total</span>
             <span className="text-2xl bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
-              KES {order.total.toLocaleString()}
+              $ {order.total.toLocaleString()}
             </span>
           </div>
         </div>

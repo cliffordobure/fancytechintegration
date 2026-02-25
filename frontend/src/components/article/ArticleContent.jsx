@@ -12,11 +12,25 @@ const ArticleContent = ({ content, tags }) => {
       transition={{ delay: 0.3 }}
       className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
     >
-      {/* Article Content */}
+      {/* Article Content - Fixed with white text */}
       <div
-        className="prose prose-lg max-w-none prose-invert prose-headings:text-white prose-p:text-gray-300 prose-strong:text-white prose-a:text-purple-400 hover:prose-a:text-purple-300 prose-code:text-purple-300 prose-pre:bg-gray-900/50"
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
+        className="prose prose-lg max-w-none prose-invert"
+        style={{
+          color: "#ffffff", // Force white text
+        }}
+      >
+        <div
+          dangerouslySetInnerHTML={{
+            __html: content,
+            // Optional: If content has inline styles, you can strip them
+            // .replace(/style="[^"]*"/g, '')
+            // .replace(/color:[^;"]*;?/g, '')
+          }}
+          style={{
+            color: "#ffffff", // Force white text for the content
+          }}
+        />
+      </div>
 
       {/* Tags Section */}
       {tags && tags.length > 0 && (

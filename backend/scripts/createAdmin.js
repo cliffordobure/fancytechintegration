@@ -1,28 +1,31 @@
-import mongoose from 'mongoose';
-import dotenv from 'dotenv';
-import User from '../models/User.js';
-import { fileURLToPath } from 'url';
-import path from 'path';
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+import User from "../models/User.js";
+import { fileURLToPath } from "url";
+import path from "path";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-dotenv.config({ path: path.join(__dirname, '../.env') });
+dotenv.config({ path: path.join(__dirname, "../.env") });
 
 const createAdmin = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/fancytech-kenya');
-    console.log('MongoDB Connected');
+    await mongoose.connect(
+      process.env.MONGODB_URI ||
+        "mongodb://localhost:27017/fancytech-South Sudan",
+    );
+    console.log("MongoDB Connected");
 
     const args = process.argv.slice(2);
-    const name = args[0] || 'Admin';
-    const email = args[1] || 'admin@fancytechkenya.com';
-    const password = args[2] || 'admin123';
+    const name = args[0] || "Admin";
+    const email = args[1] || "admin@fancytechSouth Sudan.com";
+    const password = args[2] || "admin123";
 
     // Check if admin already exists
     const existingAdmin = await User.findOne({ email });
     if (existingAdmin) {
-      console.log('Admin user already exists with this email');
+      console.log("Admin user already exists with this email");
       process.exit(0);
     }
 
@@ -31,17 +34,17 @@ const createAdmin = async () => {
       name,
       email,
       password,
-      role: 'admin',
+      role: "admin",
     });
 
-    console.log('Admin user created successfully!');
-    console.log('Email:', admin.email);
-    console.log('Password:', password);
-    console.log('\nPlease change the password after first login!');
-    
+    console.log("Admin user created successfully!");
+    console.log("Email:", admin.email);
+    console.log("Password:", password);
+    console.log("\nPlease change the password after first login!");
+
     process.exit(0);
   } catch (error) {
-    console.error('Error creating admin:', error);
+    console.error("Error creating admin:", error);
     process.exit(1);
   }
 };

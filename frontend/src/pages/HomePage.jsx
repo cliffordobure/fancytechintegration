@@ -14,6 +14,8 @@ import category1 from "../assets/pngwing.com (15).png";
 import category2 from "../assets/pngwing.com (16).png";
 import category3 from "../assets/pngwing.com (17).png";
 import category4 from "../assets/pngwing.com (18).png";
+import SoftwareServices from "../components/SoftwareServices";
+import FloatingActions from "../components/FloatingActions";
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -80,22 +82,24 @@ const HomePage = () => {
   return (
     <>
       <SEO
-        title="Home - Fancy Tech Integration Kenya"
-        description="Leading technology company in Kenya providing Starlink Kits, Networking Equipment, Laptops, Phones, and Software Solutions."
+        title="Home - Fancy Tech Integration South Sudan"
+        description="Leading technology company in South Sudan providing Starlink Kits, Networking Equipment, Laptops, Phones, and Software Solutions."
         keywords={[
           "Fancy Tech Integration",
-          "F.T.I. Kenya",
+          "F.T.I. South Sudan",
           "Technology Solutions",
-          "Starlink Kenya",
+          "Starlink South Sudan",
           "Networking Equipment",
         ]}
       />
 
       <HomeHero />
       <OurFeatures />
+      <SoftwareServices />
       <CategoriesSection categoryInfo={categoryInfo} />
       <Products products={products} />
       <CTASection />
+      <FloatingActions />
       <RecentArticles
         recentArticles={recentArticles}
         articlesLoading={articlesLoading}

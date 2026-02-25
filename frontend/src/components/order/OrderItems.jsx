@@ -59,13 +59,13 @@ const OrderItems = ({ items }) => {
                     {item.name}
                   </h3>
                   <p className="text-sm text-gray-500 mt-1">
-                    KES {item.price.toLocaleString()} each
+                    $ {item.price.toLocaleString()} each
                   </p>
                   <div className="flex justify-between items-center mt-2">
                     <p className="text-sm text-gray-400">
                       Subtotal:{" "}
                       <span className="text-white font-medium">
-                        KES {(item.price * item.quantity).toLocaleString()}
+                        $ {(item.price * item.quantity).toLocaleString()}
                       </span>
                     </p>
                     <span className="text-xs text-gray-500">

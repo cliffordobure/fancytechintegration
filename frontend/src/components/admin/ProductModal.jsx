@@ -122,53 +122,58 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // Validate required fields
     if (!formData.name || !formData.name.trim()) {
-      toast.error('Product name is required');
-      setActiveTab('basic');
+      toast.error("Product name is required");
+      setActiveTab("basic");
       return;
     }
-    
+
     if (!formData.description || !formData.description.trim()) {
-      toast.error('Product description is required');
-      setActiveTab('basic');
+      toast.error("Product description is required");
+      setActiveTab("basic");
       return;
     }
-    
-    if (!formData.price || formData.price === '') {
-      toast.error('Product price is required');
-      setActiveTab('pricing');
+
+    if (!formData.price || formData.price === "") {
+      toast.error("Product price is required");
+      setActiveTab("pricing");
       return;
     }
-    
+
     // Parse price - use existing price if editing and new price is invalid
-    const priceValue = formData.price 
-      ? parseFloat(formData.price) 
-      : (product?.price || 0);
-    
+    const priceValue = formData.price
+      ? parseFloat(formData.price)
+      : product?.price || 0;
+
     if (isNaN(priceValue) || priceValue <= 0) {
-      toast.error('Please enter a valid price');
-      setActiveTab('pricing');
+      toast.error("Please enter a valid price");
+      setActiveTab("pricing");
       return;
     }
-    
+
     const productData = {
       ...formData,
       name: formData.name.trim(),
       description: formData.description.trim(),
       price: priceValue,
-      originalPrice: formData.originalPrice && formData.originalPrice !== ''
-        ? parseFloat(formData.originalPrice)
-        : undefined,
-      stockQuantity: formData.stockQuantity && formData.stockQuantity !== ''
-        ? parseInt(formData.stockQuantity) || 0
-        : 0,
+      originalPrice:
+        formData.originalPrice && formData.originalPrice !== ""
+          ? parseFloat(formData.originalPrice)
+          : undefined,
+      stockQuantity:
+        formData.stockQuantity && formData.stockQuantity !== ""
+          ? parseInt(formData.stockQuantity) || 0
+          : 0,
       seoKeywords: formData.seoKeywords
-        ? formData.seoKeywords.split(",").map((k) => k.trim()).filter(k => k)
+        ? formData.seoKeywords
+            .split(",")
+            .map((k) => k.trim())
+            .filter((k) => k)
         : [],
     };
-    
+
     onSubmit(productData);
   };
 
@@ -336,7 +341,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                         <div className="grid grid-cols-2 gap-4">
                           <div>
                             <label className="block text-sm font-medium text-gray-400 mb-2">
-                              Price (KES) *
+                              Price ($) *
                             </label>
                             <input
                               type="number"
@@ -351,7 +356,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                           </div>
                           <div>
                             <label className="block text-sm font-medium text-gray-400 mb-2">
-                              Original Price (KES)
+                              Original Price ($)
                             </label>
                             <input
                               type="number"

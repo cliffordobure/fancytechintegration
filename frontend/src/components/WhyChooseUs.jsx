@@ -29,7 +29,7 @@ const WhyChooseUs = () => {
       icon: Globe2,
       title: "Global Coverage",
       description:
-        "Access high-speed internet from anywhere in Kenya with our satellite-based Starlink technology.",
+        "Access high-speed internet from anywhere in South Sudan with our satellite-based Starlink technology.",
       color: "from-blue-400 to-cyan-400",
       stats: "100% Coverage",
     },
@@ -69,7 +69,7 @@ const WhyChooseUs = () => {
       icon: Users,
       title: "Experience & Expertise",
       description:
-        "Years of experience in South Sudan and now expanding to Kenya, understanding unique regional needs.",
+        "Years of experience in South Sudan and now expanding to South Sudan, understanding unique regional needs.",
       color: "from-orange-400 to-red-400",
       stats: "5+ Years",
     },
@@ -253,24 +253,6 @@ const WhyChooseUs = () => {
           </AnimatedSection>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes gradient {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
-        }
-        .animate-gradient {
-          background-size: 200% auto;
-          animation: gradient 3s ease infinite;
-        }
-      `}</style>
     </section>
   );
 };

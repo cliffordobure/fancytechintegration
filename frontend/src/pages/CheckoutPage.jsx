@@ -118,7 +118,7 @@ const CheckoutPage = () => {
           phone: formData.phone,
           address: {
             ...formData.address,
-            country: "Kenya",
+            country: "South Sudan",
           },
         },
         items: cartItems.map((item) => ({
@@ -163,7 +163,7 @@ const CheckoutPage = () => {
     <>
       <SEO
         title="Checkout"
-        description="Complete your order at Fancy Tech Integration Kenya. Secure checkout for all your technology needs."
+        description="Complete your order at Fancy Tech Integration South Sudan. Secure checkout for all your technology needs."
         keywords={["Checkout", "Order", "Payment"]}
       />
 

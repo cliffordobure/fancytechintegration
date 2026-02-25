@@ -1,12 +1,13 @@
-# FancyTech Kenya - Project Summary
+# FancyTech South Sudan - Project Summary
 
 ## Overview
 
-This is a complete, production-ready MERN stack e-commerce and content management system built for FancyTech Kenya. The system includes a public-facing marketplace website and a comprehensive admin panel for managing products and SEO-optimized articles.
+This is a complete, production-ready MERN stack e-commerce and content management system built for FancyTech South Sudan. The system includes a public-facing marketplace website and a comprehensive admin panel for managing products and SEO-optimized articles.
 
 ## Key Features Implemented
 
 ### 🛍️ Product Management
+
 - **Categories**: Starlink Kits, Networking Equipment, Laptops, Phones, Software
 - **Product Features**:
   - Multiple images per product
@@ -18,6 +19,7 @@ This is a complete, production-ready MERN stack e-commerce and content managemen
   - Slug-based URLs for SEO
 
 ### 📝 Article/Blog System
+
 - **Article Categories**: News, Tutorials, Product Reviews, Company Updates, Tech Tips
 - **Article Features**:
   - Rich content (HTML supported)
@@ -30,6 +32,7 @@ This is a complete, production-ready MERN stack e-commerce and content managemen
   - Slug-based URLs
 
 ### 👨‍💼 Admin Panel
+
 - **Authentication**: Secure JWT-based admin login
 - **Dashboard**: Overview statistics and quick actions
 - **Product Management**: Full CRUD operations with image upload
@@ -37,6 +40,7 @@ This is a complete, production-ready MERN stack e-commerce and content managemen
 - **Image Upload**: Single and multiple image upload support
 
 ### 🔍 SEO Optimization
+
 - **Meta Tags**: Dynamic meta tags for all pages
 - **Open Graph**: Social media sharing optimization
 - **Twitter Cards**: Twitter sharing optimization
@@ -45,6 +49,7 @@ This is a complete, production-ready MERN stack e-commerce and content managemen
 - **Sitemap Ready**: Structure supports sitemap generation
 
 ### 🎨 User Interface
+
 - **Modern Design**: Clean, professional Tailwind CSS design
 - **Responsive**: Mobile-first, fully responsive layout
 - **Product Catalog**: Grid view with filtering and search
@@ -55,6 +60,7 @@ This is a complete, production-ready MERN stack e-commerce and content managemen
 ## Technology Stack
 
 ### Frontend
+
 - **React 18**: Modern React with hooks
 - **Vite**: Fast build tool and dev server
 - **Redux Toolkit**: State management
@@ -65,6 +71,7 @@ This is a complete, production-ready MERN stack e-commerce and content managemen
 - **Axios**: HTTP client
 
 ### Backend
+
 - **Express.js**: Node.js web framework
 - **MongoDB**: NoSQL database
 - **Mongoose**: MongoDB object modeling
@@ -76,7 +83,7 @@ This is a complete, production-ready MERN stack e-commerce and content managemen
 ## Project Structure
 
 ```
-fancyTechKenya/
+fancyTechSouth Sudan/
 ├── backend/
 │   ├── models/              # Database models (Product, Article, User)
 │   ├── routes/              # API route handlers
@@ -102,12 +109,14 @@ fancyTechKenya/
 ## API Endpoints
 
 ### Public Endpoints
+
 - `GET /api/products` - List products (with filters)
 - `GET /api/products/:slug` - Get product details
 - `GET /api/articles` - List published articles
 - `GET /api/articles/:slug` - Get article details
 
 ### Admin Endpoints (Requires Authentication)
+
 - `POST /api/auth/login` - Admin login
 - `GET /api/auth/me` - Get current user
 - `POST /api/products` - Create product
@@ -140,6 +149,7 @@ fancyTechKenya/
 ## Getting Started
 
 1. **Install Dependencies**
+
    ```bash
    npm run install-all
    ```
@@ -149,12 +159,14 @@ fancyTechKenya/
    - Update MongoDB URI and JWT secret
 
 3. **Create Admin User**
+
    ```bash
    cd backend
    npm run create-admin
    ```
 
 4. **Start Development Servers**
+
    ```bash
    npm run dev
    ```
@@ -208,6 +220,7 @@ fancyTechKenya/
 ## Database Models
 
 ### Product
+
 - Basic info (name, description, category)
 - Pricing (price, originalPrice)
 - Inventory (inStock, stockQuantity)
@@ -217,6 +230,7 @@ fancyTechKenya/
 - Status (active, inactive, draft)
 
 ### Article
+
 - Content (title, content, excerpt)
 - Media (featuredImage)
 - Organization (category, tags)
@@ -225,6 +239,7 @@ fancyTechKenya/
 - Author reference
 
 ### User
+
 - Authentication (email, password)
 - Profile (name)
 - Role (admin, user)
@@ -232,16 +247,19 @@ fancyTechKenya/
 ## Customization Guide
 
 ### Styling
+
 - Modify `frontend/tailwind.config.js` for theme colors
 - Update `frontend/src/index.css` for global styles
 - Component styles in individual component files
 
 ### Content
+
 - Update company info in About page
 - Modify contact information in Contact page
 - Customize footer links and information
 
 ### Product Categories
+
 - Add/remove categories in Product model enum
 - Update category filters in ProductsPage
 - Add category icons in HomePage
@@ -258,4 +276,4 @@ MIT License - Feel free to use and modify for your business needs.
 
 ---
 
-**Built with ❤️ for FancyTech Kenya**
+**Built with ❤️ for FancyTech South Sudan**

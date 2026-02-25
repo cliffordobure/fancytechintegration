@@ -2,7 +2,7 @@
   "name": "fancytech-backend",
   "version": "1.0.0",
   "type": "module",
-  "description": "FancyTech Kenya Backend API",
+  "description": "FancyTech South Sudan Backend API",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

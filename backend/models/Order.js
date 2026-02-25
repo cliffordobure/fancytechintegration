@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const orderSchema = new mongoose.Schema(
   {
@@ -27,7 +27,7 @@ const orderSchema = new mongoose.Schema(
         postalCode: String,
         country: {
           type: String,
-          default: 'Kenya',
+          default: "South Sudan",
         },
       },
     },
@@ -35,7 +35,7 @@ const orderSchema = new mongoose.Schema(
       {
         product: {
           type: mongoose.Schema.Types.ObjectId,
-          ref: 'Product',
+          ref: "Product",
           required: true,
         },
         name: String,
@@ -58,39 +58,39 @@ const orderSchema = new mongoose.Schema(
     },
     paymentMethod: {
       type: String,
-      enum: ['mpesa', 'bank_transfer', 'cash_on_delivery', 'card'],
-      default: 'mpesa',
+      enum: ["mpesa", "bank_transfer", "cash_on_delivery", "card"],
+      default: "mpesa",
     },
     paymentStatus: {
       type: String,
-      enum: ['pending', 'paid', 'failed', 'refunded'],
-      default: 'pending',
+      enum: ["pending", "paid", "failed", "refunded"],
+      default: "pending",
     },
     orderStatus: {
       type: String,
-      enum: ['pending', 'processing', 'shipped', 'delivered', 'cancelled'],
-      default: 'pending',
+      enum: ["pending", "processing", "shipped", "delivered", "cancelled"],
+      default: "pending",
     },
     notes: {
       type: String,
     },
     shippingMethod: {
       type: String,
-      enum: ['standard', 'express', 'pickup'],
-      default: 'standard',
+      enum: ["standard", "express", "pickup"],
+      default: "standard",
     },
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 // Generate order number before saving
-orderSchema.pre('save', async function (next) {
+orderSchema.pre("save", async function (next) {
   if (!this.orderNumber) {
     try {
-      const count = await mongoose.model('Order').countDocuments();
-      this.orderNumber = `FTI-${Date.now()}-${String(count + 1).padStart(4, '0')}`;
+      const count = await mongoose.model("Order").countDocuments();
+      this.orderNumber = `FTI-${Date.now()}-${String(count + 1).padStart(4, "0")}`;
     } catch (error) {
       // If count fails, use timestamp only
       this.orderNumber = `FTI-${Date.now()}-${Math.random().toString(36).substr(2, 4).toUpperCase()}`;
@@ -99,6 +99,6 @@ orderSchema.pre('save', async function (next) {
   next();
 });
 
-const Order = mongoose.model('Order', orderSchema);
+const Order = mongoose.model("Order", orderSchema);
 
 export default Order;

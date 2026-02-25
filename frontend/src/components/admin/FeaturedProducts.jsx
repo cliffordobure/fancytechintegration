@@ -89,7 +89,7 @@ const FeaturedProducts = ({ products }) => {
               </Link>
               <div className="flex items-center gap-2 text-xs">
                 <span className="text-gray-500">
-                  KES {product.price?.toLocaleString()}
+                  $ {product.price?.toLocaleString()}
                 </span>
                 <span className="w-1 h-1 bg-gray-600 rounded-full" />
                 <span

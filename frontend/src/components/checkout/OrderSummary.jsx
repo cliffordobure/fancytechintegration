@@ -52,10 +52,10 @@ const OrderSummary = ({ cartItems, subtotal, shipping, total, onBack }) => {
                   {item.name}
                 </h3>
                 <p className="text-xs text-gray-500">
-                  KES {item.price.toLocaleString()} each
+                  $ {item.price.toLocaleString()} each
                 </p>
                 <p className="text-sm font-bold text-purple-400 mt-1">
-                  KES {(item.price * item.quantity).toLocaleString()}
+                  $ {(item.price * item.quantity).toLocaleString()}
                 </p>
               </div>
             </motion.div>
@@ -66,13 +66,13 @@ const OrderSummary = ({ cartItems, subtotal, shipping, total, onBack }) => {
         <div className="border-t border-white/10 pt-4 space-y-3">
           <div className="flex justify-between text-gray-400">
             <span>Subtotal ({cartItems.length} items)</span>
-            <span className="text-white">KES {subtotal.toLocaleString()}</span>
+            <span className="text-white">$ {subtotal.toLocaleString()}</span>
           </div>
 
           <div className="flex justify-between text-gray-400">
             <span>Shipping</span>
             <span className={shipping === 0 ? "text-green-400" : "text-white"}>
-              {shipping === 0 ? "Free" : `KES ${shipping.toLocaleString()}`}
+              {shipping === 0 ? "Free" : `$ ${shipping.toLocaleString()}`}
             </span>
           </div>
 
@@ -80,7 +80,7 @@ const OrderSummary = ({ cartItems, subtotal, shipping, total, onBack }) => {
           <div className="bg-white/5 rounded-lg p-3 space-y-2 mt-3">
             <div className="flex items-center gap-2 text-xs text-gray-400">
               <Truck size={14} className="text-purple-400" />
-              <span>Free shipping on orders over KES 50,000</span>
+              <span>Free shipping on orders over $ 50,000</span>
             </div>
             <div className="flex items-center gap-2 text-xs text-gray-400">
               <Shield size={14} className="text-purple-400" />
@@ -91,7 +91,7 @@ const OrderSummary = ({ cartItems, subtotal, shipping, total, onBack }) => {
           <div className="border-t border-white/10 pt-3 flex justify-between text-lg font-bold">
             <span className="text-white">Total</span>
             <span className="text-2xl bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
-              KES {total.toLocaleString()}
+              $ {total.toLocaleString()}
             </span>
           </div>
         </div>

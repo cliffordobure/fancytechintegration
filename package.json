@@ -1,7 +1,7 @@
 {
-  "name": "fancytech-kenya",
+  "name": "fancytech-South Sudan",
   "version": "1.0.0",
-  "description": "FancyTech Kenya - Software, Starlink Kits, Networking Equipment, Laptops & Phones Marketplace",
+  "description": "FancyTech South Sudan - Software, Starlink Kits, Networking Equipment, Laptops & Phones Marketplace",
   "main": "server.js",
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",
@@ -17,7 +17,7 @@
     "networking",
     "laptops"
   ],
-  "author": "FancyTech Kenya",
+  "author": "FancyTech South Sudan",
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^8.2.2",

@@ -374,7 +374,7 @@ const HomeHero = () => {
           <motion.div variants={itemVariants} className="mb-12">
             <p className="text-gray-400 mb-4">Trusted by companies using</p>
             <div className="flex flex-wrap justify-center gap-8 opacity-50">
-              {["React", "Node.js", "Python", "AWS", "Docker", "MongoDB"].map(
+              {["React", "Node.js", "Python", "AWS", "Express", "MongoDB"].map(
                 (tech, i) => (
                   <motion.span
                     key={tech}

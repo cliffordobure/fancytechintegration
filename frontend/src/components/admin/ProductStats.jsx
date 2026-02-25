@@ -50,7 +50,7 @@ const ProductStats = ({ products }) => {
     },
     {
       title: "Total Value",
-      value: `KES ${products
+      value: `$ ${products
         .filter((p) => p.status === "active")
         .reduce((sum, p) => sum + p.price * (p.stockQuantity || 0), 0)
         .toLocaleString()}`,

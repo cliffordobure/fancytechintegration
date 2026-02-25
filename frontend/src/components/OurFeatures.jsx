@@ -16,7 +16,7 @@ const OurFeatures = () => {
     {
       icon: Rocket,
       title: "Fast Delivery",
-      description: "Quick and reliable delivery across Kenya",
+      description: "Quick and reliable delivery across South Sudan",
       color: "from-purple-400 to-blue-400",
       delay: 0.1,
     },
@@ -175,7 +175,7 @@ const OurFeatures = () => {
         <AnimatedSection delay={0.5} direction="up" className="mt-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-white/10">
             {[
-              { value: "5000+", label: "Happy Customers" },
+              { value: "500+", label: "Happy Customers" },
               { value: "1000+", label: "Products Sold" },
               { value: "98%", label: "Satisfaction Rate" },
               { value: "24/7", label: "Support Available" },

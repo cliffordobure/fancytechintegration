@@ -159,7 +159,7 @@ const CheckoutForm = ({ formData, errors, onChange, onSubmit, loading }) => {
                   value={formData.address.city}
                   onChange={onChange}
                   className={inputClasses(errors["address.city"])}
-                  placeholder="Nairobi"
+                  placeholder="Juba"
                   required
                 />
               </div>
@@ -183,7 +183,7 @@ const CheckoutForm = ({ formData, errors, onChange, onSubmit, loading }) => {
                   value={formData.address.county}
                   onChange={onChange}
                   className={inputClasses(errors["address.county"])}
-                  placeholder="Nairobi County"
+                  placeholder="Juba County"
                   required
                 />
               </div>
@@ -277,7 +277,7 @@ const CheckoutForm = ({ formData, errors, onChange, onSubmit, loading }) => {
                 <div className="font-bold text-purple-400">
                   {option.rate === 0
                     ? "Free"
-                    : `KES ${option.rate.toLocaleString()}`}
+                    : `$ ${option.rate.toLocaleString()}`}
                 </div>
               </div>
               {formData.shippingMethod === option.method && (

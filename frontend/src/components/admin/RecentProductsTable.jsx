@@ -114,7 +114,7 @@ const RecentProductsTable = ({ products }) => {
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <span className="text-sm font-semibold text-purple-400">
-                    KES {product.price?.toLocaleString()}
+                    $ {product.price?.toLocaleString()}
                   </span>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">

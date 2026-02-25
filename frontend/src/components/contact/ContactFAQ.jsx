@@ -15,7 +15,7 @@ const ContactFAQ = () => {
     {
       question: "Do you offer on-site consultations?",
       answer:
-        "Yes! We provide free on-site consultations for businesses in Nairobi and surrounding areas.",
+        "Yes! We provide free on-site consultations for businesses in Juba and surrounding areas.",
     },
     {
       question: "What payment methods and currencies do you accept?",

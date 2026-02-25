@@ -324,8 +324,8 @@ const AdminLogin = () => {
           transition={{ delay: 0.8 }}
           className="text-center mt-8 text-sm text-gray-500"
         >
-          © {new Date().getFullYear()} Fancy Tech Integration Kenya. All rights
-          reserved.
+          © {new Date().getFullYear()} Fancy Tech Integration South Sudan. All
+          rights reserved.
         </motion.p>
       </div>
     </div>

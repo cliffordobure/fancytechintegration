@@ -1,10 +1,10 @@
-import { v2 as cloudinary } from 'cloudinary';
-import { CloudinaryStorage } from 'multer-storage-cloudinary';
-import multer from 'multer';
+import { v2 as cloudinary } from "cloudinary";
+import { CloudinaryStorage } from "multer-storage-cloudinary";
+import multer from "multer";
 // Check if Cloudinary credentials are provided
-const hasCloudinaryConfig = 
-  process.env.CLOUDINARY_CLOUD_NAME && 
-  process.env.CLOUDINARY_API_KEY && 
+const hasCloudinaryConfig =
+  process.env.CLOUDINARY_CLOUD_NAME &&
+  process.env.CLOUDINARY_API_KEY &&
   process.env.CLOUDINARY_API_SECRET;
 
 if (hasCloudinaryConfig) {
@@ -15,7 +15,9 @@ if (hasCloudinaryConfig) {
     api_secret: process.env.CLOUDINARY_API_SECRET,
   });
 } else {
-  console.warn('⚠️  Cloudinary credentials not found. Image uploads will fail. Please set CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, and CLOUDINARY_API_SECRET in your .env file.');
+  console.warn(
+    "⚠️  Cloudinary credentials not found. Image uploads will fail. Please set CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, and CLOUDINARY_API_SECRET in your .env file.",
+  );
 }
 
 // Configure storage for Cloudinary
@@ -24,7 +26,7 @@ const storage = hasCloudinaryConfig
   ? new CloudinaryStorage({
       cloudinary: cloudinary,
       params: {
-        folder: 'fancytech-kenya', // Folder name in Cloudinary
+        folder: "fancytech-South Sudan", // Folder name in Cloudinary
         // Don't include allowed_formats or transformation here - they cause signature issues
         // File validation is handled by multer fileFilter instead
       },
@@ -39,7 +41,7 @@ const fileFilter = (req, file, cb) => {
   if (mimetype) {
     return cb(null, true);
   } else {
-    cb(new Error('Only image files are allowed!'));
+    cb(new Error("Only image files are allowed!"));
   }
 };
 
@@ -57,17 +59,17 @@ export const deleteImage = async (publicId) => {
   try {
     // Extract public_id from URL if full URL is provided
     let public_id = publicId;
-    if (publicId.includes('/')) {
+    if (publicId.includes("/")) {
       // If it's a URL, extract the public_id
-      const parts = publicId.split('/');
+      const parts = publicId.split("/");
       const filename = parts[parts.length - 1];
-      public_id = `fancytech-kenya/${filename.split('.')[0]}`;
+      public_id = `fancytech-South Sudan/${filename.split(".")[0]}`;
     }
-    
+
     const result = await cloudinary.uploader.destroy(public_id);
     return result;
   } catch (error) {
-    console.error('Error deleting image from Cloudinary:', error);
+    console.error("Error deleting image from Cloudinary:", error);
     throw error;
   }
 };

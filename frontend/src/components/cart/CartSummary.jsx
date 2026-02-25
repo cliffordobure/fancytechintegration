@@ -6,7 +6,7 @@ import { ShoppingBag, Truck, Shield, ArrowRight } from "lucide-react";
 
 const CartSummary = ({ subtotal, itemCount, onClearCart }) => {
   const features = [
-    { icon: Truck, text: "Free shipping on orders over KES 50,000" },
+    { icon: Truck, text: "Free shipping on orders over $ 50,000" },
     { icon: Shield, text: "Secure checkout guaranteed" },
   ];
 
@@ -30,7 +30,7 @@ const CartSummary = ({ subtotal, itemCount, onClearCart }) => {
               Subtotal ({itemCount} {itemCount === 1 ? "item" : "items"})
             </span>
             <span className="text-white font-medium">
-              KES {subtotal.toLocaleString()}
+              $ {subtotal.toLocaleString()}
             </span>
           </div>
 
@@ -43,7 +43,7 @@ const CartSummary = ({ subtotal, itemCount, onClearCart }) => {
             <div className="flex justify-between text-lg">
               <span className="text-white font-semibold">Total</span>
               <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
-                KES {subtotal.toLocaleString()}
+                $ {subtotal.toLocaleString()}
               </span>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from "react-helmet-async";
 
 const SEO = ({
   title,
@@ -6,23 +6,23 @@ const SEO = ({
   keywords = [],
   image,
   url,
-  type = 'website',
+  type = "website",
 }) => {
-  const siteName = 'Fancy Tech Integration Kenya';
+  const siteName = "Fancy Tech Integration South Sudan";
   const fullTitle = title ? `${title} | ${siteName}` : siteName;
   const fullDescription =
     description ||
-    'Fancy Tech Integration Kenya - Leading provider of Starlink Kits, Networking Equipment, Laptops, Phones, and Software Solutions in Kenya';
+    "Fancy Tech Integration South Sudan - Leading provider of Starlink Kits, Networking Equipment, Laptops, Phones, and Software Solutions in South Sudan";
   const fullKeywords = [
-    'Fancy Tech Integration Kenya',
-    'F.T.I. Kenya',
-    'Starlink Kenya',
-    'Networking Equipment',
-    'Laptops Kenya',
-    'Phones Kenya',
-    'Software Solutions',
+    "Fancy Tech Integration South Sudan",
+    "F.T.I. South Sudan",
+    "Starlink South Sudan",
+    "Networking Equipment",
+    "Laptops South Sudan",
+    "Phones South Sudan",
+    "Software Solutions",
     ...keywords,
-  ].join(', ');
+  ].join(", ");
 
   return (
     <Helmet>

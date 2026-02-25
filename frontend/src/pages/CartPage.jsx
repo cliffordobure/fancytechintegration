@@ -43,7 +43,7 @@ const CartPage = () => {
     <>
       <SEO
         title="Shopping Cart"
-        description="View your shopping cart at Fancy Tech Integration Kenya. Review your selected products before checkout."
+        description="View your shopping cart at Fancy Tech Integration South Sudan. Review your selected products before checkout."
         keywords={["Cart", "Shopping Cart", "Checkout"]}
       />
 

@@ -69,7 +69,7 @@ const ArticlesPage = () => {
     <>
       <SEO
         title="Articles"
-        description="Read the latest articles, tutorials, product reviews, and tech tips from Fancy Tech Integration Kenya. Stay updated with technology trends and solutions."
+        description="Read the latest articles, tutorials, product reviews, and tech tips from Fancy Tech Integration South Sudan. Stay updated with technology trends and solutions."
         keywords={[
           "Articles",
           "Tech News",

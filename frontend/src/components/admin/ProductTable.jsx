@@ -125,11 +125,11 @@ const ProductTable = ({ products, onEdit, onDelete, loading }) => {
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="text-sm font-semibold text-purple-400">
-                    KES {product.price?.toLocaleString()}
+                    $ {product.price?.toLocaleString()}
                   </div>
                   {product.originalPrice && (
                     <div className="text-xs text-gray-500 line-through">
-                      KES {product.originalPrice.toLocaleString()}
+                      $ {product.originalPrice.toLocaleString()}
                     </div>
                   )}
                 </td>

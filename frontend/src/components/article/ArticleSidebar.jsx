@@ -19,7 +19,7 @@ const ArticleSidebar = ({ article, formatDate }) => {
 
   const relatedArticles = [
     {
-      title: "Getting Started with Starlink in Kenya",
+      title: "Getting Started with Starlink in South Sudan",
       slug: "#",
       date: "2024-01-15",
     },

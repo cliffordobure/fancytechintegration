@@ -8,7 +8,7 @@ Create a file named `.env` (not `.env.example`) in the `backend` folder with the
 
 ```env
 PORT=5000
-MONGODB_URI=mongodb://localhost:27017/fancytech-kenya
+MONGODB_URI=mongodb://localhost:27017/fancytech-South Sudan
 JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
 NODE_ENV=development
 ```
@@ -24,8 +24,9 @@ NODE_ENV=development
 ## Example MongoDB Atlas URI
 
 If using MongoDB Atlas, your URI will look like:
+
 ```
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/fancytech-kenya?retryWrites=true&w=majority
+MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/fancytech-South Sudan?retryWrites=true&w=majority
 ```
 
 ## Security Note

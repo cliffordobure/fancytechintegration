@@ -1,4 +1,4 @@
-# FancyTech Kenya - Setup Guide
+# FancyTech South Sudan - Setup Guide
 
 ## Prerequisites
 
@@ -17,6 +17,7 @@ npm run install-all
 ```
 
 This will install dependencies for:
+
 - Root package (concurrently)
 - Backend (Express, MongoDB, etc.)
 - Frontend (React, Vite, Redux Toolkit, etc.)
@@ -24,29 +25,32 @@ This will install dependencies for:
 ### 2. Backend Setup
 
 1. Navigate to the backend directory:
+
    ```bash
    cd backend
    ```
 
 2. Create a `.env` file (copy from `.env.example`):
+
    ```bash
    cp .env.example .env
    ```
 
 3. Update the `.env` file with your configuration:
+
    ```env
    PORT=5000
-   MONGODB_URI=mongodb://localhost:27017/fancytech-kenya
+   MONGODB_URI=mongodb://localhost:27017/fancytech-South Sudan
    JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
    NODE_ENV=development
-   
+
    # Cloudinary Configuration (for image storage)
    CLOUDINARY_CLOUD_NAME=your-cloudinary-cloud-name
    CLOUDINARY_API_KEY=your-cloudinary-api-key
    CLOUDINARY_API_SECRET=your-cloudinary-api-secret
    ```
 
-   **Important:** 
+   **Important:**
    - Change `JWT_SECRET` to a strong, random string in production
    - Update `MONGODB_URI` if using MongoDB Atlas or a different MongoDB instance
    - Get your Cloudinary credentials from [cloudinary.com](https://cloudinary.com):
@@ -75,12 +79,14 @@ npm run create-admin
 ```
 
 Or with custom credentials:
+
 ```bash
 npm run create-admin "Admin Name" "admin@example.com" "securepassword"
 ```
 
 Default credentials:
-- Email: `admin@fancytechkenya.com`
+
+- Email: `admin@fancytechSouth Sudan.com`
 - Password: `admin123`
 
 **⚠️ IMPORTANT:** Change the default password immediately after first login!
@@ -94,18 +100,21 @@ npm run dev
 ```
 
 This will start:
+
 - Backend server on `http://localhost:5000`
 - Frontend development server on `http://localhost:3000`
 
 Or start them separately:
 
 **Backend:**
+
 ```bash
 cd backend
 npm run dev
 ```
 
 **Frontend:**
+
 ```bash
 cd frontend
 npm run dev
@@ -135,11 +144,11 @@ You can serve the frontend build from the Express server by adding this to `back
 
 ```javascript
 // Serve static files from React app
-app.use(express.static(path.join(__dirname, '../frontend/dist')));
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
 // Handle React routing, return all requests to React app
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
 });
 ```
 
@@ -147,12 +156,12 @@ app.get('*', (req, res) => {
 
 ### Backend (.env)
 
-| Variable | Description | Default |
-|----------|-------------|---------|
-| PORT | Server port | 5000 |
-| MONGODB_URI | MongoDB connection string | mongodb://localhost:27017/fancytech-kenya |
-| JWT_SECRET | Secret key for JWT tokens | (required) |
-| NODE_ENV | Environment (development/production) | development |
+| Variable    | Description                          | Default                                         |
+| ----------- | ------------------------------------ | ----------------------------------------------- |
+| PORT        | Server port                          | 5000                                            |
+| MONGODB_URI | MongoDB connection string            | mongodb://localhost:27017/fancytech-South Sudan |
+| JWT_SECRET  | Secret key for JWT tokens            | (required)                                      |
+| NODE_ENV    | Environment (development/production) | development                                     |
 
 ## Troubleshooting
 

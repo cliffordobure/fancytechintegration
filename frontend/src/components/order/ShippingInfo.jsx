@@ -114,7 +114,7 @@ const ShippingInfo = ({ customer, address }) => {
               <MapPin size={16} className="text-purple-400 mt-1" />
               <div>
                 <p className="text-sm text-gray-400">Country</p>
-                <p className="text-white">{address.country || "Kenya"}</p>
+                <p className="text-white">{address.country || "South Sudan"}</p>
               </div>
             </motion.div>
           </div>

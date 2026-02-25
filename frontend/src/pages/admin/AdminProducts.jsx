@@ -68,7 +68,7 @@ const AdminProducts = () => {
     <>
       <SEO
         title="Product Management"
-        description="Manage products for Fancy Tech Integration Kenya"
+        description="Manage products for Fancy Tech Integration South Sudan"
       />
 
       <div className="min-h-screen bg-gray-900 pt-24 pb-16">

@@ -69,7 +69,7 @@ const ProductsPage = () => {
     <>
       <SEO
         title="Products"
-        description="Browse our wide range of technology products including Starlink Kits, Networking Equipment, Laptops, Phones, and Software Solutions in Kenya."
+        description="Browse our wide range of technology products including Starlink Kits, Networking Equipment, Laptops, Phones, and Software Solutions in South Sudan."
         keywords={[
           "Products",
           "Starlink",

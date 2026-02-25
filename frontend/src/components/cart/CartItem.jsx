@@ -96,11 +96,11 @@ const CartItem = ({ item, onRemove, onQuantityChange, index }) => {
               {/* Price */}
               <div className="text-right">
                 <p className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
-                  KES {(item.price * item.quantity).toLocaleString()}
+                  $ {(item.price * item.quantity).toLocaleString()}
                 </p>
                 {item.quantity > 1 && (
                   <p className="text-sm text-gray-500">
-                    KES {item.price.toLocaleString()} each
+                    $ {item.price.toLocaleString()} each
                   </p>
                 )}
               </div>

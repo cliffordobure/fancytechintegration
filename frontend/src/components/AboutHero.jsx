@@ -12,8 +12,9 @@ import {
   ArrowRight,
   Award,
   Briefcase,
-  Coffee,
+  ShoppingCart,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const [navbarHeight, setNavbarHeight] = useState(0);
@@ -162,7 +163,7 @@ const HeroSection = () => {
           {/* Badge/Tag */}
           <motion.div variants={textVariants} className="inline-block mb-6">
             <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg shadow-blue-500/30">
-              ⚡ Since 2020 • Innovating Tomorrow
+              ⚡ Since 2021 • Innovating Tomorrow
             </span>
           </motion.div>
 
@@ -197,22 +198,25 @@ const HeroSection = () => {
             variants={textVariants}
             className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
           >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="group bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl shadow-blue-500/30 hover:shadow-2xl hover:shadow-purple-500/40 transition-all duration-300 flex items-center justify-center gap-2"
-            >
-              Meet Our Team
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </motion.button>
-
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-transparent border-2 border-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition-all duration-300 backdrop-blur-sm"
-            >
-              View Our Work
-            </motion.button>
+            <Link to="/products">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="group bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl shadow-blue-500/30 hover:shadow-2xl hover:shadow-purple-500/40 transition-all duration-300 flex items-center justify-center gap-2"
+              >
+                Explore Our Products
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </motion.button>
+            </Link>
+            <Link to="/contact">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-transparent border-2 border-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition-all duration-300 backdrop-blur-sm"
+              >
+                Ask for a Quote
+              </motion.button>
+            </Link>
           </motion.div>
 
           {/* Stats Grid */}
@@ -229,8 +233,8 @@ const HeroSection = () => {
               },
               {
                 icon: Users,
-                value: "50+",
-                label: "Team Members",
+                value: "500+",
+                label: "Happy Clients",
                 color: "purple",
               },
               {
@@ -240,9 +244,9 @@ const HeroSection = () => {
                 color: "yellow",
               },
               {
-                icon: Coffee,
-                value: "10k+",
-                label: "Coffee Cups",
+                icon: ShoppingCart,
+                value: "1000+",
+                label: "Items Sold",
                 color: "orange",
               },
             ].map((stat, index) => (

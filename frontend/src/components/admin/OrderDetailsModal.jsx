@@ -203,7 +203,7 @@ const OrderDetailsModal = ({ order, isOpen, onClose, onUpdateStatus }) => {
                         {order.customer.address.postalCode && (
                           <p>{order.customer.address.postalCode}</p>
                         )}
-                        <p>Kenya</p>
+                        <p>South Sudan</p>
                       </div>
                     </div>
                   </div>
@@ -256,7 +256,7 @@ const OrderDetailsModal = ({ order, isOpen, onClose, onUpdateStatus }) => {
                             </p>
                           </div>
                           <p className="text-purple-400 font-semibold">
-                            KES {(item.price * item.quantity).toLocaleString()}
+                            $ {(item.price * item.quantity).toLocaleString()}
                           </p>
                         </div>
                       ))}
@@ -269,7 +269,7 @@ const OrderDetailsModal = ({ order, isOpen, onClose, onUpdateStatus }) => {
                       <div className="flex justify-between text-sm">
                         <span className="text-gray-400">Subtotal</span>
                         <span className="text-white">
-                          KES {order.subtotal.toLocaleString()}
+                          $ {order.subtotal.toLocaleString()}
                         </span>
                       </div>
                       <div className="flex justify-between text-sm">
@@ -277,13 +277,13 @@ const OrderDetailsModal = ({ order, isOpen, onClose, onUpdateStatus }) => {
                         <span className="text-white">
                           {order.shipping === 0
                             ? "Free"
-                            : `KES ${order.shipping.toLocaleString()}`}
+                            : `$ ${order.shipping.toLocaleString()}`}
                         </span>
                       </div>
                       <div className="border-t border-white/10 pt-2 flex justify-between text-lg font-bold">
                         <span className="text-white">Total</span>
                         <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
-                          KES {order.total.toLocaleString()}
+                          $ {order.total.toLocaleString()}
                         </span>
                       </div>
                     </div>
