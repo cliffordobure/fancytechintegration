@@ -81,4 +81,60 @@ router.get('/me', protect, async (req, res) => {
   });
 });
 
+// @route   GET /api/auth/admin/users
+// @desc    List all admin users (admin only)
+// @access  Private/Admin
+router.get('/admin/users', protect, admin, async (req, res) => {
+  try {
+    const users = await User.find({ role: 'admin' }).select('-password');
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+// @route   POST /api/auth/admin/users
+// @desc    Create a new admin user (admin only)
+// @access  Private/Admin
+router.post('/admin/users', protect, admin, async (req, res) => {
+  try {
+    const { name, email, password } = req.body;
+
+    if (!name || !email || !password) {
+      return res.status(400).json({
+        message: 'Please provide name, email, and password',
+      });
+    }
+
+    if (password.length < 6) {
+      return res.status(400).json({
+        message: 'Password must be at least 6 characters',
+      });
+    }
+
+    const userExists = await User.findOne({ email: email.toLowerCase() });
+
+    if (userExists) {
+      return res.status(400).json({ message: 'User with this email already exists' });
+    }
+
+    const user = await User.create({
+      name: name.trim(),
+      email: email.toLowerCase().trim(),
+      password,
+      role: 'admin',
+    });
+
+    res.status(201).json({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      role: user.role,
+      message: 'Admin user created successfully',
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
 export default router;

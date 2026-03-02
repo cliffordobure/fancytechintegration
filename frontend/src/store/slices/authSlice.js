@@ -8,6 +8,7 @@ const userInfo = localStorage.getItem('userInfo')
 
 const initialState = {
   userInfo,
+  adminUsers: [],
   loading: false,
   error: null,
 };
@@ -59,6 +60,40 @@ export const getCurrentUser = createAsyncThunk(
   }
 );
 
+// Fetch admin users (admin only)
+export const fetchAdminUsers = createAsyncThunk(
+  'auth/fetchAdminUsers',
+  async (_, { rejectWithValue }) => {
+    try {
+      const { data } = await api.get('/auth/admin/users');
+      return data;
+    } catch (error) {
+      return rejectWithValue(
+        error.response?.data?.message || 'Failed to fetch admin users'
+      );
+    }
+  }
+);
+
+// Create admin user (admin only)
+export const createAdminUser = createAsyncThunk(
+  'auth/createAdminUser',
+  async ({ name, email, password }, { rejectWithValue }) => {
+    try {
+      const { data } = await api.post('/auth/admin/users', {
+        name,
+        email,
+        password,
+      });
+      return data;
+    } catch (error) {
+      return rejectWithValue(
+        error.response?.data?.message || 'Failed to create admin user'
+      );
+    }
+  }
+);
+
 const authSlice = createSlice({
   name: 'auth',
   initialState,
@@ -102,6 +137,23 @@ const authSlice = createSlice({
       // Get current user
       .addCase(getCurrentUser.fulfilled, (state, action) => {
         state.userInfo = action.payload;
+      })
+      // Fetch admin users
+      .addCase(fetchAdminUsers.fulfilled, (state, action) => {
+        state.adminUsers = action.payload;
+      })
+      // Create admin user
+      .addCase(createAdminUser.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(createAdminUser.fulfilled, (state) => {
+        state.loading = false;
+        state.error = null;
+      })
+      .addCase(createAdminUser.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
       });
   },
 });

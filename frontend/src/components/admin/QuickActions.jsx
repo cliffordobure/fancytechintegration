@@ -40,7 +40,7 @@ const QuickActions = () => {
       label: "Manage Users",
       path: "/admin/users",
       color: "from-orange-500 to-red-500",
-      description: "Customer management",
+      description: "Add and manage admin users",
     },
     {
       icon: BarChart,
