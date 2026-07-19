@@ -25,6 +25,8 @@ const corsOptions = {
     "http://localhost:3000",
     "https://fancytechintegration.vercel.app",
     "https://www.fancytechintegration.vercel.app",
+    "https://fancytechintegration.com",
+    "https://www.fancytechintegration.com",
   ],
   credentials: true,
   optionsSuccessStatus: 200,
@@ -54,7 +56,6 @@ app.use("/api/orders", orderRoutes);
 
 // Health check
 app.get("/api/health", (req, res) => {
-  I;
   res.json({ status: "OK", message: "FancyTech South Sudan API is running" });
 });
 
