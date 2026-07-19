@@ -44,6 +44,13 @@ const WhatWeDo = () => {
       color: "from-orange-400 to-orange-600",
       gradient: "group-hover:from-orange-500 group-hover:to-red-500",
     },
+    {
+      icon: Smartphone,
+      title: "CCTV Systems",
+      description: "Professional CCTV systems and installation services.",
+      color: "from-orange-400 to-orange-600",
+      gradient: "group-hover:from-orange-500 group-hover:to-red-500",
+    },
   ];
 
   return (

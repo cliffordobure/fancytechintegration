@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const productSchema = new mongoose.Schema(
   {
@@ -19,7 +19,16 @@ const productSchema = new mongoose.Schema(
     category: {
       type: String,
       required: true,
-      enum: ['starlink', 'networking', 'laptops', 'phones', 'software'],
+      enum: [
+        "starlink",
+        "networking",
+        "laptop",
+        "accesspoint",
+        "cctv",
+        "router",
+        "phone",
+        "software",
+      ],
     },
     price: {
       type: Number,
@@ -68,19 +77,19 @@ const productSchema = new mongoose.Schema(
     ],
     status: {
       type: String,
-      enum: ['active', 'inactive', 'draft'],
-      default: 'active',
+      enum: ["active", "inactive", "draft"],
+      default: "active",
     },
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 // Index for search
-productSchema.index({ name: 'text', description: 'text' });
+productSchema.index({ name: "text", description: "text" });
 productSchema.index({ category: 1, status: 1 });
 
-const Product = mongoose.model('Product', productSchema);
+const Product = mongoose.model("Product", productSchema);
 
 export default Product;

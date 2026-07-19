@@ -1,14 +1,14 @@
-import express from 'express';
-import slugify from 'slugify';
-import Product from '../models/Product.js';
-import { protect, admin } from '../middleware/authMiddleware.js';
+import express from "express";
+import slugify from "slugify";
+import Product from "../models/Product.js";
+import { protect, admin } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
 // @route   GET /api/products
 // @desc    Get all products (public)
 // @access  Public
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const {
       category,
@@ -16,16 +16,16 @@ router.get('/', async (req, res) => {
       search,
       page = 1,
       limit = 12,
-      sort = '-createdAt',
+      sort = "-createdAt",
     } = req.query;
 
-    const query = { status: 'active' };
+    const query = { status: "active" };
 
     if (category) {
       query.category = category;
     }
 
-    if (featured === 'true') {
+    if (featured === "true") {
       query.featured = true;
     }
 
@@ -37,7 +37,7 @@ router.get('/', async (req, res) => {
       .sort(sort)
       .limit(limit * 1)
       .skip((page - 1) * limit)
-      .select('-specifications');
+      .select("-specifications");
 
     const total = await Product.countDocuments(query);
 
@@ -55,12 +55,12 @@ router.get('/', async (req, res) => {
 // @route   GET /api/products/:slug
 // @desc    Get single product by slug
 // @access  Public
-router.get('/:slug', async (req, res) => {
+router.get("/:slug", async (req, res) => {
   try {
     const product = await Product.findOne({ slug: req.params.slug });
 
     if (!product) {
-      return res.status(404).json({ message: 'Product not found' });
+      return res.status(404).json({ message: "Product not found" });
     }
 
     res.json(product);
@@ -72,9 +72,26 @@ router.get('/:slug', async (req, res) => {
 // @route   POST /api/products
 // @desc    Create new product
 // @access  Private/Admin
-router.post('/', protect, admin, async (req, res) => {
+router.post("/", protect, admin, async (req, res) => {
   try {
-    const { name, description, category, price, originalPrice, images, inStock, stockQuantity, specifications, brand, model, featured, seoTitle, seoDescription, seoKeywords } = req.body;
+    const {
+      name,
+      description,
+      features,
+      category,
+      price,
+      originalPrice,
+      images,
+      inStock,
+      stockQuantity,
+      specifications,
+      brand,
+      model,
+      featured,
+      seoTitle,
+      seoDescription,
+      seoKeywords,
+    } = req.body;
 
     const slug = slugify(name, { lower: true, strict: true });
 
@@ -82,6 +99,7 @@ router.post('/', protect, admin, async (req, res) => {
       name,
       slug,
       description,
+      features,
       category,
       price,
       originalPrice,
@@ -106,7 +124,7 @@ router.post('/', protect, admin, async (req, res) => {
 // @route   PUT /api/products/:id
 // @desc    Update product
 // @access  Private/Admin
-router.put('/:id', protect, admin, async (req, res) => {
+router.put("/:id", protect, admin, async (req, res) => {
   try {
     const { name } = req.body;
     let updateData = { ...req.body };
@@ -115,14 +133,13 @@ router.put('/:id', protect, admin, async (req, res) => {
       updateData.slug = slugify(name, { lower: true, strict: true });
     }
 
-    const product = await Product.findByIdAndUpdate(
-      req.params.id,
-      updateData,
-      { new: true, runValidators: true }
-    );
+    const product = await Product.findByIdAndUpdate(req.params.id, updateData, {
+      new: true,
+      runValidators: true,
+    });
 
     if (!product) {
-      return res.status(404).json({ message: 'Product not found' });
+      return res.status(404).json({ message: "Product not found" });
     }
 
     res.json(product);
@@ -134,15 +151,15 @@ router.put('/:id', protect, admin, async (req, res) => {
 // @route   DELETE /api/products/:id
 // @desc    Delete product
 // @access  Private/Admin
-router.delete('/:id', protect, admin, async (req, res) => {
+router.delete("/:id", protect, admin, async (req, res) => {
   try {
     const product = await Product.findByIdAndDelete(req.params.id);
 
     if (!product) {
-      return res.status(404).json({ message: 'Product not found' });
+      return res.status(404).json({ message: "Product not found" });
     }
 
-    res.json({ message: 'Product deleted successfully' });
+    res.json({ message: "Product deleted successfully" });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

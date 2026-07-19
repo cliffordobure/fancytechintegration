@@ -12,6 +12,7 @@ import {
   Globe,
   Satellite,
   HelpCircle,
+  Camera,
 } from "lucide-react";
 
 const FloatingActions = () => {
@@ -40,6 +41,12 @@ const FloatingActions = () => {
       text: "Website development",
       message:
         "Hi! I'd like to know more about your available website development services and pricing.",
+    },
+    {
+      icon: <Camera className="w-4 h-4" />,
+      text: " CCTV Systems",
+      message:
+        "Hi! I'd like to know more about your available CCTV systems and pricing.",
     },
     {
       icon: <ShoppingCart className="w-4 h-4" />,

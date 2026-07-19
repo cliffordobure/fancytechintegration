@@ -60,9 +60,12 @@ const ProductsPage = () => {
     { value: "", label: "All Products" },
     { value: "starlink", label: "Starlink Kits" },
     { value: "networking", label: "Networking Equipment" },
-    { value: "laptops", label: "Laptops" },
-    { value: "phones", label: "Phones" },
+    { value: "laptop", label: "Laptop" },
+    { value: "phone", label: "Phone" },
     { value: "software", label: "Software" },
+    { value: "cctv", label: "CCTV Equipment" },
+    { value: "router", label: "Routers" },
+    { value: "accesspoint", label: "Access point" },
   ];
 
   return (
@@ -74,9 +77,11 @@ const ProductsPage = () => {
           "Products",
           "Starlink",
           "Networking Equipment",
-          "Laptops",
-          "Phones",
+          "Laptop",
+          "Phone",
           "Software",
+          "Access point",
+          "Router",
         ]}
       />
 

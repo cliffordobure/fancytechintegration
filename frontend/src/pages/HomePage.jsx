@@ -64,6 +64,12 @@ const HomePage = () => {
       image: category1,
       icon: "⚙️",
     },
+    cctv: {
+      title: "CCTV Equipment",
+      description: "Professional surveillance and monitoring systems",
+      image: category2,
+      icon: "📹",
+    },
   };
 
   // Group products by category

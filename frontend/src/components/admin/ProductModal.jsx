@@ -7,10 +7,8 @@ import {
   Image as ImageIcon,
   Package,
   DollarSign,
-  Tag,
   FileText,
   Settings,
-  ChevronDown,
 } from "lucide-react";
 import { getImageUrl } from "../../utils/constants";
 import api from "../../services/api";
@@ -20,6 +18,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
   const [formData, setFormData] = useState({
     name: product?.name || "",
     description: product?.description || "",
+    features: product?.features || "",
     category: product?.category || "starlink",
     price: product?.price || "",
     originalPrice: product?.originalPrice || "",
@@ -43,6 +42,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
       setFormData({
         name: product?.name || "",
         description: product?.description || "",
+        features: product?.features || "",
         category: product?.category || "starlink",
         price: product?.price || "",
         originalPrice: product?.originalPrice || "",
@@ -135,6 +135,11 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
       setActiveTab("basic");
       return;
     }
+    if (!formData.features || !formData.features.trim()) {
+      toast.error("Product features are required");
+      setActiveTab("basic");
+      return;
+    }
 
     if (!formData.price || formData.price === "") {
       toast.error("Product price is required");
@@ -157,6 +162,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
       ...formData,
       name: formData.name.trim(),
       description: formData.description.trim(),
+      features: formData.features.trim(),
       price: priceValue,
       originalPrice:
         formData.originalPrice && formData.originalPrice !== ""
@@ -277,11 +283,20 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                             <option value="networking" className="bg-gray-800">
                               Networking
                             </option>
-                            <option value="laptops" className="bg-gray-800">
-                              Laptops
+                            <option value="accesspoint" className="bg-gray-800">
+                              Access Point
                             </option>
-                            <option value="phones" className="bg-gray-800">
-                              Phones
+                            <option value="router" className="bg-gray-800">
+                              Router
+                            </option>
+                            <option value="cctv" className="bg-gray-800">
+                              CCTV
+                            </option>
+                            <option value="laptop" className="bg-gray-800">
+                              Laptop
+                            </option>
+                            <option value="phone" className="bg-gray-800">
+                              Phone
                             </option>
                             <option value="software" className="bg-gray-800">
                               Software
@@ -301,6 +316,21 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                             rows="4"
                             className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
                             placeholder="Enter product description"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-sm font-medium text-gray-400 mb-2">
+                            Key Features *
+                          </label>
+                          <textarea
+                            name="features"
+                            value={formData.features}
+                            onChange={handleChange}
+                            required
+                            rows="4"
+                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                            placeholder="Enter product features (comma-separated or bullet points)"
                           />
                         </div>
 

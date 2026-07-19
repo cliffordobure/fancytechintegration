@@ -1,6 +1,6 @@
 // components/product/ProductInfo.jsx
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../store/slices/cartSlice";
 import toast from "react-hot-toast";
@@ -11,23 +11,33 @@ import {
   RotateCcw,
   CheckCircle,
   XCircle,
+  ChevronDown,
+  ChevronUp,
+  Cpu,
+  HardDrive,
+  Monitor,
+  Battery,
+  Wifi,
+  Camera,
 } from "lucide-react";
 
 const ProductInfo = ({ product }) => {
   const dispatch = useDispatch();
+  const [showFeatures, setShowFeatures] = useState(false);
 
   const categoryLabels = {
     starlink: "Starlink Kit",
     networking: "Networking Equipment",
-    laptops: "Laptop",
-    phones: "Phone",
+    laptop: "Laptop",
+    phone: "Phone",
     software: "Software",
+    cctv: "CCTV",
   };
 
-  const features = [
+  const Ourfeatures = [
     {
       icon: Shield,
-      text: "1 Year Warranty",
+      text: "3 months Warranty",
       color: "from-blue-400 to-blue-500",
     },
     {
@@ -41,6 +51,26 @@ const ProductInfo = ({ product }) => {
       color: "from-purple-400 to-purple-500",
     },
   ];
+
+  // Helper function to get appropriate icon for specification
+  const getSpecIcon = (key) => {
+    const iconMap = {
+      processor: Cpu,
+      cpu: Cpu,
+      ram: HardDrive,
+      memory: HardDrive,
+      storage: HardDrive,
+      harddrive: HardDrive,
+      display: Monitor,
+      screen: Monitor,
+      battery: Battery,
+      wifi: Wifi,
+      wireless: Wifi,
+      camera: Camera,
+    };
+    const Icon = iconMap[key.toLowerCase()] || Cpu;
+    return Icon;
+  };
 
   return (
     <div className="space-y-6">
@@ -65,15 +95,92 @@ const ProductInfo = ({ product }) => {
           </span>
         </motion.h1>
 
-        <motion.p
+        {/* Overview Section */}
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-gray-400 text-lg leading-relaxed"
+          className="mb-4"
         >
-          {product.description}
-        </motion.p>
+          <h3 className="text-sm font-semibold text-purple-400 mb-2 uppercase tracking-wider">
+            Overview
+          </h3>
+          <p className="text-gray-400 text-lg leading-relaxed">
+            {product.description}
+          </p>
+        </motion.div>
+
+        {/* Key Features Toggle Button */}
+        {product.features && Object.keys(product.features).length > 0 && (
+          <motion.button
+            onClick={() => setShowFeatures(!showFeatures)}
+            className="flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors mt-2 group"
+            whileHover={{ x: 5 }}
+          >
+            <span className="text-sm font-medium">
+              {showFeatures ? "Hide Key Features" : "See Key Features"}
+            </span>
+            {showFeatures ? (
+              <ChevronUp
+                size={16}
+                className="group-hover:-translate-y-1 transition-transform"
+              />
+            ) : (
+              <ChevronDown
+                size={16}
+                className="group-hover:translate-y-1 transition-transform"
+              />
+            )}
+          </motion.button>
+        )}
       </div>
+
+      {/* Key Features Collapsible Section */}
+      <AnimatePresence>
+        {showFeatures && product.features && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="overflow-hidden"
+          >
+            <div className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-6 border border-purple-500/20">
+              <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                <span className="w-1 h-6 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full" />
+                Technical Specifications
+              </h3>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {Object.entries(product.features).map(([key, value], index) => {
+                  const Icon = getSpecIcon(key);
+                  return (
+                    <motion.div
+                      key={key}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.05 }}
+                      className="flex items-center gap-3 bg-white/5 rounded-lg p-3 group hover:bg-white/10 transition-colors"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-purple-500/20 to-blue-500/20 p-1.5 group-hover:scale-110 transition-transform">
+                        <Icon className="w-full h-full text-purple-400" />
+                      </div>
+                      <div>
+                        <p className="text-xs text-gray-400 capitalize">
+                          {key.replace(/([A-Z])/g, " $1").trim()}
+                        </p>
+                        <p className="text-sm font-semibold text-white">
+                          {value}
+                        </p>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Price Section */}
       <motion.div
@@ -159,7 +266,7 @@ const ProductInfo = ({ product }) => {
         transition={{ delay: 0.4 }}
         className="grid grid-cols-3 gap-3"
       >
-        {features.map((feature, index) => (
+        {Ourfeatures.map((feature, index) => (
           <motion.div
             key={index}
             whileHover={{ y: -3 }}

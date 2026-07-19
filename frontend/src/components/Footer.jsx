@@ -31,9 +31,16 @@ const Footer = () => {
   const productLinks = [
     { name: "Starlink Kits", path: "/products?category=starlink", icon: "🛰️" },
     { name: "Networking", path: "/products?category=networking", icon: "🌐" },
-    { name: "Laptops", path: "/products?category=laptops", icon: "💻" },
-    { name: "Phones", path: "/products?category=phones", icon: "📱" },
+    { name: "Laptops", path: "/products?category=laptop", icon: "💻" },
+    { name: "Phones", path: "/products?category=phone", icon: "📱" },
     { name: "Software", path: "/products?category=software", icon: "⚙️" },
+    {
+      name: "Access Points",
+      path: "/products?category=accesspoint",
+      icon: "📶",
+    },
+    { name: "CCTV", path: "/products?category=cctv", icon: "📹" },
+    { name: "ROUTER", path: "/products?category=router", icon: " 📡" },
   ];
 
   const socialLinks = [

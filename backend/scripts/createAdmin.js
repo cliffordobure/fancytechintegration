@@ -19,7 +19,7 @@ const createAdmin = async () => {
 
     const args = process.argv.slice(2);
     const name = args[0] || "Admin";
-    const email = args[1] || "admin@fancytechSouth Sudan.com";
+    const email = args[1] || "admin@fancytech.com";
     const password = args[2] || "admin123";
 
     // Check if admin already exists

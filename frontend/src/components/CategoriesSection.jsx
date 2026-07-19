@@ -10,9 +10,12 @@ const CategoriesSection = ({ categoryInfo }) => {
   const categoryGradients = {
     starlink: "from-purple-500 to-blue-500",
     networking: "from-blue-500 to-cyan-500",
-    laptops: "from-green-500 to-emerald-500",
-    phones: "from-orange-500 to-red-500",
+    laptop: "from-green-500 to-emerald-500",
+    cctv: "from-red-500 to-orange-500",
+    router: "from-indigo-500 to-purple-500",
+    phone: "from-pink-500 to-rose-500",
     software: "from-pink-500 to-rose-500",
+    accesspoint: "from-yellow-500 to-amber-500",
   };
 
   return (
@@ -170,24 +173,6 @@ const CategoriesSection = ({ categoryInfo }) => {
           ))}
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes gradient {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
-        }
-        .animate-gradient {
-          background-size: 200% auto;
-          animation: gradient 3s ease infinite;
-        }
-      `}</style>
     </section>
   );
 };

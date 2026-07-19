@@ -26,18 +26,24 @@ const ProductCard = ({ product }) => {
   const categoryLabels = {
     starlink: "Starlink Kit",
     networking: "Networking",
-    laptops: "Laptop",
-    phones: "Phone",
+    laptop: "Laptop",
+    phone: "Phone",
     software: "Software",
+    accesspoint: "Access Point",
+    cctv: "CCTV System",
+    router: "Router",
   };
 
   // Category-based gradients
   const categoryGradients = {
     starlink: "from-purple-500 to-blue-500",
     networking: "from-blue-500 to-cyan-500",
-    laptops: "from-green-500 to-emerald-500",
-    phones: "from-orange-500 to-red-500",
+    laptop: "from-green-500 to-emerald-500",
+    phone: "from-orange-500 to-red-500",
     software: "from-pink-500 to-rose-500",
+    accesspoints: "from-yellow-500 to-amber-500",
+    cctv: "from-red-500 to-orange-500",
+    router: "from-indigo-500 to-purple-500",
   };
 
   const gradient =

@@ -25,22 +25,40 @@ const CategoryStats = ({ products }) => {
       count: products.filter((p) => p.category === "networking").length,
     },
     {
-      name: "Laptops",
+      name: "Laptop",
       icon: Laptop,
       color: "from-green-500 to-emerald-500",
-      count: products.filter((p) => p.category === "laptops").length,
+      count: products.filter((p) => p.category === "laptop").length,
     },
     {
-      name: "Phones",
+      name: "Phone",
       icon: Smartphone,
       color: "from-orange-500 to-red-500",
-      count: products.filter((p) => p.category === "phones").length,
+      count: products.filter((p) => p.category === "phone").length,
     },
     {
       name: "Software",
       icon: Code2,
       color: "from-pink-500 to-rose-500",
       count: products.filter((p) => p.category === "software").length,
+    },
+    {
+      name: "CCTV",
+      icon: Sparkles,
+      color: "from-red-500 to-orange-500",
+      count: products.filter((p) => p.category === "cctv").length,
+    },
+    {
+      name: "Routers",
+      icon: Network,
+      color: "from-yellow-500 to-orange-500",
+      count: products.filter((p) => p.category === "router").length,
+    },
+    {
+      name: "Access Points",
+      icon: Satellite,
+      color: "from-indigo-500 to-purple-500",
+      count: products.filter((p) => p.category === "accesspoint").length,
     },
   ].filter((cat) => cat.count > 0);
 

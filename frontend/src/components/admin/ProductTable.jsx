@@ -30,6 +30,7 @@ const ProductTable = ({ products, onEdit, onDelete, loading }) => {
       laptops: "bg-green-500/20 text-green-400 border-green-500/30",
       phones: "bg-orange-500/20 text-orange-400 border-orange-500/30",
       software: "bg-pink-500/20 text-pink-400 border-pink-500/30",
+      cctv: "bg-red-500/20 text-red-400 border-red-500/30",
     };
     return (
       colors[category] || "bg-gray-500/20 text-gray-400 border-gray-500/30"
