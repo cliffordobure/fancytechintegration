@@ -1,4 +1,8 @@
+// ✅ THIS MUST BE THE FIRST LINE
 import dotenv from "dotenv";
+dotenv.config();
+
+// THEN all other imports
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
@@ -11,8 +15,6 @@ import articleRoutes from "./routes/articleRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
-
-dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

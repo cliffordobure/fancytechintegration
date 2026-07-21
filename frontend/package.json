@@ -9,7 +9,10 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.0.1",
+    "@tailwindcss/typography": "^0.5.20",
+    "@tolipovjs/rich-text": "^2.2.0",
     "axios": "^1.6.2",
+    "dompurify": "^3.4.12",
     "framer-motion": "^12.34.3",
     "lucide-react": "^0.575.0",
     "react": "^18.2.0",

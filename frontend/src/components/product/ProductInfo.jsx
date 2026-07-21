@@ -1,9 +1,9 @@
-// components/product/ProductInfo.jsx
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../store/slices/cartSlice";
 import toast from "react-hot-toast";
+import DOMPurify from "dompurify"; // <-- Added
 import {
   ShoppingCart,
   Shield,
@@ -52,7 +52,6 @@ const ProductInfo = ({ product }) => {
     },
   ];
 
-  // Helper function to get appropriate icon for specification
   const getSpecIcon = (key) => {
     const iconMap = {
       processor: Cpu,
@@ -95,7 +94,7 @@ const ProductInfo = ({ product }) => {
           </span>
         </motion.h1>
 
-        {/* Overview Section */}
+        {/* Overview Section - NOW RENDERS HTML */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -105,9 +104,12 @@ const ProductInfo = ({ product }) => {
           <h3 className="text-sm font-semibold text-purple-400 mb-2 uppercase tracking-wider">
             Overview
           </h3>
-          <p className="text-gray-400 text-lg leading-relaxed">
-            {product.description}
-          </p>
+          <div
+            className="text-gray-400 text-lg leading-relaxed prose prose-invert max-w-none"
+            dangerouslySetInnerHTML={{
+              __html: DOMPurify.sanitize(product.description),
+            }}
+          />
         </motion.div>
 
         {/* Key Features Toggle Button */}

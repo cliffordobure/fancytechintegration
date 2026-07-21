@@ -14,6 +14,10 @@ import { getImageUrl } from "../../utils/constants";
 import api from "../../services/api";
 import toast from "react-hot-toast";
 
+// 👇 Import the rich-text editor and its styles
+import { RichTextEditor } from "@tolipovjs/rich-text";
+import "@tolipovjs/rich-text/styles.css";
+
 const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
   const [formData, setFormData] = useState({
     name: product?.name || "",
@@ -60,6 +64,27 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
       setActiveTab("basic");
     }
   }, [product, isOpen]);
+
+  // HTML template for product description
+  const DESCRIPTION_TEMPLATE = `
+<h3>Ultra-Light Premium Convertible for Executives &amp; Frequent Travelers</h3>
+<p>The HP Elite Dragonfly x360 redefines mobility. Weighing just under 1kg, this ultra-premium convertible is crafted from recycled ocean-bound plastics and magnesium, making it as sustainable as it is stylish. It’s the ultimate companion for C-suite executives, consultants, and professionals who live on the move.</p>
+<h4>Performance &amp; Memory</h4>
+<p>Powered by the <strong>11th Generation Intel Core i7</strong> processor (up to 3.0GHz), this laptop handles heavy multitasking, large spreadsheets, and virtual meetings with ease. With <strong>16GB of RAM</strong> and a <strong>512GB NVMe SSD</strong>, you get lightning-fast boot times, quick file access, and ample storage for your entire digital workspace.</p>
+<h4>Display &amp; Convertible Design</h4>
+<p>The <strong>14-inch Full HD touchscreen</strong> delivers crisp visuals with 400 nits of brightness, making it usable even in bright outdoor environments. The 360° hinge allows four versatile modes — laptop, tablet, tent, and stand — giving you flexibility for presentations, note-taking, or media consumption.</p>
+<h4>Security &amp; Connectivity</h4>
+<p>Business-grade security comes standard with an integrated fingerprint reader, HP Sure View privacy screen options, and HP Sure Start BIOS protection. It also includes <strong>Wi-Fi 6</strong> and <strong>Bluetooth 5.0</strong> for fast, stable wireless connections.</p>
+<h4>Battery Life</h4>
+<p>With an all-day battery that delivers up to <strong>12 hours of mixed usage</strong>, you can leave your charger behind and stay productive from morning meetings to evening flights.</p>
+<h4>Best For:</h4>
+<ul>
+  <li>Executives</li>
+  <li>Frequent travelers</li>
+  <li>Remote professionals</li>
+  <li>Anyone who demands premium build quality in an ultra-light package</li>
+</ul>
+`;
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -130,11 +155,16 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
       return;
     }
 
-    if (!formData.description || !formData.description.trim()) {
+    // Description validation – strip HTML tags and check for actual text
+    const plainTextDescription = formData.description
+      ? formData.description.replace(/<[^>]+>/g, "").trim()
+      : "";
+    if (!plainTextDescription) {
       toast.error("Product description is required");
       setActiveTab("basic");
       return;
     }
+
     if (!formData.features || !formData.features.trim()) {
       toast.error("Product features are required");
       setActiveTab("basic");
@@ -147,7 +177,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
       return;
     }
 
-    // Parse price - use existing price if editing and new price is invalid
+    // Parse price
     const priceValue = formData.price
       ? parseFloat(formData.price)
       : product?.price || 0;
@@ -161,7 +191,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
     const productData = {
       ...formData,
       name: formData.name.trim(),
-      description: formData.description.trim(),
+      description: formData.description, // stores HTML
       features: formData.features.trim(),
       price: priceValue,
       originalPrice:
@@ -304,19 +334,55 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                           </select>
                         </div>
 
+                        {/* 👇 RICH TEXT EDITOR for Description */}
                         <div>
-                          <label className="block text-sm font-medium text-gray-400 mb-2">
-                            Description *
-                          </label>
-                          <textarea
-                            name="description"
-                            value={formData.description}
-                            onChange={handleChange}
-                            required
-                            rows="4"
-                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
-                            placeholder="Enter product description"
-                          />
+                          <div className="flex items-center justify-between mb-2">
+                            <label className="block text-sm font-medium text-gray-400">
+                              Description *
+                            </label>
+                            <button
+                              type="button"
+                              onClick={() =>
+                                setFormData((prev) => ({
+                                  ...prev,
+                                  description: DESCRIPTION_TEMPLATE,
+                                }))
+                              }
+                              className="text-xs text-purple-400 hover:text-purple-300 transition-colors flex items-center gap-1"
+                            >
+                              <span>📄</span> Use Product Template
+                            </button>
+                          </div>
+                          <div className="bg-gray-900/50 border border-white/10 rounded-lg overflow-hidden">
+                            <RichTextEditor
+                              value={formData.description}
+                              onChange={(html) =>
+                                setFormData((prev) => ({
+                                  ...prev,
+                                  description: html,
+                                }))
+                              }
+                              placeholder="Enter product description..."
+                              theme="dark"
+                              toolbar={[
+                                "heading",
+                                "bold",
+                                "italic",
+                                "underline",
+                                "strikethrough",
+                                "bulletList",
+                                "orderedList",
+                                "link",
+                                "clean",
+                              ]}
+                            />
+                          </div>
+                          <p className="text-xs text-gray-500 mt-1">
+                            Use headings, bold, italic, lists, and links to
+                            structure your description. You can also click{" "}
+                            <strong>"Use Product Template"</strong> to insert a
+                            sample.
+                          </p>
                         </div>
 
                         <div>
@@ -365,7 +431,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                       </div>
                     )}
 
-                    {/* Pricing Tab */}
+                    {/* Pricing Tab (unchanged) */}
                     {activeTab === "pricing" && (
                       <div className="space-y-4">
                         <div className="grid grid-cols-2 gap-4">
@@ -466,7 +532,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                       </div>
                     )}
 
-                    {/* Media Tab */}
+                    {/* Media Tab (unchanged) */}
                     {activeTab === "media" && (
                       <div className="space-y-4">
                         <div>
@@ -527,7 +593,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                       </div>
                     )}
 
-                    {/* SEO Tab */}
+                    {/* SEO Tab (unchanged) */}
                     {activeTab === "seo" && (
                       <div className="space-y-4">
                         <div>
@@ -577,7 +643,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                       </div>
                     )}
 
-                    {/* Advanced Tab */}
+                    {/* Advanced Tab (unchanged) */}
                     {activeTab === "advanced" && (
                       <div className="space-y-4">
                         <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">

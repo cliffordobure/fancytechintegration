@@ -100,10 +100,11 @@ const HomePage = () => {
       />
 
       <HomeHero />
+      <Products products={products} />
       <OurFeatures />
       <SoftwareServices />
       <CategoriesSection categoryInfo={categoryInfo} />
-      <Products products={products} />
+
       <CTASection />
       <FloatingActions />
       <RecentArticles
