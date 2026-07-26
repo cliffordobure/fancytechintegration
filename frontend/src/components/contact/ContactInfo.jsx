@@ -2,7 +2,6 @@
 import React from "react";
 import { MessageCircle } from "lucide-react";
 
-// Custom icon components using SVG paths from provided links
 const FacebookIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -79,31 +78,26 @@ const ContactInfo = () => {
     {
       icon: FacebookIcon,
       href: "https://www.facebook.com/share/1C5boUNkPB/?mibextid=wwXIfr&ref=share",
-      bg: "from-[#1877F2] to-[#0A5C9E]",
       label: "Facebook",
     },
     {
       icon: TikTokIcon,
       href: "https://www.tiktok.com/@fancy_tech_integration?_r=1&_t=ZS-94BqRrCsEm9",
-      bg: "from-[#000000] to-[#333333]",
       label: "TikTok",
     },
     {
       icon: YouTubeIcon,
       href: "https://youtube.com/@fancytechintegration?si=Co4IE5-BIU5EW-Cx",
-      bg: "from-[#FF0000] to-[#CC0000]",
       label: "YouTube",
     },
     {
       icon: InstagramIcon,
       href: "https://www.instagram.com/fancy_tech_juba?igsh=cWI2c3QxYjJjZWpp&utm_source=qr_code_scanner",
-      bg: "from-[#833AB4] via-[#E4405F] to-[#FDC830]",
       label: "Instagram",
     },
     {
       icon: MessageCircle,
       href: "https://wa.me/0929097920",
-      bg: "from-[#25D366] to-[#128C7E]",
       label: "WhatsApp",
     },
   ];
@@ -121,48 +115,34 @@ const ContactInfo = () => {
         exclusive offers.
       </p>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+      {/* Minimal social row – icons with labels, no card backgrounds */}
+      <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
         {socialLinks.map((social, index) => (
           <a
             key={index}
             href={social.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group block"
+            className="group flex flex-col items-center gap-1 text-gray-400 hover:text-white transition-colors duration-200"
           >
-            {/* Card */}
-            <div
-              className={`bg-gradient-to-br ${social.bg} p-4 rounded-2xl border border-white/20 shadow-xl`}
-            >
-              <div className="flex flex-col items-center justify-center gap-2">
-                <div className="w-10 h-10 flex items-center justify-center text-white">
-                  <social.icon />
-                </div>
-                <span className="text-xs font-medium text-white">
-                  {social.label}
-                </span>
-                <span className="text-[8px] text-white/70">Follow Us</span>
-              </div>
+            <div className="w-10 h-10 flex items-center justify-center text-current group-hover:scale-110 transition-transform duration-200">
+              <social.icon />
             </div>
+            <span className="text-xs font-medium opacity-70 group-hover:opacity-100 transition-opacity">
+              {social.label}
+            </span>
           </a>
         ))}
       </div>
 
-      {/* Static message card */}
-      <div className="mt-8 p-5 bg-gradient-to-r from-orange-500/10 via-blue-500/10 to-orange-500/10 rounded-2xl border border-orange-500/30">
-        <div className="relative flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-r from-orange-500 to-blue-500 flex items-center justify-center text-white text-xl">
-            ⚡
-          </div>
-          <div>
-            <p className="text-sm text-white font-medium">
-              Quick Response Guaranteed
-            </p>
-            <p className="text-xs text-gray-400">
-              We typically reply within 2-4 hours on all social platforms!
-            </p>
-          </div>
-        </div>
+      {/* Quick response message – more subtle and integrated */}
+      <div className="mt-10 pt-6 border-t border-white/10 flex items-center gap-3 justify-center text-sm text-gray-500">
+        <span className="text-orange-400">⚡</span>
+        <span>
+          We typically reply within{" "}
+          <span className="text-orange-300 font-medium">2-4 hours</span> on all
+          platforms
+        </span>
       </div>
     </div>
   );

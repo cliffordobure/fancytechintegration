@@ -26,7 +26,7 @@ const SupportCTA = () => {
           </p>
 
           <a
-            href="tel:+254759466446"
+            href="tel:+211920532819"
             className="inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl shadow-orange-500/30"
           >
             <Phone size={20} />

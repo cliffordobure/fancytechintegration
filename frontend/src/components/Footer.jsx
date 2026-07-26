@@ -316,15 +316,7 @@ const Footer = () => {
             <p className="text-gray-400 text-sm flex items-center gap-2">
               © {currentYear} Fancy Tech Integration.
               <span className="hidden md:inline">All rights reserved.</span>
-              <motion.span
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 1, repeat: Infinity }}
-                className="inline-flex items-center gap-1 ml-2"
-              >
-                Made with{" "}
-                <Heart size={14} className="text-red-400 fill-red-400" /> in
-                South Sudan
-              </motion.span>
+              Proudly South Sudanese Tech.
             </p>
 
             {/* Legal Links */}
