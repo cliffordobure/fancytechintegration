@@ -198,7 +198,7 @@ const OrderDetailsModal = ({ order, isOpen, onClose, onUpdateStatus }) => {
                         <p>{order.customer.address.street}</p>
                         <p>
                           {order.customer.address.city},{" "}
-                          {order.customer.address.county}
+                          {order.customer.address.state}
                         </p>
                         {order.customer.address.postalCode && (
                           <p>{order.customer.address.postalCode}</p>

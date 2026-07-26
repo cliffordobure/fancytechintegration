@@ -32,6 +32,12 @@ const ProductCard = ({ product }) => {
     router: "Router",
   };
 
+  // Helper to strip HTML tags and trim
+  const stripHtml = (html) => {
+    if (!html) return "";
+    return html.replace(/<[^>]+>/g, "").trim();
+  };
+
   return (
     <div className="relative h-full">
       <div className="relative bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10">
@@ -53,7 +59,7 @@ const ProductCard = ({ product }) => {
             {/* Gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60" />
 
-            {/* Featured badge – orange */}
+            {/* Featured badge */}
             {product.featured && (
               <div className="absolute top-4 right-4">
                 <span className="flex items-center gap-1 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
@@ -63,7 +69,7 @@ const ProductCard = ({ product }) => {
               </div>
             )}
 
-            {/* Category badge – orange */}
+            {/* Category badge */}
             <div className="absolute top-4 left-4 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
               {categoryLabels[product.category] || product.category}
             </div>
@@ -87,11 +93,12 @@ const ProductCard = ({ product }) => {
             </h3>
           </Link>
 
+          {/* Description – stripped of HTML tags */}
           <p className="text-sm text-gray-400 mb-3 line-clamp-2">
-            {product.description}
+            {stripHtml(product.description)}
           </p>
 
-          {/* Price section – orange price */}
+          {/* Price section */}
           <div className="flex items-center justify-between mb-4">
             <div>
               <span className="text-2xl font-bold text-orange-400">
@@ -104,13 +111,12 @@ const ProductCard = ({ product }) => {
               )}
             </div>
 
-            {/* Static icon – orange */}
             <div className="text-orange-400/50">
               <Zap size={20} />
             </div>
           </div>
 
-          {/* Add to cart button – orange */}
+          {/* Add to cart button */}
           <button
             onClick={handleAddToCart}
             disabled={!product.inStock}
@@ -125,7 +131,7 @@ const ProductCard = ({ product }) => {
           </button>
         </div>
 
-        {/* Static decorative icon – orange */}
+        {/* Decorative icon */}
         <div className="absolute bottom-2 right-2 text-orange-500/10">
           <Star size={32} />
         </div>

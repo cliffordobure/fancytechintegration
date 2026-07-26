@@ -80,7 +80,7 @@ const OrdersTable = ({ orders = [], onUpdateStatus }) => {
     const address = order?.customer?.address;
     if (!address) return "No address provided";
     return (
-      `${address.street || ""}, ${address.city || ""} ${address.county || ""}`.trim() ||
+      `${address.street || ""}, ${address.city || ""} ${address.state || ""}`.trim() ||
       "No address provided"
     );
   };

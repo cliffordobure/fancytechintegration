@@ -87,9 +87,9 @@ const ShippingInfo = ({ customer, address }) => {
             >
               <MapPin size={16} className="text-blue-400 mt-1" />
               <div>
-                <p className="text-sm text-gray-400">City / County</p>
+                <p className="text-sm text-gray-400">Residential area / town</p>
                 <p className="text-white">
-                  {address.city}, {address.county}
+                  {address.city}, {address.state}
                 </p>
               </div>
             </motion.div>

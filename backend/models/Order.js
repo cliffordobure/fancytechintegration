@@ -23,8 +23,7 @@ const orderSchema = new mongoose.Schema(
       address: {
         street: String,
         city: String,
-        county: String,
-        postalCode: String,
+        state: String,
         country: {
           type: String,
           default: "South Sudan",
@@ -58,8 +57,8 @@ const orderSchema = new mongoose.Schema(
     },
     paymentMethod: {
       type: String,
-      enum: ["mpesa", "bank_transfer", "cash_on_delivery", "card"],
-      default: "mpesa",
+      enum: ["bank_transfer", "cash_on_delivery", "card"],
+      default: "cash_on_delivery",
     },
     paymentStatus: {
       type: String,

@@ -11,7 +11,7 @@ export const PRODUCT_TEMPLATES = {
 <h4>Display &amp; Convertible Design</h4>
 <p>The <strong>14-inch Full HD touchscreen</strong> delivers crisp visuals with 400 nits of brightness, making it usable even in bright outdoor environments. The 360° hinge allows four versatile modes — laptop, tablet, tent, and stand — giving you flexibility for presentations, note-taking, or media consumption.</p>
 <h4>Security &amp; Connectivity</h4>
-<p>Business-grade security comes standard with an integrated fingerprint reader, HP Sure View privacy screen options, and HP Sure Start BIOS protection. It also includes <strong>Wi-Fi 6</strong> and <strong>bluetooth 5.0</strong> for fast, stable wireless connections.</p>
+<p>Business-grade security comes standard with an integrated fingerprint reader, HP Sure View privacy screen options, and HP Sure Start BIOS protection. It also includes <strong>Wi-Fi 6</strong> and <strong>Bluetooth 5.0</strong> for fast, stable wireless connections.</p>
 <h4>Battery Life</h4>
 <p>With an all-day battery that delivers up to <strong>12 hours of mixed usage</strong>, you can leave your charger behind and stay productive from morning meetings to evening flights.</p>
 <h4>Best For:</h4>
@@ -58,6 +58,46 @@ export const PRODUCT_TEMPLATES = {
 <p>AI‑powered human/vehicle detection reduces false alerts. Receive real‑time notifications on your phone.</p>
 <h4>Easy Integration</h4>
 <p>Works with Alexa, Google Home, and ONVIF‑compatible NVRs. View live footage from anywhere via the mobile app.</p>
+    `,
+  },
+  networking: {
+    label: "🌐 Networking Accessories",
+    description: `
+<h3>High‑Performance Networking Solutions – Routers, Access Points &amp; Cables</h3>
+<p>Build a robust, reliable network with our premium networking accessories. Whether you're setting up a small office, a large enterprise, or a home network, our products deliver exceptional speed, coverage, and security.</p>
+
+<h4>Routers</h4>
+<p>Our routers are designed for demanding environments. They support <strong>Wi‑Fi 6 (802.11ax)</strong>, delivering blazing‑fast speeds up to 3.5 Gbps. Advanced QoS and MU‑MIMO technology ensure smooth streaming, gaming, and video conferencing even with multiple devices connected. Built‑in VPN and firewall protection keep your data safe.</p>
+
+<h4>Access Points</h4>
+<p>Extend your network coverage seamlessly with our <strong>PoE‑powered access points</strong>. Ideal for large offices, hotels, and campuses, they offer <strong>dual‑band (2.4GHz + 5GHz)</strong> operation and support <strong>up to 200 simultaneous clients</strong>. Easy cloud management allows you to monitor and control your network from anywhere.</p>
+
+<h4>Cables &amp; Connectors</h4>
+<p>We supply high‑quality <strong>Cat6 and Cat6a Ethernet cables</strong> with shielded connectors to minimize interference. Available in various lengths, these cables are perfect for wiring your network infrastructure. Also available: <strong>fibre optic cables</strong> and <strong>RJ45 connectors</strong> for professional installations.</p>
+
+<h4>Accessories</h4>
+<ul>
+  <li>Wall‑mount brackets for access points</li>
+  <li>Power over Ethernet (PoE) injectors</li>
+  <li>Network switches (managed and unmanaged)</li>
+  <li>Cable management tools (ties, clips, labels)</li>
+</ul>
+
+<h4>Why Choose Our Networking Gear?</h4>
+<ul>
+  <li><strong>Reliability:</strong> Tested to perform under heavy load</li>
+  <li><strong>Scalability:</strong> Grow your network as your needs expand</li>
+  <li><strong>Support:</strong> Expert installation and after‑sales support</li>
+  <li><strong>Warranty:</strong> 1‑2 year warranty on most products</li>
+</ul>
+
+<h4>Best For:</h4>
+<ul>
+  <li>Small to medium businesses</li>
+  <li>Enterprise offices</li>
+  <li>Residential smart homes</li>
+  <li>IT professionals and integrators</li>
+</ul>
     `,
   },
   // Add more templates as needed

@@ -5,6 +5,12 @@ import { Trash2, Minus, Plus } from "lucide-react";
 import { getImageUrl } from "../../utils/constants";
 
 const CartItem = ({ item, onRemove, onQuantityChange }) => {
+  // Helper to strip HTML tags and trim
+  const stripHtml = (html) => {
+    if (!html) return "";
+    return html.replace(/<[^>]+>/g, "").trim();
+  };
+
   return (
     <div className="relative">
       <div className="relative bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-white/10">
@@ -36,12 +42,13 @@ const CartItem = ({ item, onRemove, onQuantityChange }) => {
               {item.name}
             </Link>
 
+            {/* Description – stripped of HTML tags */}
             <p className="text-gray-400 text-sm mb-4 line-clamp-2">
-              {item.description}
+              {stripHtml(item.description)}
             </p>
 
             <div className="flex flex-wrap items-center justify-between gap-4">
-              {/* Quantity Controls – static */}
+              {/* Quantity Controls */}
               <div className="flex items-center gap-3">
                 <span className="text-sm text-gray-400">Quantity:</span>
                 <div className="flex items-center bg-white/5 border border-white/10 rounded-lg">
@@ -80,7 +87,7 @@ const CartItem = ({ item, onRemove, onQuantityChange }) => {
                 </div>
               </div>
 
-              {/* Price – orange */}
+              {/* Price */}
               <div className="text-right">
                 <p className="text-2xl font-bold text-orange-400">
                   $ {(item.price * item.quantity).toLocaleString()}
@@ -94,7 +101,7 @@ const CartItem = ({ item, onRemove, onQuantityChange }) => {
             </div>
           </div>
 
-          {/* Remove Button – static */}
+          {/* Remove Button */}
           <button
             onClick={() => onRemove(item._id, item.name)}
             className="absolute top-4 right-4 md:relative md:top-auto md:right-auto text-red-400"

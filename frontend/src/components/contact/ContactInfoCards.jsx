@@ -23,7 +23,7 @@ const ContactInfoCards = () => {
       title: "Office",
       details: ["Tranquil Centre, Konyokonyo", "Juba, South Sudan"],
       action:
-        "https://maps.google.com/?q=Tranquil+Centre,+Konyokonyo,+Juba,+South+Sudan",
+        "https://www.google.com/maps?q=Fancy+Tech+Integration,+Juba,+South+Sudan&output=embed",
       actionText: "Get Directions",
     },
     {

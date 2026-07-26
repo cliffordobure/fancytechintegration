@@ -28,7 +28,7 @@ const CheckoutPage = () => {
     address: {
       street: "",
       city: "",
-      county: "",
+      state: "",
       postalCode: "",
     },
     paymentMethod: "mpesa",
@@ -86,8 +86,8 @@ const CheckoutPage = () => {
       newErrors["address.street"] = "Street address is required";
     if (!formData.address.city.trim())
       newErrors["address.city"] = "City is required";
-    if (!formData.address.county.trim())
-      newErrors["address.county"] = "County is required";
+    if (!formData.address.state.trim())
+      newErrors["address.state"] = "state is required";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
