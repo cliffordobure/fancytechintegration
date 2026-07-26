@@ -70,7 +70,7 @@ const AdminLogin = () => {
             rotate: [0, 45, 0],
           }}
           transition={{ duration: 20, repeat: Infinity }}
-          className="absolute top-20 -right-20 w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
+          className="absolute top-20 -right-20 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
         />
         <motion.div
           animate={{
@@ -88,7 +88,7 @@ const AdminLogin = () => {
             rotate: [0, 10, 0],
           }}
           transition={{ duration: 6, repeat: Infinity }}
-          className="absolute top-40 right-40 text-purple-500/10 hidden lg:block"
+          className="absolute top-40 right-40 text-blue-500/10 hidden lg:block"
         >
           <Shield size={80} />
         </motion.div>
@@ -109,7 +109,7 @@ const AdminLogin = () => {
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.5 }}
               >
-                <Code2 className="w-12 h-12 text-purple-400" />
+                <Code2 className="w-12 h-12 text-blue-400" />
               </motion.div>
               <motion.div
                 animate={{
@@ -122,7 +122,7 @@ const AdminLogin = () => {
                 className="absolute inset-0 rounded-full"
               />
             </div>
-            <span className="text-3xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 text-transparent bg-clip-text">
+            <span className="text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-400 to-blue-400 text-transparent bg-clip-text">
               F.T.I.
             </span>
           </Link>
@@ -143,13 +143,13 @@ const AdminLogin = () => {
               transition={{ delay: 0.3, type: "spring" }}
               className="inline-block mb-4"
             >
-              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 p-3">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-blue-500 p-3">
                 <Shield className="w-full h-full text-white" />
               </div>
             </motion.div>
 
             <h2 className="text-2xl font-bold">
-              <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+              <span className="bg-gradient-to-r from-blue-400 to-blue-400 text-transparent bg-clip-text">
                 Admin Login
               </span>
             </h2>
@@ -166,7 +166,7 @@ const AdminLogin = () => {
                 Email Address
               </label>
               <div className="relative group">
-                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-purple-400 transition-colors" />
+                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-blue-400 transition-colors" />
                 <input
                   id="email"
                   name="email"
@@ -177,7 +177,7 @@ const AdminLogin = () => {
                   onChange={handleChange}
                   onFocus={() => setFocusedField("email")}
                   onBlur={() => setFocusedField(null)}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg pl-12 pr-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/50 transition-all"
+                  className="w-full bg-white/5 border border-white/10 rounded-lg pl-12 pr-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all"
                   placeholder="admin@example.com"
                 />
                 {focusedField === "email" && (
@@ -186,7 +186,7 @@ const AdminLogin = () => {
                     animate={{ scale: 1 }}
                     className="absolute -right-2 -top-2"
                   >
-                    <Sparkles className="w-4 h-4 text-purple-400" />
+                    <Sparkles className="w-4 h-4 text-blue-400" />
                   </motion.div>
                 )}
               </div>
@@ -198,7 +198,7 @@ const AdminLogin = () => {
                 Password
               </label>
               <div className="relative group">
-                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-purple-400 transition-colors" />
+                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-blue-400 transition-colors" />
                 <input
                   id="password"
                   name="password"
@@ -209,7 +209,7 @@ const AdminLogin = () => {
                   onChange={handleChange}
                   onFocus={() => setFocusedField("password")}
                   onBlur={() => setFocusedField(null)}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg pl-12 pr-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/50 transition-all"
+                  className="w-full bg-white/5 border border-white/10 rounded-lg pl-12 pr-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all"
                   placeholder="••••••••"
                 />
                 {focusedField === "password" && (
@@ -218,7 +218,7 @@ const AdminLogin = () => {
                     animate={{ scale: 1 }}
                     className="absolute -right-2 -top-2"
                   >
-                    <Sparkles className="w-4 h-4 text-purple-400" />
+                    <Sparkles className="w-4 h-4 text-blue-400" />
                   </motion.div>
                 )}
               </div>
@@ -229,7 +229,7 @@ const AdminLogin = () => {
               <label className="flex items-center gap-2 cursor-pointer group">
                 <input
                   type="checkbox"
-                  className="w-4 h-4 rounded border-white/10 bg-white/5 text-purple-500 focus:ring-purple-500/50 focus:ring-offset-0"
+                  className="w-4 h-4 rounded border-white/10 bg-white/5 text-blue-500 focus:ring-blue-500/50 focus:ring-offset-0"
                 />
                 <span className="text-sm text-gray-400 group-hover:text-white transition-colors">
                   Remember me
@@ -237,7 +237,7 @@ const AdminLogin = () => {
               </label>
               <a
                 href="#"
-                className="text-sm text-purple-400 hover:text-purple-300 transition-colors"
+                className="text-sm text-blue-400 hover:text-blue-300 transition-colors"
               >
                 Forgot password?
               </a>
@@ -249,7 +249,7 @@ const AdminLogin = () => {
               disabled={loading}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-2 group relative overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-gradient-to-r from-blue-500 to-blue-500 text-white py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-2 group relative overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? (
                 <>
@@ -289,10 +289,10 @@ const AdminLogin = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="mt-6 p-4 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-lg border border-purple-500/20"
+            className="mt-6 p-4 bg-gradient-to-r from-blue-500/10 to-blue-500/10 rounded-lg border border-blue-500/20"
           >
             <p className="text-xs text-gray-400 text-center flex items-center justify-center gap-2">
-              <Shield size={14} className="text-purple-400" />
+              <Shield size={14} className="text-blue-400" />
               This area is restricted to authorized personnel only
             </p>
           </motion.div>
@@ -306,7 +306,7 @@ const AdminLogin = () => {
           >
             <Link
               to="/"
-              className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-purple-400 transition-colors group"
+              className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-blue-400 transition-colors group"
             >
               <ArrowRight
                 size={14}

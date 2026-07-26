@@ -37,8 +37,8 @@ const SoftwareServices = () => {
         "E-commerce integration",
         "Analytics & tracking setup",
       ],
-      color: "from-blue-500 to-cyan-500",
-      iconBg: "bg-blue-500/10",
+      color: "from-secondary-500 to-cyan-500",
+      iconBg: "bg-secondary-500/10",
     },
     {
       id: "mobile-apps",
@@ -56,8 +56,8 @@ const SoftwareServices = () => {
         "Push notifications",
         "App store deployment",
       ],
-      color: "from-purple-500 to-pink-500",
-      iconBg: "bg-purple-500/10",
+      color: "from-blue-500 to-pink-500",
+      iconBg: "bg-blue-500/10",
     },
     {
       id: "fancify-business",
@@ -130,7 +130,7 @@ const SoftwareServices = () => {
         "Financial reporting",
         "Document storage",
       ],
-      color: "from-indigo-500 to-blue-500",
+      color: "from-indigo-500 to-secondary-500",
       iconBg: "bg-indigo-500/10",
     },
   ];
@@ -152,16 +152,15 @@ const SoftwareServices = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center gap-2 bg-purple-500/10 px-4 py-2 rounded-full mb-6">
-              <Sparkles className="w-4 h-4 text-purple-400" />
-              <span className="text-sm font-medium text-purple-400">
+            <div className="inline-flex items-center bg-blue-500/10 px-4 py-2 rounded-full mb-6">
+              <span className="text-sm font-medium text-blue-400">
                 Our Software Solutions
               </span>
             </div>
 
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Powerful Software for{" "}
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-400 to-pink-400 bg-clip-text text-transparent">
                 Every Business Need
               </span>
             </h2>
@@ -194,7 +193,7 @@ const SoftwareServices = () => {
                 <WifiOff className="w-4 h-4 text-yellow-400" />
                 <span className="text-sm text-gray-300">Offline</span>
               </div>
-              <span className="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded-full">
+              <span className="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full">
                 Syncs when connected
               </span>
             </div>
@@ -213,7 +212,7 @@ const SoftwareServices = () => {
                 className="group cursor-pointer"
                 onClick={() => openServiceModal(service)}
               >
-                <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 h-full hover:border-purple-500/50 transition-all duration-300">
+                <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 h-full hover:border-blue-500/50 transition-all duration-300">
                   {/* Icon with gradient */}
                   <div
                     className={`inline-flex p-4 rounded-xl ${service.iconBg} mb-4 group-hover:scale-110 transition-transform duration-300`}
@@ -227,7 +226,7 @@ const SoftwareServices = () => {
                   </div>
 
                   {/* Title & Description */}
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 group-hover:bg-clip-text transition-all">
+                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-pink-400 group-hover:bg-clip-text transition-all">
                     {service.title}
                   </h3>
                   <p className="text-gray-400 mb-4 line-clamp-2">
@@ -272,7 +271,7 @@ const SoftwareServices = () => {
                   )}
 
                   {/* Learn More Link */}
-                  <div className="flex items-center text-purple-400 group-hover:text-purple-300 mt-4">
+                  <div className="flex items-center text-blue-400 group-hover:text-blue-300 mt-4">
                     <span className="text-sm font-medium">Learn more</span>
                     <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -289,7 +288,7 @@ const SoftwareServices = () => {
             viewport={{ once: true }}
             className="mt-12 text-center"
           >
-            <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-2xl p-8">
+            <div className="bg-gradient-to-r from-blue-500/10 to-pink-500/10 border border-blue-500/20 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-white mb-3">
                 Need Something Custom?
               </h3>
@@ -300,7 +299,7 @@ const SoftwareServices = () => {
                 covered.
               </p>
               <Link to="/contact">
-                <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-full font-medium hover:shadow-lg hover:shadow-purple-500/25 transition-all">
+                <button className="bg-gradient-to-r from-blue-500 to-pink-500 text-white px-8 py-3 rounded-full font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all">
                   Request Custom Solution
                 </button>
               </Link>

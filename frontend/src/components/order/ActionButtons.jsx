@@ -16,7 +16,7 @@ const ActionButtons = () => {
         <motion.button
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          className="w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white px-8 py-4 rounded-xl font-semibold flex items-center justify-center gap-2 group relative overflow-hidden"
+          className="w-full bg-gradient-to-r from-blue-500 to-blue-500 text-white px-8 py-4 rounded-xl font-semibold flex items-center justify-center gap-2 group relative overflow-hidden"
         >
           <span className="relative z-10 flex items-center gap-2">
             <ShoppingBag size={18} />

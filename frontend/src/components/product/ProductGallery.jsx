@@ -84,7 +84,7 @@ const ProductGallery = ({ images, name }) => {
                 onClick={() => setSelectedImage(index)}
                 className={`relative rounded-lg overflow-hidden border-2 transition-colors ${
                   selectedImage === index
-                    ? "border-purple-500"
+                    ? "border-blue-500"
                     : "border-transparent"
                 }`}
               >
@@ -96,7 +96,7 @@ const ProductGallery = ({ images, name }) => {
                 {selectedImage === index && (
                   <motion.div
                     layoutId="selectedIndicator"
-                    className="absolute inset-0 bg-purple-500/20"
+                    className="absolute inset-0 bg-blue-500/20"
                   />
                 )}
               </motion.button>

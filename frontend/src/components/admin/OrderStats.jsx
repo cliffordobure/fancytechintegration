@@ -16,9 +16,9 @@ const OrderStats = ({ orders }) => {
       title: "Total Orders",
       value: orders.length,
       icon: ShoppingBag,
-      color: "from-purple-500 to-blue-500",
-      bgColor: "bg-purple-500/10",
-      textColor: "text-purple-400",
+      color: "from-blue-500 to-blue-500",
+      bgColor: "bg-blue-500/10",
+      textColor: "text-blue-400",
       delay: 0.1,
     },
     {

@@ -28,7 +28,7 @@ const RecentArticles = ({ recentArticles, articlesLoading }) => {
             opacity: [0.1, 0.2, 0.1],
           }}
           transition={{ duration: 10, repeat: Infinity }}
-          className="absolute top-0 right-0 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl"
+          className="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl"
         />
         <motion.div
           animate={{
@@ -47,7 +47,7 @@ const RecentArticles = ({ recentArticles, articlesLoading }) => {
           rotate: [0, 10, 0],
         }}
         transition={{ duration: 6, repeat: Infinity }}
-        className="absolute top-40 left-20 text-purple-500/10 hidden lg:block"
+        className="absolute top-40 left-20 text-blue-500/10 hidden lg:block"
       >
         <Newspaper size={100} />
       </motion.div>
@@ -65,13 +65,13 @@ const RecentArticles = ({ recentArticles, articlesLoading }) => {
             transition={{ delay: 0.2, type: "spring" }}
             className="inline-block mb-4"
           >
-            <span className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 backdrop-blur-sm border border-white/10 px-4 py-2 rounded-full text-sm font-semibold text-purple-400">
+            <span className="bg-gradient-to-r from-blue-500/20 to-blue-500/20 backdrop-blur-sm border border-white/10 px-4 py-2 rounded-full text-sm font-semibold text-blue-400">
               📰 LATEST UPDATES
             </span>
           </motion.div>
 
           <h2 className="text-5xl md:text-6xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 text-transparent bg-clip-text bg-[length:200%] animate-gradient">
+            <span className="bg-gradient-to-r from-blue-400 via-blue-400 to-blue-400 text-transparent bg-clip-text bg-[length:200%] animate-gradient">
               Latest News & Articles
             </span>
           </h2>
@@ -85,7 +85,7 @@ const RecentArticles = ({ recentArticles, articlesLoading }) => {
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-              className="inline-block w-16 h-16 border-4 border-purple-500 border-t-transparent rounded-full"
+              className="inline-block w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full"
             />
             <p className="mt-4 text-gray-400">Loading articles...</p>
           </div>
@@ -114,12 +114,12 @@ const RecentArticles = ({ recentArticles, articlesLoading }) => {
                 >
                   <Link
                     to="/articles"
-                    className="group inline-flex items-center gap-3 bg-gradient-to-r from-purple-500/10 to-blue-500/10 backdrop-blur-sm border border-white/10 px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/5 transition-all duration-300"
+                    className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-500/10 to-blue-500/10 backdrop-blur-sm border border-white/10 px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/5 transition-all duration-300"
                   >
-                    <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+                    <span className="bg-gradient-to-r from-blue-400 to-blue-400 text-transparent bg-clip-text">
                       Read All Articles
                     </span>
-                    <ArrowRight className="w-5 h-5 text-purple-400 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-5 h-5 text-blue-400 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </motion.div>
               </div>

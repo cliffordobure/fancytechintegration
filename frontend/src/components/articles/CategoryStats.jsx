@@ -27,7 +27,7 @@ const CategoryStats = ({ articles }) => {
     {
       name: "Reviews",
       icon: Star,
-      color: "from-purple-400 to-purple-500",
+      color: "from-blue-400 to-blue-500",
       count: articles.filter((a) => a.category === "product-review").length,
     },
     {
@@ -49,7 +49,7 @@ const CategoryStats = ({ articles }) => {
   return (
     <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-white/10 mb-8">
       <div className="flex items-center gap-2 mb-4">
-        <Sparkles className="w-5 h-5 text-purple-400" />
+        <Sparkles className="w-5 h-5 text-blue-400" />
         <h3 className="text-lg font-semibold text-white">Category Breakdown</h3>
       </div>
 

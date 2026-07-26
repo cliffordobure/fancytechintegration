@@ -28,7 +28,7 @@ const ArticleTable = ({ articles, onEdit, onDelete, loading }) => {
     const colors = {
       news: "bg-blue-500/20 text-blue-400 border-blue-500/30",
       tutorial: "bg-green-500/20 text-green-400 border-green-500/30",
-      "product-review": "bg-purple-500/20 text-purple-400 border-purple-500/30",
+      "product-review": "bg-blue-500/20 text-blue-400 border-blue-500/30",
       "company-update": "bg-orange-500/20 text-orange-400 border-orange-500/30",
       "tech-tips": "bg-pink-500/20 text-pink-400 border-pink-500/30",
     };
@@ -51,7 +51,7 @@ const ArticleTable = ({ articles, onEdit, onDelete, loading }) => {
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-          className="inline-block w-16 h-16 border-4 border-purple-500 border-t-transparent rounded-full"
+          className="inline-block w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full"
         />
       </div>
     );
@@ -99,7 +99,7 @@ const ArticleTable = ({ articles, onEdit, onDelete, loading }) => {
               >
                 <td className="px-6 py-4">
                   <div className="flex items-center gap-3">
-                    <div className="relative w-12 h-12 rounded-lg overflow-hidden bg-gradient-to-r from-purple-500/20 to-blue-500/20">
+                    <div className="relative w-12 h-12 rounded-lg overflow-hidden bg-gradient-to-r from-blue-500/20 to-blue-500/20">
                       {article.featuredImage ? (
                         <img
                           src={getImageUrl(article.featuredImage)}
@@ -108,7 +108,7 @@ const ArticleTable = ({ articles, onEdit, onDelete, loading }) => {
                         />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center">
-                          <FileText size={20} className="text-purple-400" />
+                          <FileText size={20} className="text-blue-400" />
                         </div>
                       )}
                     </div>
@@ -168,7 +168,7 @@ const ArticleTable = ({ articles, onEdit, onDelete, loading }) => {
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                       onClick={() => onEdit(article)}
-                      className="p-2 text-gray-400 hover:text-purple-400 transition-colors"
+                      className="p-2 text-gray-400 hover:text-blue-400 transition-colors"
                       title="Edit Article"
                     >
                       <Edit size={16} />

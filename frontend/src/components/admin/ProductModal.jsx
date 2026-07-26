@@ -225,7 +225,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-white/10">
                   <h2 className="text-2xl font-bold">
-                    <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+                    <span className="bg-gradient-to-r from-blue-400 to-blue-400 text-transparent bg-clip-text">
                       {product ? "Edit Product" : "Add New Product"}
                     </span>
                   </h2>
@@ -247,7 +247,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                       onClick={() => setActiveTab(tab.id)}
                       className={`flex items-center gap-2 px-6 py-4 text-sm font-medium transition-colors whitespace-nowrap ${
                         activeTab === tab.id
-                          ? "text-purple-400 border-b-2 border-purple-400"
+                          ? "text-blue-400 border-b-2 border-blue-400"
                           : "text-gray-400 hover:text-white"
                       }`}
                     >
@@ -272,7 +272,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                             value={formData.name}
                             onChange={handleChange}
                             required
-                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
                             placeholder="Enter product name"
                           />
                         </div>
@@ -286,7 +286,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                             value={formData.category}
                             onChange={handleChange}
                             required
-                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
                           >
                             <option value="starlink" className="bg-gray-800">
                               Starlink
@@ -342,7 +342,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                                     }));
                                   }
                                 }}
-                                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
                               >
                                 <option value="">Select a template…</option>
                                 {Object.entries(PRODUCT_TEMPLATES).map(
@@ -405,7 +405,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                             onChange={handleChange}
                             required
                             rows="4"
-                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
                             placeholder="Enter product features (comma-separated or bullet points)"
                           />
                         </div>
@@ -420,7 +420,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                               name="brand"
                               value={formData.brand}
                               onChange={handleChange}
-                              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
                               placeholder="e.g., Dell, HP, Starlink"
                             />
                           </div>
@@ -433,7 +433,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                               name="model"
                               value={formData.model}
                               onChange={handleChange}
-                              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
                               placeholder="e.g., XPS 15, Gen 2"
                             />
                           </div>
@@ -456,7 +456,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                               onChange={handleChange}
                               required
                               step="0.01"
-                              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
                               placeholder="0.00"
                             />
                           </div>
@@ -470,7 +470,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                               value={formData.originalPrice}
                               onChange={handleChange}
                               step="0.01"
-                              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
                               placeholder="0.00"
                             />
                           </div>
@@ -486,7 +486,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                               name="stockQuantity"
                               value={formData.stockQuantity}
                               onChange={handleChange}
-                              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
                               placeholder="0"
                             />
                           </div>
@@ -497,7 +497,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                                 name="inStock"
                                 checked={formData.inStock}
                                 onChange={handleChange}
-                                className="w-4 h-4 rounded border-white/10 bg-white/5 text-purple-500 focus:ring-purple-500/50"
+                                className="w-4 h-4 rounded border-white/10 bg-white/5 text-blue-500 focus:ring-blue-500/50"
                               />
                               <span className="text-sm text-gray-300">
                                 In Stock
@@ -509,7 +509,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                                 name="featured"
                                 checked={formData.featured}
                                 onChange={handleChange}
-                                className="w-4 h-4 rounded border-white/10 bg-white/5 text-purple-500 focus:ring-purple-500/50"
+                                className="w-4 h-4 rounded border-white/10 bg-white/5 text-blue-500 focus:ring-blue-500/50"
                               />
                               <span className="text-sm text-gray-300">
                                 Featured
@@ -526,7 +526,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                             name="status"
                             value={formData.status}
                             onChange={handleChange}
-                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
                           >
                             <option value="active" className="bg-gray-800">
                               Active
@@ -549,7 +549,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                           <label className="block text-sm font-medium text-gray-400 mb-2">
                             Product Images
                           </label>
-                          <div className="border-2 border-dashed border-white/10 rounded-lg p-6 text-center hover:border-purple-500/50 transition-colors">
+                          <div className="border-2 border-dashed border-white/10 rounded-lg p-6 text-center hover:border-blue-500/50 transition-colors">
                             <input
                               type="file"
                               multiple
@@ -574,7 +574,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                           </div>
                           {uploading && (
                             <div className="flex items-center gap-2 mt-2 text-sm text-gray-400">
-                              <div className="w-4 h-4 border-2 border-purple-500 border-t-transparent rounded-full animate-spin" />
+                              <div className="w-4 h-4 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
                               Uploading...
                             </div>
                           )}
@@ -615,7 +615,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                             name="seoTitle"
                             value={formData.seoTitle}
                             onChange={handleChange}
-                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
                             placeholder="Enter SEO title"
                           />
                         </div>
@@ -629,7 +629,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                             value={formData.seoDescription}
                             onChange={handleChange}
                             rows="3"
-                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
                             placeholder="Enter SEO description"
                           />
                         </div>
@@ -643,7 +643,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                             name="seoKeywords"
                             value={formData.seoKeywords}
                             onChange={handleChange}
-                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
                             placeholder="keyword1, keyword2, keyword3"
                           />
                           <p className="text-xs text-gray-500 mt-1">
@@ -709,7 +709,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       type="submit"
-                      className="px-6 py-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg font-medium hover:shadow-lg transition-all"
+                      className="px-6 py-2 bg-gradient-to-r from-blue-500 to-blue-500 text-white rounded-lg font-medium hover:shadow-lg transition-all"
                     >
                       {product ? "Update Product" : "Create Product"}
                     </motion.button>

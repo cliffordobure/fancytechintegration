@@ -95,7 +95,7 @@ const AdminArticles = () => {
             <p className="text-gray-400 mb-6">{error}</p>
             <button
               onClick={() => dispatch(fetchAllArticles())}
-              className="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-lg font-semibold"
+              className="bg-gradient-to-r from-blue-500 to-blue-500 text-white px-6 py-3 rounded-lg font-semibold"
             >
               Try Again
             </button>
@@ -122,7 +122,7 @@ const AdminArticles = () => {
           >
             <div>
               <h1 className="text-4xl font-bold mb-2">
-                <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 text-transparent bg-clip-text">
+                <span className="bg-gradient-to-r from-blue-400 via-blue-400 to-blue-400 text-transparent bg-clip-text">
                   Article Management
                 </span>
               </h1>
@@ -136,7 +136,7 @@ const AdminArticles = () => {
                 transition={{ duration: 20, repeat: Infinity }}
                 className="hidden md:block"
               >
-                <Sparkles size={32} className="text-purple-400/30" />
+                <Sparkles size={32} className="text-blue-400/30" />
               </motion.div>
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -146,7 +146,7 @@ const AdminArticles = () => {
                   setShowModal(true);
                 }}
                 disabled={submitting}
-                className="flex items-center gap-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all disabled:opacity-50"
+                className="flex items-center gap-2 bg-gradient-to-r from-blue-500 to-blue-500 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all disabled:opacity-50"
               >
                 <Plus size={20} />
                 Add New Article

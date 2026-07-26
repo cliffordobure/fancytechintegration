@@ -89,7 +89,7 @@ const AdminDashboard = () => {
             <div className="flex items-center justify-between">
               <div>
                 <h1 className="text-4xl font-bold mb-2">
-                  <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 text-transparent bg-clip-text">
+                  <span className="bg-gradient-to-r from-blue-400 via-blue-400 to-blue-400 text-transparent bg-clip-text">
                     Admin Dashboard
                   </span>
                 </h1>
@@ -102,7 +102,7 @@ const AdminDashboard = () => {
                 transition={{ duration: 20, repeat: Infinity }}
                 className="hidden md:block"
               >
-                <Sparkles size={32} className="text-purple-400/30" />
+                <Sparkles size={32} className="text-blue-400/30" />
               </motion.div>
             </div>
           </motion.div>
@@ -113,7 +113,7 @@ const AdminDashboard = () => {
               title="Total Products"
               value={products.length}
               icon={Package}
-              color="purple"
+              color="blue"
               link="/admin/products"
             />
             <StatCard
@@ -186,10 +186,10 @@ const AdminDashboard = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="bg-gradient-to-br from-purple-500/20 to-blue-500/20 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/30"
+              className="bg-gradient-to-br from-blue-500/20 to-blue-500/20 backdrop-blur-sm rounded-2xl p-6 border border-blue-500/30"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-purple-500 to-blue-500 p-2">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-blue-500 to-blue-500 p-2">
                   <TrendingUp className="w-full h-full text-white" />
                 </div>
                 <div>
@@ -213,7 +213,7 @@ const AdminDashboard = () => {
                         width: `${(stats.conversionRate / 5) * 100}%`,
                       }}
                       transition={{ delay: 0.5, duration: 1 }}
-                      className="h-full bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"
+                      className="h-full bg-gradient-to-r from-blue-500 to-blue-500 rounded-full"
                     />
                   </div>
                 </div>

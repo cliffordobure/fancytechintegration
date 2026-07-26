@@ -88,7 +88,7 @@ const Footer = () => {
           opacity: [0.1, 0.2, 0.1],
         }}
         transition={{ duration: 8, repeat: Infinity }}
-        className="absolute top-20 left-20 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl"
+        className="absolute top-20 left-20 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl"
       />
       <motion.div
         animate={{
@@ -106,7 +106,7 @@ const Footer = () => {
           rotate: [0, 10, 0],
         }}
         transition={{ duration: 6, repeat: Infinity }}
-        className="absolute top-40 right-40 text-purple-500/10 hidden lg:block"
+        className="absolute top-40 right-40 text-blue-500/10 hidden lg:block"
       >
         <Sparkles size={60} />
       </motion.div>
@@ -180,7 +180,7 @@ const Footer = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h4 className="text-lg font-bold mb-6 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+            <h4 className="text-lg font-bold mb-6 bg-gradient-to-r from-blue-400 to-blue-400 text-transparent bg-clip-text">
               Quick Links
             </h4>
             <ul className="space-y-3">
@@ -196,9 +196,9 @@ const Footer = () => {
                   >
                     <ArrowRight
                       size={14}
-                      className="opacity-0 group-hover:opacity-100 text-purple-400 transition-opacity"
+                      className="opacity-0 group-hover:opacity-100 text-blue-400 transition-opacity"
                     />
-                    <span className="group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-blue-400 group-hover:text-transparent group-hover:bg-clip-text transition-all">
+                    <span className="group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-blue-400 group-hover:text-transparent group-hover:bg-clip-text transition-all">
                       {link.name}
                     </span>
                   </Link>
@@ -213,7 +213,7 @@ const Footer = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h4 className="text-lg font-bold mb-6 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+            <h4 className="text-lg font-bold mb-6 bg-gradient-to-r from-blue-400 to-blue-400 text-transparent bg-clip-text">
               Our Products
             </h4>
             <ul className="space-y-3">
@@ -228,7 +228,7 @@ const Footer = () => {
                     className="group flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
                   >
                     <span className="text-sm">{link.icon}</span>
-                    <span className="group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-blue-400 group-hover:text-transparent group-hover:bg-clip-text transition-all">
+                    <span className="group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-blue-400 group-hover:text-transparent group-hover:bg-clip-text transition-all">
                       {link.name}
                     </span>
                   </Link>
@@ -243,7 +243,7 @@ const Footer = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <h4 className="text-lg font-bold mb-6 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+            <h4 className="text-lg font-bold mb-6 bg-gradient-to-r from-blue-400 to-blue-400 text-transparent bg-clip-text">
               Get in Touch
             </h4>
             <ul className="space-y-4">
@@ -251,10 +251,7 @@ const Footer = () => {
                 whileHover={{ x: 5 }}
                 className="flex items-start gap-3 text-gray-400 hover:text-white transition-colors group"
               >
-                <Mail
-                  size={18}
-                  className="text-purple-400 mt-1 flex-shrink-0"
-                />
+                <Mail size={18} className="text-blue-400 mt-1 flex-shrink-0" />
                 <a
                   href="mailto:sales@fancytechintegration.com"
                   className="hover:text-white transition-colors break-all"
@@ -267,7 +264,7 @@ const Footer = () => {
                 whileHover={{ x: 5 }}
                 className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group"
               >
-                <Phone size={18} className="text-purple-400 flex-shrink-0" />
+                <Phone size={18} className="text-blue-400 flex-shrink-0" />
                 <a
                   href="tel:+254759466446"
                   className="hover:text-white transition-colors"
@@ -280,7 +277,7 @@ const Footer = () => {
                 whileHover={{ x: 5 }}
                 className="flex items-center gap-3 text-gray-400 group"
               >
-                <MapPin size={18} className="text-purple-400 flex-shrink-0" />
+                <MapPin size={18} className="text-blue-400 flex-shrink-0" />
                 <span>Juba, South Sudan</span>
               </motion.li>
             </ul>
@@ -294,12 +291,12 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Your email"
-                  className="flex-1 bg-white/5 backdrop-blur-sm border border-white/10 rounded-l-lg px-4 py-2 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-purple-500"
+                  className="flex-1 bg-white/5 backdrop-blur-sm border border-white/10 rounded-l-lg px-4 py-2 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-blue-500"
                 />
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-4 py-2 rounded-r-lg text-sm font-medium"
+                  className="bg-gradient-to-r from-blue-500 to-blue-500 text-white px-4 py-2 rounded-r-lg text-sm font-medium"
                 >
                   Subscribe
                 </motion.button>
@@ -334,13 +331,13 @@ const Footer = () => {
             <div className="flex items-center gap-6 text-sm">
               <Link
                 to="/privacy"
-                className="text-gray-400 hover:text-purple-400 transition-colors"
+                className="text-gray-400 hover:text-blue-400 transition-colors"
               >
                 Privacy Policy
               </Link>
               <Link
                 to="/terms"
-                className="text-gray-400 hover:text-purple-400 transition-colors"
+                className="text-gray-400 hover:text-blue-400 transition-colors"
               >
                 Terms of Service
               </Link>
@@ -350,7 +347,7 @@ const Footer = () => {
       </div>
 
       {/* Decorative bottom gradient line */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500" />
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-blue-500 to-blue-500" />
     </footer>
   );
 };

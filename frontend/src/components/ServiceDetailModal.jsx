@@ -136,25 +136,25 @@ const ServiceDetailModal = ({ service, isOpen, onClose }) => {
                   {/* Benefits Grid */}
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                     <div className="bg-gray-800/30 rounded-xl p-4 text-center border border-gray-700">
-                      <Clock className="w-6 h-6 text-purple-400 mx-auto mb-2" />
+                      <Clock className="w-6 h-6 text-blue-400 mx-auto mb-2" />
                       <span className="text-sm text-gray-300">
                         Quick Deployment
                       </span>
                     </div>
                     <div className="bg-gray-800/30 rounded-xl p-4 text-center border border-gray-700">
-                      <DollarSign className="w-6 h-6 text-purple-400 mx-auto mb-2" />
+                      <DollarSign className="w-6 h-6 text-blue-400 mx-auto mb-2" />
                       <span className="text-sm text-gray-300">
                         Budget Friendly
                       </span>
                     </div>
                     <div className="bg-gray-800/30 rounded-xl p-4 text-center border border-gray-700">
-                      <Users className="w-6 h-6 text-purple-400 mx-auto mb-2" />
+                      <Users className="w-6 h-6 text-blue-400 mx-auto mb-2" />
                       <span className="text-sm text-gray-300">
                         24/7 Support
                       </span>
                     </div>
                     <div className="bg-gray-800/30 rounded-xl p-4 text-center border border-gray-700">
-                      <Shield className="w-6 h-6 text-purple-400 mx-auto mb-2" />
+                      <Shield className="w-6 h-6 text-blue-400 mx-auto mb-2" />
                       <span className="text-sm text-gray-300">
                         Secure & Reliable
                       </span>
@@ -164,7 +164,7 @@ const ServiceDetailModal = ({ service, isOpen, onClose }) => {
                   {/* CTA Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Link to="/contact">
-                      <button className="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg hover:shadow-purple-500/25 transition-all flex items-center justify-center gap-2">
+                      <button className="flex-1 bg-gradient-to-r from-blue-500 to-pink-500 text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all flex items-center justify-center gap-2">
                         Request Demo
                         <ArrowRight className="w-4 h-4" />
                       </button>

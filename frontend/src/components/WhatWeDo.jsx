@@ -14,34 +14,36 @@ const WhatWeDo = () => {
     {
       icon: Code2,
       title: "Software Development",
-      description: "Custom software solutions tailored to your business needs.",
+      description:
+        "Custom software solutions tailored to your business needs, from web apps to enterprise systems.",
       color: "blue",
     },
     {
       icon: Satellite,
       title: "Starlink Kits",
       description:
-        "High-speed satellite internet solutions for remote and underserved areas.",
+        "High-speed satellite internet solutions for remote and underserved areas, with professional installation.",
       color: "orange",
     },
     {
       icon: Network,
       title: "Networking Equipment",
       description:
-        "Professional networking equipment and installation services for technicians.",
+        "Professional networking equipment and installation services for businesses and technicians.",
       color: "blue",
     },
     {
       icon: Smartphone,
       title: "Laptops & Phones",
       description:
-        "Quality laptops and smartphones from leading manufacturers.",
+        "Quality laptops and smartphones from leading manufacturers, with warranty and support.",
       color: "orange",
     },
     {
       icon: Smartphone,
       title: "CCTV Systems",
-      description: "Professional CCTV systems and installation services.",
+      description:
+        "Professional CCTV systems and installation services for security and surveillance.",
       color: "orange",
     },
   ];
@@ -49,26 +51,26 @@ const WhatWeDo = () => {
   const getColorClasses = (color) => {
     if (color === "orange") {
       return {
-        bg: "bg-orange-500",
-        gradient: "from-orange-400 to-orange-600",
+        iconBg: "bg-orange-500",
+        iconShadow: "shadow-orange-500/30",
         text: "text-orange-400",
         border: "border-orange-500/30",
-        shadow: "shadow-orange-500/30",
+        hoverBg: "hover:bg-orange-500/5",
       };
     } else {
       return {
-        bg: "bg-blue-500",
-        gradient: "from-blue-400 to-blue-600",
+        iconBg: "bg-blue-500",
+        iconShadow: "shadow-blue-500/30",
         text: "text-blue-400",
         border: "border-blue-500/30",
-        shadow: "shadow-blue-500/30",
+        hoverBg: "hover:bg-blue-500/5",
       };
     }
   };
 
   return (
     <section className="relative py-24 bg-gray-900">
-      {/* Static background pattern – orange dots */}
+      {/* Background pattern */}
       <div className="absolute inset-0 opacity-20">
         <div
           className="absolute inset-0"
@@ -80,20 +82,19 @@ const WhatWeDo = () => {
         />
       </div>
 
-      {/* Static gradient orbs – blue + orange */}
+      {/* Gradient orbs */}
       <div className="absolute top-20 left-10 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10" />
       <div className="absolute bottom-20 right-10 w-64 h-64 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10" />
 
       <div className="relative container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          {/* Section Header – static */}
+        <div className="max-w-5xl mx-auto">
+          {/* Section Header */}
           <div className="text-center mb-16">
             <div className="inline-block mb-4">
               <span className="bg-orange-500/10 backdrop-blur-sm border border-orange-500/30 px-4 py-2 rounded-full text-sm font-semibold text-orange-400 shadow-lg shadow-orange-500/10">
                 OUR SERVICES
               </span>
             </div>
-
             <h2 className="text-5xl md:text-6xl font-bold mb-4">
               <span className="bg-gradient-to-r from-orange-400 via-blue-400 to-orange-400 text-transparent bg-clip-text">
                 What We Do
@@ -105,58 +106,65 @@ const WhatWeDo = () => {
             </p>
           </div>
 
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, index) => {
-              const colors = getColorClasses(service.color);
-              return (
-                <div key={index} className="relative h-full">
-                  <div className="relative h-full bg-gray-800/90 backdrop-blur-sm rounded-xl p-8 border border-white/10">
-                    {/* Icon with gradient background – static */}
+          {/* Services List – Modern, Card‑free Layout */}
+          <div className="bg-gray-800/40 backdrop-blur-sm rounded-2xl border border-white/10 p-8 md:p-12">
+            <div className="space-y-8">
+              {services.map((service, index) => {
+                const colors = getColorClasses(service.color);
+                return (
+                  <div
+                    key={index}
+                    className={`flex flex-col md:flex-row md:items-start gap-6 p-4 rounded-xl transition-colors ${colors.hoverBg}`}
+                  >
+                    {/* Icon */}
                     <div
-                      className={`w-16 h-16 mb-6 rounded-xl bg-gradient-to-r ${colors.gradient} p-3`}
+                      className={`flex-shrink-0 w-14 h-14 rounded-xl ${colors.iconBg} p-3 shadow-lg ${colors.iconShadow} flex items-center justify-center`}
                     >
                       <service.icon className="w-full h-full text-white" />
                     </div>
 
                     {/* Content */}
-                    <h3 className={`text-xl font-bold mb-3 text-white`}>
-                      {service.title}
-                    </h3>
+                    <div className="flex-1 min-w-0">
+                      <h3 className={`text-xl font-bold mb-2 ${colors.text}`}>
+                        {service.title}
+                      </h3>
+                      <p className="text-gray-400 leading-relaxed">
+                        {service.description}
+                      </p>
+                    </div>
 
-                    <p className="text-gray-400 leading-relaxed mb-4">
-                      {service.description}
-                    </p>
-
-                    {/* Learn more link – static, no hover */}
-                    <a
-                      href="#"
-                      className={`inline-flex items-center gap-2 text-sm ${colors.text}`}
-                    >
-                      Learn more <ArrowRight size={14} />
-                    </a>
-
-                    {/* Static decorative sparkle – no rotation */}
-                    <div
-                      className={`absolute top-4 right-4 ${colors.text} opacity-20`}
-                    >
-                      <Sparkles size={24} />
+                    {/* Learn More Link – subtle */}
+                    <div className="flex-shrink-0 md:self-center">
+                      <a
+                        href="#"
+                        className={`inline-flex items-center gap-2 text-sm font-medium ${colors.text} hover:underline`}
+                      >
+                        Learn More <ArrowRight size={14} />
+                      </a>
                     </div>
                   </div>
-                </div>
-              );
-            })}
-          </div>
+                );
+              })}
+            </div>
 
-          {/* Bottom CTA – static button, orange primary */}
-          <div className="text-center mt-16">
-            <a
-              href="#"
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-orange-500/30"
-            >
-              Explore All Services
-              <ArrowRight className="w-5 h-5" />
-            </a>
+            {/* Divider with subtle sparkle */}
+            <div className="relative my-8">
+              <div className="border-t border-white/10" />
+              <div className="absolute left-1/2 -top-3 -translate-x-1/2 bg-gray-800 px-4">
+                <Sparkles className="w-6 h-6 text-orange-500/30" />
+              </div>
+            </div>
+
+            {/* Bottom CTA */}
+            <div className="text-center mt-6">
+              <a
+                href="#"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-orange-500/30"
+              >
+                Explore All Services
+                <ArrowRight className="w-5 h-5" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

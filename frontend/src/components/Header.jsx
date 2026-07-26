@@ -5,14 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { motion, AnimatePresence } from "framer-motion";
 import { logout } from "../store/slices/authSlice";
 import { selectCartItemsCount } from "../store/slices/cartSlice";
-import {
-  Menu,
-  X,
-  ShoppingCart,
-  LogOut,
-  LayoutDashboard,
-  Shield,
-} from "lucide-react";
+import { Menu, X, ShoppingCart, LogOut, LayoutDashboard } from "lucide-react";
 import logo from "../assets/logo.png";
 
 const Header = () => {
@@ -32,7 +25,6 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location]);
@@ -51,7 +43,6 @@ const Header = () => {
     { name: "Contact", path: "/contact" },
   ];
 
-  // Animation variants
   const logoVariants = {
     hidden: { opacity: 0, x: -20 },
     visible: {
@@ -90,13 +81,13 @@ const Header = () => {
       transition={{ duration: 0.5, type: "spring", stiffness: 100 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-slate-900/95 backdrop-blur-lg shadow-lg shadow-purple-500/10 py-2"
+          ? "bg-slate-900/95 backdrop-blur-lg shadow-lg shadow-blue-500/10 py-2"
           : "bg-transparent py-4"
       }`}
     >
       <nav className="container mx-auto px-4">
         <div className="flex items-center justify-between">
-          {/* Logo with Image */}
+          {/* Logo */}
           <motion.div
             variants={logoVariants}
             initial="hidden"
@@ -108,7 +99,6 @@ const Header = () => {
                 transition={{ duration: 0.5 }}
                 className="relative"
               >
-                {/* Logo Image */}
                 <img
                   src={logo}
                   alt="F.T.I. Logo"
@@ -126,7 +116,6 @@ const Header = () => {
                 />
               </motion.div>
 
-              {/* Hidden on mobile, visible on medium screens and up */}
               <div className="hidden md:flex flex-col">
                 <span className="text-lg font-semibold text-white">
                   Fancy Tech
@@ -150,7 +139,7 @@ const Header = () => {
                   to={item.path}
                   className={`relative px-4 py-2 text-sm font-medium transition-colors group ${
                     location.pathname === item.path
-                      ? "text-purple-400"
+                      ? "text-blue-400"
                       : "text-gray-300 hover:text-white"
                   }`}
                 >
@@ -158,7 +147,7 @@ const Header = () => {
                   {location.pathname === item.path && (
                     <motion.div
                       layoutId="activeNav"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-400 to-blue-400"
                       initial={false}
                       transition={{
                         type: "spring",
@@ -172,7 +161,7 @@ const Header = () => {
             ))}
           </div>
 
-          {/* Right side icons and buttons */}
+          {/* Right side icons */}
           <motion.div
             className="flex items-center gap-3"
             initial={{ opacity: 0, x: 20 }}
@@ -183,14 +172,14 @@ const Header = () => {
             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
               <Link
                 to="/cart"
-                className="relative p-2 text-gray-300 hover:text-purple-400 transition-colors"
+                className="relative p-2 text-gray-300 hover:text-blue-400 transition-colors"
               >
                 <ShoppingCart className="w-5 h-5" />
                 {cartItemsCount > 0 && (
                   <motion.span
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
-                    className="absolute -top-1 -right-1 bg-gradient-to-r from-purple-500 to-blue-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center shadow-lg"
+                    className="absolute -top-1 -right-1 bg-gradient-to-r from-blue-500 to-blue-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center shadow-lg"
                   >
                     {cartItemsCount}
                   </motion.span>
@@ -198,8 +187,8 @@ const Header = () => {
               </Link>
             </motion.div>
 
-            {/* Admin Section */}
-            {userInfo && userInfo.role === "admin" ? (
+            {/* Admin section – only visible when logged in as admin */}
+            {userInfo && userInfo.role === "admin" && (
               <div className="flex items-center gap-2">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
@@ -207,7 +196,7 @@ const Header = () => {
                 >
                   <Link
                     to="/admin/dashboard"
-                    className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500/20 to-blue-500/20 backdrop-blur-sm border border-white/10 rounded-lg text-purple-400 hover:text-purple-300 transition-all"
+                    className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/20 to-blue-500/20 backdrop-blur-sm border border-white/10 rounded-lg text-blue-400 hover:text-blue-300 transition-all"
                   >
                     <LayoutDashboard className="w-4 h-4" />
                     <span className="text-sm font-medium">Dashboard</span>
@@ -224,24 +213,11 @@ const Header = () => {
                   <span className="text-sm font-medium">Logout</span>
                 </motion.button>
               </div>
-            ) : (
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link
-                  to="/admin/login"
-                  className="flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg font-medium text-sm shadow-lg shadow-purple-500/30 hover:shadow-xl hover:shadow-purple-500/40 transition-all"
-                >
-                  <Shield className="w-4 h-4" />
-                  Admin
-                </Link>
-              </motion.div>
             )}
 
             {/* Mobile menu button */}
             <motion.button
-              className="md:hidden p-2 text-gray-300 hover:text-purple-400 transition-colors"
+              className="md:hidden p-2 text-gray-300 hover:text-blue-400 transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               whileTap={{ scale: 0.9 }}
               aria-label="Toggle mobile menu"
@@ -278,7 +254,7 @@ const Header = () => {
                         to={item.path}
                         className={`block px-4 py-3 rounded-lg transition-all ${
                           location.pathname === item.path
-                            ? "bg-gradient-to-r from-purple-500/20 to-blue-500/20 text-purple-400"
+                            ? "bg-gradient-to-r from-blue-500/20 to-blue-500/20 text-blue-400"
                             : "text-gray-300 hover:bg-white/5 hover:text-white"
                         }`}
                       >
@@ -287,47 +263,32 @@ const Header = () => {
                     </motion.div>
                   ))}
 
-                  {/* Mobile admin section */}
-                  <div className="pt-4 mt-2 border-t border-white/10">
-                    {userInfo && userInfo.role === "admin" ? (
-                      <>
-                        <motion.div
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: 0.5 }}
-                        >
-                          <Link
-                            to="/admin/dashboard"
-                            className="block px-4 py-3 text-purple-400 hover:bg-white/5 rounded-lg transition-all"
-                          >
-                            Dashboard
-                          </Link>
-                        </motion.div>
-                        <motion.button
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: 0.6 }}
-                          onClick={handleLogout}
-                          className="w-full text-left px-4 py-3 text-gray-300 hover:bg-white/5 rounded-lg transition-all"
-                        >
-                          Logout
-                        </motion.button>
-                      </>
-                    ) : (
+                  {/* Mobile admin section – only if logged in as admin */}
+                  {userInfo && userInfo.role === "admin" && (
+                    <div className="pt-4 mt-2 border-t border-white/10">
                       <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.5 }}
                       >
                         <Link
-                          to="/admin/login"
-                          className="block px-4 py-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg font-medium text-center"
+                          to="/admin/dashboard"
+                          className="block px-4 py-3 text-blue-400 hover:bg-white/5 rounded-lg transition-all"
                         >
-                          Admin Login
+                          Dashboard
                         </Link>
                       </motion.div>
-                    )}
-                  </div>
+                      <motion.button
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.6 }}
+                        onClick={handleLogout}
+                        className="w-full text-left px-4 py-3 text-gray-300 hover:bg-white/5 rounded-lg transition-all"
+                      >
+                        Logout
+                      </motion.button>
+                    </div>
+                  )}
                 </div>
               </div>
             </motion.div>

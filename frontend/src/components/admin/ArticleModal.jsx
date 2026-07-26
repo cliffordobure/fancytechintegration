@@ -103,7 +103,7 @@ const ArticleModal = ({ isOpen, onClose, article, onSubmit }) => {
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-white/10">
                   <h2 className="text-2xl font-bold">
-                    <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+                    <span className="bg-gradient-to-r from-blue-400 to-blue-400 text-transparent bg-clip-text">
                       {article ? "Edit Article" : "Create New Article"}
                     </span>
                   </h2>
@@ -112,7 +112,7 @@ const ArticleModal = ({ isOpen, onClose, article, onSubmit }) => {
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                       onClick={() => setPreviewMode(!previewMode)}
-                      className="p-2 text-gray-400 hover:text-purple-400 transition-colors"
+                      className="p-2 text-gray-400 hover:text-blue-400 transition-colors"
                       title={previewMode ? "Edit Mode" : "Preview Mode"}
                     >
                       <Eye size={20} />
@@ -137,7 +137,7 @@ const ArticleModal = ({ isOpen, onClose, article, onSubmit }) => {
                         onClick={() => setActiveTab(tab.id)}
                         className={`flex items-center gap-2 px-6 py-4 text-sm font-medium transition-colors ${
                           activeTab === tab.id
-                            ? "text-purple-400 border-b-2 border-purple-400"
+                            ? "text-blue-400 border-b-2 border-blue-400"
                             : "text-gray-400 hover:text-white"
                         }`}
                       >
@@ -185,7 +185,7 @@ const ArticleModal = ({ isOpen, onClose, article, onSubmit }) => {
                               value={formData.title}
                               onChange={handleChange}
                               required
-                              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
                               placeholder="Enter article title"
                             />
                           </div>
@@ -199,7 +199,7 @@ const ArticleModal = ({ isOpen, onClose, article, onSubmit }) => {
                               value={formData.category}
                               onChange={handleChange}
                               required
-                              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
                             >
                               <option value="news" className="bg-gray-800">
                                 News
@@ -235,7 +235,7 @@ const ArticleModal = ({ isOpen, onClose, article, onSubmit }) => {
                               onChange={handleChange}
                               required
                               rows="3"
-                              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
                               placeholder="Short description of the article"
                             />
                           </div>
@@ -250,7 +250,7 @@ const ArticleModal = ({ isOpen, onClose, article, onSubmit }) => {
                               onChange={handleChange}
                               required
                               rows="10"
-                              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white font-mono text-sm focus:outline-none focus:border-purple-500 transition-colors"
+                              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white font-mono text-sm focus:outline-none focus:border-blue-500 transition-colors"
                               placeholder="<p>Your article content here...</p>"
                             />
                             <p className="text-xs text-gray-500 mt-1">
@@ -270,7 +270,7 @@ const ArticleModal = ({ isOpen, onClose, article, onSubmit }) => {
                               value={formData.tags}
                               onChange={handleChange}
                               placeholder="technology, tutorial, guide"
-                              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
                             />
                           </div>
 
@@ -278,7 +278,7 @@ const ArticleModal = ({ isOpen, onClose, article, onSubmit }) => {
                             <label className="block text-sm font-medium text-gray-400 mb-2">
                               Featured Image
                             </label>
-                            <div className="border-2 border-dashed border-white/10 rounded-lg p-4 text-center hover:border-purple-500/50 transition-colors">
+                            <div className="border-2 border-dashed border-white/10 rounded-lg p-4 text-center hover:border-blue-500/50 transition-colors">
                               <input
                                 type="file"
                                 accept="image/*"
@@ -324,7 +324,7 @@ const ArticleModal = ({ isOpen, onClose, article, onSubmit }) => {
                               name="seoTitle"
                               value={formData.seoTitle}
                               onChange={handleChange}
-                              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
                               placeholder="SEO optimized title"
                             />
                           </div>
@@ -338,7 +338,7 @@ const ArticleModal = ({ isOpen, onClose, article, onSubmit }) => {
                               value={formData.seoDescription}
                               onChange={handleChange}
                               rows="3"
-                              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
                               placeholder="Meta description for search engines"
                             />
                           </div>
@@ -353,7 +353,7 @@ const ArticleModal = ({ isOpen, onClose, article, onSubmit }) => {
                               value={formData.seoKeywords}
                               onChange={handleChange}
                               placeholder="keyword1, keyword2, keyword3"
-                              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
                             />
                             <p className="text-xs text-gray-500 mt-1">
                               Comma-separated keywords for search engines
@@ -378,7 +378,7 @@ const ArticleModal = ({ isOpen, onClose, article, onSubmit }) => {
                                 name="published"
                                 checked={formData.published}
                                 onChange={handleChange}
-                                className="w-4 h-4 rounded border-white/10 bg-white/5 text-purple-500 focus:ring-purple-500/50"
+                                className="w-4 h-4 rounded border-white/10 bg-white/5 text-blue-500 focus:ring-blue-500/50"
                               />
                               <span className="text-sm text-gray-300">
                                 Publish immediately
@@ -439,7 +439,7 @@ const ArticleModal = ({ isOpen, onClose, article, onSubmit }) => {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         type="submit"
-                        className="px-6 py-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg font-medium hover:shadow-lg transition-all"
+                        className="px-6 py-2 bg-gradient-to-r from-blue-500 to-blue-500 text-white rounded-lg font-medium hover:shadow-lg transition-all"
                       >
                         {article ? "Update Article" : "Create Article"}
                       </motion.button>

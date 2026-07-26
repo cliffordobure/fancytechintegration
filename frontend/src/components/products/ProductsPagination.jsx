@@ -47,7 +47,7 @@ const ProductsPagination = ({ currentPage, totalPages, onPageChange }) => {
         className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all ${
           currentPage === 1
             ? "bg-gray-800/50 text-gray-600 cursor-not-allowed"
-            : "bg-gray-800/50 text-white hover:bg-purple-500/20 border border-white/10 hover:border-purple-500"
+            : "bg-gray-800/50 text-white hover:bg-blue-500/20 border border-white/10 hover:border-blue-500"
         }`}
       >
         <ChevronLeft size={18} />
@@ -67,8 +67,8 @@ const ProductsPagination = ({ currentPage, totalPages, onPageChange }) => {
               onClick={() => onPageChange(page)}
               className={`w-10 h-10 rounded-lg font-medium transition-all ${
                 currentPage === page
-                  ? "bg-gradient-to-r from-purple-500 to-blue-500 text-white shadow-lg shadow-purple-500/30"
-                  : "bg-gray-800/50 text-gray-400 hover:text-white border border-white/10 hover:border-purple-500"
+                  ? "bg-gradient-to-r from-blue-500 to-blue-500 text-white shadow-lg shadow-blue-500/30"
+                  : "bg-gray-800/50 text-gray-400 hover:text-white border border-white/10 hover:border-blue-500"
               }`}
             >
               {page}
@@ -86,7 +86,7 @@ const ProductsPagination = ({ currentPage, totalPages, onPageChange }) => {
         className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all ${
           currentPage === totalPages
             ? "bg-gray-800/50 text-gray-600 cursor-not-allowed"
-            : "bg-gray-800/50 text-white hover:bg-purple-500/20 border border-white/10 hover:border-purple-500"
+            : "bg-gray-800/50 text-white hover:bg-blue-500/20 border border-white/10 hover:border-blue-500"
         }`}
       >
         <ChevronRight size={18} />

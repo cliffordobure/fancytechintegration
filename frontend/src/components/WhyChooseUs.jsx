@@ -46,7 +46,7 @@ const WhyChooseUs = () => {
       title: "Expert Support",
       description:
         "Our team of experts is always ready to provide technical support whenever you need it.",
-      color: "from-purple-400 to-indigo-400",
+      color: "from-blue-400 to-indigo-400",
       stats: "24/7 Support",
     },
     {
@@ -78,7 +78,7 @@ const WhyChooseUs = () => {
       title: "Warranty & Support",
       description:
         "Comprehensive warranty coverage and dedicated support to protect your technology investments.",
-      color: "from-blue-400 to-purple-400",
+      color: "from-blue-400 to-blue-400",
       stats: "2 Year Warranty",
     },
   ];
@@ -98,7 +98,7 @@ const WhyChooseUs = () => {
         />
 
         {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-transparent to-blue-900/30" />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-transparent to-blue-900/30" />
       </div>
 
       {/* Floating elements */}
@@ -140,17 +140,17 @@ const WhyChooseUs = () => {
               transition={{ delay: 0.2, type: "spring" }}
               className="inline-block mb-4"
             >
-              <span className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 backdrop-blur-sm border border-white/10 px-4 py-2 rounded-full text-sm font-semibold text-purple-400">
+              <span className="bg-gradient-to-r from-blue-500/20 to-blue-500/20 backdrop-blur-sm border border-white/10 px-4 py-2 rounded-full text-sm font-semibold text-blue-400">
                 ⭐ WHY PARTNER WITH US ⭐
               </span>
             </motion.div>
 
             <h2 className="text-5xl md:text-6xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 text-transparent bg-clip-text bg-[length:200%] animate-gradient">
+              <span className="bg-gradient-to-r from-blue-400 via-blue-400 to-blue-400 text-transparent bg-clip-text bg-[length:200%] animate-gradient">
                 Why Choose Us
               </span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto rounded-full mb-4" />
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-500 mx-auto rounded-full mb-4" />
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
               The advantages of partnering with Fancy Tech Integration
             </p>
@@ -221,7 +221,7 @@ const WhyChooseUs = () => {
                     <motion.div
                       animate={{ rotate: 360, scale: [1, 1.2, 1] }}
                       transition={{ duration: 10, repeat: Infinity }}
-                      className="absolute bottom-2 right-2 text-purple-500/10"
+                      className="absolute bottom-2 right-2 text-blue-500/10"
                     >
                       <Star size={24} />
                     </motion.div>
@@ -239,12 +239,12 @@ const WhyChooseUs = () => {
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="inline-flex items-center gap-4 bg-gradient-to-r from-purple-500/10 to-blue-500/10 backdrop-blur-sm border border-white/10 rounded-full p-1"
+              className="inline-flex items-center gap-4 bg-gradient-to-r from-blue-500/10 to-blue-500/10 backdrop-blur-sm border border-white/10 rounded-full p-1"
             >
               <span className="text-gray-400 pl-6">Ready to get started?</span>
               <motion.button
                 whileHover={{ x: 5 }}
-                className="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 shadow-lg"
+                className="bg-gradient-to-r from-blue-500 to-blue-500 text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 shadow-lg"
               >
                 Contact Us Today
                 <Rocket className="w-4 h-4" />

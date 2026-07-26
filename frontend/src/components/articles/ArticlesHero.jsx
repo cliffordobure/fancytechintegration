@@ -23,7 +23,7 @@ const ArticlesHero = () => {
             rotate: [0, 45, 0],
           }}
           transition={{ duration: 20, repeat: Infinity }}
-          className="absolute top-20 -right-20 w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
+          className="absolute top-20 -right-20 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
         />
         <motion.div
           animate={{
@@ -42,7 +42,7 @@ const ArticlesHero = () => {
           rotate: [0, 10, 0],
         }}
         transition={{ duration: 6, repeat: Infinity }}
-        className="absolute top-40 right-40 text-purple-500/10 hidden lg:block"
+        className="absolute top-40 right-40 text-blue-500/10 hidden lg:block"
       >
         <Newspaper size={80} />
       </motion.div>
@@ -54,7 +54,7 @@ const ArticlesHero = () => {
           transition={{ delay: 0.2, type: "spring" }}
           className="inline-block mb-6"
         >
-          <span className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 backdrop-blur-sm border border-white/10 px-6 py-3 rounded-full text-sm font-semibold text-purple-400">
+          <span className="bg-gradient-to-r from-blue-500/20 to-blue-500/20 backdrop-blur-sm border border-white/10 px-6 py-3 rounded-full text-sm font-semibold text-blue-400">
             ✦ OUR BLOG ✦
           </span>
         </motion.div>
@@ -65,7 +65,7 @@ const ArticlesHero = () => {
           transition={{ delay: 0.3 }}
           className="text-5xl md:text-7xl font-bold mb-6"
         >
-          <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 text-transparent bg-clip-text bg-[length:200%] animate-gradient">
+          <span className="bg-gradient-to-r from-blue-400 via-blue-400 to-blue-400 text-transparent bg-clip-text bg-[length:200%] animate-gradient">
             Articles & Blog
           </span>
         </motion.h1>

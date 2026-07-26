@@ -41,7 +41,7 @@ const OrdersTable = ({ orders = [], onUpdateStatus }) => {
     const colors = {
       pending: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30",
       processing: "bg-blue-500/20 text-blue-400 border-blue-500/30",
-      shipped: "bg-purple-500/20 text-purple-400 border-purple-500/30",
+      shipped: "bg-blue-500/20 text-blue-400 border-blue-500/30",
       delivered: "bg-green-500/20 text-green-400 border-green-500/30",
       cancelled: "bg-red-500/20 text-red-400 border-red-500/30",
     };
@@ -174,7 +174,7 @@ const OrdersTable = ({ orders = [], onUpdateStatus }) => {
                     >
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center gap-2">
-                          <Package size={16} className="text-purple-400" />
+                          <Package size={16} className="text-blue-400" />
                           <span className="text-sm font-medium text-white">
                             {getOrderNumber(order)}
                           </span>
@@ -201,7 +201,7 @@ const OrdersTable = ({ orders = [], onUpdateStatus }) => {
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
-                        <span className="text-sm font-semibold text-purple-400">
+                        <span className="text-sm font-semibold text-blue-400">
                           $ {getTotal(order).toLocaleString()}
                         </span>
                       </td>
@@ -283,7 +283,7 @@ const OrdersTable = ({ orders = [], onUpdateStatus }) => {
                               e.stopPropagation();
                               handleViewDetails(order);
                             }}
-                            className="p-2 text-gray-400 hover:text-purple-400 transition-colors"
+                            className="p-2 text-gray-400 hover:text-blue-400 transition-colors"
                             title="View Details"
                           >
                             <Eye size={18} />
@@ -295,7 +295,7 @@ const OrdersTable = ({ orders = [], onUpdateStatus }) => {
                                 expandedRow === order._id ? null : order._id,
                               );
                             }}
-                            className="p-2 text-gray-400 hover:text-purple-400 transition-colors"
+                            className="p-2 text-gray-400 hover:text-blue-400 transition-colors"
                           >
                             {expandedRow === order._id ? (
                               <ChevronUp size={18} />
@@ -321,7 +321,7 @@ const OrdersTable = ({ orders = [], onUpdateStatus }) => {
                               {/* Customer Details */}
                               <div>
                                 <h4 className="text-sm font-semibold text-white mb-3 flex items-center gap-2">
-                                  <User size={16} className="text-purple-400" />
+                                  <User size={16} className="text-blue-400" />
                                   Customer Details
                                 </h4>
                                 <div className="space-y-2">
@@ -357,7 +357,7 @@ const OrdersTable = ({ orders = [], onUpdateStatus }) => {
                                 <h4 className="text-sm font-semibold text-white mb-3 flex items-center gap-2">
                                   <CreditCard
                                     size={16}
-                                    className="text-purple-400"
+                                    className="text-blue-400"
                                   />
                                   Payment & Shipping
                                 </h4>
@@ -389,7 +389,7 @@ const OrdersTable = ({ orders = [], onUpdateStatus }) => {
                                 <h4 className="text-sm font-semibold text-white mb-3 flex items-center gap-2">
                                   <Package
                                     size={16}
-                                    className="text-purple-400"
+                                    className="text-blue-400"
                                   />
                                   Items
                                 </h4>
@@ -403,7 +403,7 @@ const OrdersTable = ({ orders = [], onUpdateStatus }) => {
                                         {item?.name || "Unknown"} x
                                         {item?.quantity || 0}
                                       </span>
-                                      <span className="text-purple-400">
+                                      <span className="text-blue-400">
                                         ${" "}
                                         {(
                                           (item?.price || 0) *

@@ -2,7 +2,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { motion, AnimatePresence } from "framer-motion";
 import {
   selectCartItems,
   selectCartTotal,
@@ -49,14 +48,10 @@ const CartPage = () => {
 
       <div className="min-h-screen bg-gray-900 pt-24 pb-16">
         <div className="container mx-auto px-4">
-          {/* Header */}
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mb-8"
-          >
+          {/* Header – static, no animation */}
+          <div className="mb-8">
             <h1 className="text-4xl md:text-5xl font-bold">
-              <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 text-transparent bg-clip-text">
+              <span className="bg-gradient-to-r from-blue-400 via-orange-400 to-blue-400 text-transparent bg-clip-text">
                 Shopping Cart
               </span>
             </h1>
@@ -66,25 +61,22 @@ const CartPage = () => {
                 {cartItems.length === 1 ? "item" : "items"} in your cart
               </p>
             )}
-          </motion.div>
+          </div>
 
           {cartItems.length === 0 ? (
             <EmptyCart />
           ) : (
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {/* Cart Items */}
+              {/* Cart Items – no AnimatePresence */}
               <div className="lg:col-span-2 space-y-4">
-                <AnimatePresence mode="popLayout">
-                  {cartItems.map((item, index) => (
-                    <CartItem
-                      key={item._id}
-                      item={item}
-                      index={index}
-                      onRemove={handleRemoveItem}
-                      onQuantityChange={handleQuantityChange}
-                    />
-                  ))}
-                </AnimatePresence>
+                {cartItems.map((item) => (
+                  <CartItem
+                    key={item._id}
+                    item={item}
+                    onRemove={handleRemoveItem}
+                    onQuantityChange={handleQuantityChange}
+                  />
+                ))}
               </div>
 
               {/* Cart Summary */}

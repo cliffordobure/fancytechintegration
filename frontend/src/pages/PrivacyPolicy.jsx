@@ -12,7 +12,7 @@ const PrivacyPolicy = () => {
         <Link to="/">
           <motion.div
             whileHover={{ x: -5 }}
-            className="inline-flex items-center gap-2 text-gray-400 hover:text-purple-400 transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors mb-8"
           >
             <ArrowLeft size={16} />
             Back to Home
@@ -25,9 +25,9 @@ const PrivacyPolicy = () => {
           animate={{ opacity: 1, y: 0 }}
           className="mb-12"
         >
-          <div className="inline-flex items-center gap-2 bg-purple-500/10 px-4 py-2 rounded-full mb-4">
-            <Shield className="w-4 h-4 text-purple-400" />
-            <span className="text-sm font-medium text-purple-400">Legal</span>
+          <div className="inline-flex items-center gap-2 bg-blue-500/10 px-4 py-2 rounded-full mb-4">
+            <Shield className="w-4 h-4 text-blue-400" />
+            <span className="text-sm font-medium text-blue-400">Legal</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Privacy Policy
@@ -47,7 +47,7 @@ const PrivacyPolicy = () => {
           {/* Introduction */}
           <section>
             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-              <Lock className="w-5 h-5 text-purple-400" />
+              <Lock className="w-5 h-5 text-blue-400" />
               Introduction
             </h2>
             <p className="text-gray-300 leading-relaxed">
@@ -63,7 +63,7 @@ const PrivacyPolicy = () => {
           {/* Information Collection */}
           <section>
             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-              <Database className="w-5 h-5 text-purple-400" />
+              <Database className="w-5 h-5 text-blue-400" />
               Information We Collect
             </h2>
             <div className="space-y-4 text-gray-300">
@@ -97,7 +97,7 @@ const PrivacyPolicy = () => {
           {/* How We Use Information */}
           <section>
             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-              <Eye className="w-5 h-5 text-purple-400" />
+              <Eye className="w-5 h-5 text-blue-400" />
               How We Use Your Information
             </h2>
             <div className="space-y-4 text-gray-300">
@@ -120,7 +120,7 @@ const PrivacyPolicy = () => {
           {/* Cookies */}
           <section>
             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-              <Cookie className="w-5 h-5 text-purple-400" />
+              <Cookie className="w-5 h-5 text-blue-400" />
               Cookies and Tracking Technologies
             </h2>
             <p className="text-gray-300 leading-relaxed">
@@ -148,7 +148,7 @@ const PrivacyPolicy = () => {
           </section>
 
           {/* Contact Information */}
-          <section className="bg-purple-500/10 p-6 rounded-xl border border-purple-500/20">
+          <section className="bg-blue-500/10 p-6 rounded-xl border border-blue-500/20">
             <h2 className="text-xl font-bold text-white mb-3">Contact Us</h2>
             <p className="text-gray-300 mb-2">
               If you have questions about this Privacy Policy, please contact

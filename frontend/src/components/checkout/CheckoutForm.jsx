@@ -8,7 +8,7 @@ import {
   MapPin,
   Home,
   Building,
-  Mail as MailIcon,
+  MailIcon,
   FileText,
 } from "lucide-react";
 
@@ -19,7 +19,7 @@ const CheckoutForm = ({ formData, errors, onChange, onSubmit, loading }) => {
     ${
       fieldError
         ? "border-red-500 focus:ring-red-500/50"
-        : "border-white/10 focus:border-purple-500 focus:ring-purple-500/50"
+        : "border-white/10 focus:border-orange-500 focus:ring-orange-500/50"
     }
   `;
 
@@ -33,7 +33,7 @@ const CheckoutForm = ({ formData, errors, onChange, onSubmit, loading }) => {
         className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-white/10"
       >
         <h2 className="text-2xl font-bold mb-6">
-          <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+          <span className="bg-gradient-to-r from-orange-400 to-blue-400 text-transparent bg-clip-text">
             Customer Information
           </span>
         </h2>
@@ -45,14 +45,13 @@ const CheckoutForm = ({ formData, errors, onChange, onSubmit, loading }) => {
               Full Name *
             </label>
             <div className="relative group">
-              <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-purple-400 transition-colors" />
+              <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-orange-400 transition-colors" />
               <input
                 type="text"
                 name="name"
                 value={formData.name}
                 onChange={onChange}
                 className={inputClasses(errors.name)}
-                placeholder="John Doe"
                 required
               />
             </div>
@@ -67,14 +66,13 @@ const CheckoutForm = ({ formData, errors, onChange, onSubmit, loading }) => {
               Email *
             </label>
             <div className="relative group">
-              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-purple-400 transition-colors" />
+              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-orange-400 transition-colors" />
               <input
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={onChange}
                 className={inputClasses(errors.email)}
-                placeholder="john@example.com"
                 required
               />
             </div>
@@ -89,14 +87,13 @@ const CheckoutForm = ({ formData, errors, onChange, onSubmit, loading }) => {
               Phone Number *
             </label>
             <div className="relative group">
-              <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-purple-400 transition-colors" />
+              <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-orange-400 transition-colors" />
               <input
                 type="tel"
                 name="phone"
                 value={formData.phone}
                 onChange={onChange}
                 className={inputClasses(errors.phone)}
-                placeholder="+254 700 000 000"
                 required
               />
             </div>
@@ -115,7 +112,7 @@ const CheckoutForm = ({ formData, errors, onChange, onSubmit, loading }) => {
         className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-white/10"
       >
         <h2 className="text-2xl font-bold mb-6">
-          <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+          <span className="bg-gradient-to-r from-orange-400 to-blue-400 text-transparent bg-clip-text">
             Shipping Address
           </span>
         </h2>
@@ -127,14 +124,13 @@ const CheckoutForm = ({ formData, errors, onChange, onSubmit, loading }) => {
               Street Address *
             </label>
             <div className="relative group">
-              <Home className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-purple-400 transition-colors" />
+              <Home className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-orange-400 transition-colors" />
               <input
                 type="text"
                 name="address.street"
                 value={formData.address.street}
                 onChange={onChange}
                 className={inputClasses(errors["address.street"])}
-                placeholder="123 Main Street"
                 required
               />
             </div>
@@ -146,20 +142,19 @@ const CheckoutForm = ({ formData, errors, onChange, onSubmit, loading }) => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {/* City */}
+            {/* Town */}
             <div>
               <label className="block text-sm font-medium text-gray-400 mb-2">
-                City *
+                Residential area *
               </label>
               <div className="relative group">
-                <Building className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-purple-400 transition-colors" />
+                <Building className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-orange-400 transition-colors" />
                 <input
                   type="text"
                   name="address.city"
                   value={formData.address.city}
                   onChange={onChange}
                   className={inputClasses(errors["address.city"])}
-                  placeholder="Juba"
                   required
                 />
               </div>
@@ -170,46 +165,27 @@ const CheckoutForm = ({ formData, errors, onChange, onSubmit, loading }) => {
               )}
             </div>
 
-            {/* County */}
+            {/* town */}
             <div>
               <label className="block text-sm font-medium text-gray-400 mb-2">
-                County *
+                Town *
               </label>
               <div className="relative group">
-                <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-purple-400 transition-colors" />
+                <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-orange-400 transition-colors" />
                 <input
                   type="text"
-                  name="address.county"
-                  value={formData.address.county}
+                  name="address.state"
+                  value={formData.address.state}
                   onChange={onChange}
-                  className={inputClasses(errors["address.county"])}
-                  placeholder="Juba County"
+                  className={inputClasses(errors["address.state"])}
                   required
                 />
               </div>
-              {errors["address.county"] && (
+              {errors["address.state"] && (
                 <p className="text-red-400 text-xs mt-1">
-                  {errors["address.county"]}
+                  {errors["address.state"]}
                 </p>
               )}
-            </div>
-
-            {/* Postal Code */}
-            <div>
-              <label className="block text-sm font-medium text-gray-400 mb-2">
-                Postal Code
-              </label>
-              <div className="relative group">
-                <MailIcon className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-purple-400 transition-colors" />
-                <input
-                  type="text"
-                  name="address.postalCode"
-                  value={formData.address.postalCode}
-                  onChange={onChange}
-                  className={inputClasses()}
-                  placeholder="00100"
-                />
-              </div>
             </div>
           </div>
         </div>
@@ -223,7 +199,7 @@ const CheckoutForm = ({ formData, errors, onChange, onSubmit, loading }) => {
         className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-white/10"
       >
         <h2 className="text-2xl font-bold mb-6">
-          <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+          <span className="bg-gradient-to-r from-orange-400 to-blue-400 text-transparent bg-clip-text">
             Shipping Method
           </span>
         </h2>
@@ -233,15 +209,15 @@ const CheckoutForm = ({ formData, errors, onChange, onSubmit, loading }) => {
             {
               method: "standard",
               label: "Standard Delivery",
-              time: "5-7 business days",
-              rate: 500,
+              time: "2-8 business hours",
+              rate: 3,
               icon: "🚚",
             },
             {
               method: "express",
               label: "Express Delivery",
-              time: "2-3 business days",
-              rate: 1500,
+              time: "1-3 business hours",
+              rate: 6,
               icon: "⚡",
             },
             {
@@ -256,8 +232,8 @@ const CheckoutForm = ({ formData, errors, onChange, onSubmit, loading }) => {
               key={option.method}
               className={`relative flex items-center p-4 border-2 rounded-xl cursor-pointer transition-all group ${
                 formData.shippingMethod === option.method
-                  ? "border-purple-500 bg-purple-500/10"
-                  : "border-white/10 hover:border-purple-500/50"
+                  ? "border-orange-500 bg-orange-500/10"
+                  : "border-white/10 hover:border-orange-500/50"
               }`}
             >
               <input
@@ -274,7 +250,7 @@ const CheckoutForm = ({ formData, errors, onChange, onSubmit, loading }) => {
                   <div className="font-semibold text-white">{option.label}</div>
                   <div className="text-sm text-gray-400">{option.time}</div>
                 </div>
-                <div className="font-bold text-purple-400">
+                <div className="font-bold text-orange-400">
                   {option.rate === 0
                     ? "Free"
                     : `$ ${option.rate.toLocaleString()}`}
@@ -283,7 +259,7 @@ const CheckoutForm = ({ formData, errors, onChange, onSubmit, loading }) => {
               {formData.shippingMethod === option.method && (
                 <motion.div
                   layoutId="shippingIndicator"
-                  className="absolute inset-0 border-2 border-purple-500 rounded-xl"
+                  className="absolute inset-0 border-2 border-orange-500 rounded-xl"
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 />
               )}
@@ -300,19 +276,13 @@ const CheckoutForm = ({ formData, errors, onChange, onSubmit, loading }) => {
         className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-white/10"
       >
         <h2 className="text-2xl font-bold mb-6">
-          <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+          <span className="bg-gradient-to-r from-orange-400 to-blue-400 text-transparent bg-clip-text">
             Payment Method
           </span>
         </h2>
 
         <div className="space-y-3">
           {[
-            {
-              value: "mpesa",
-              label: "M-Pesa",
-              icon: "📱",
-              desc: "Pay with M-Pesa",
-            },
             {
               value: "bank_transfer",
               label: "Bank Transfer",
@@ -330,8 +300,8 @@ const CheckoutForm = ({ formData, errors, onChange, onSubmit, loading }) => {
               key={method.value}
               className={`relative flex items-center p-4 border-2 rounded-xl cursor-pointer transition-all ${
                 formData.paymentMethod === method.value
-                  ? "border-purple-500 bg-purple-500/10"
-                  : "border-white/10 hover:border-purple-500/50"
+                  ? "border-orange-500 bg-orange-500/10"
+                  : "border-white/10 hover:border-orange-500/50"
               }`}
             >
               <input
@@ -352,7 +322,7 @@ const CheckoutForm = ({ formData, errors, onChange, onSubmit, loading }) => {
               {formData.paymentMethod === method.value && (
                 <motion.div
                   layoutId="paymentIndicator"
-                  className="absolute inset-0 border-2 border-purple-500 rounded-xl"
+                  className="absolute inset-0 border-2 border-orange-500 rounded-xl"
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 />
               )}
@@ -369,18 +339,18 @@ const CheckoutForm = ({ formData, errors, onChange, onSubmit, loading }) => {
         className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-white/10"
       >
         <h2 className="text-2xl font-bold mb-6">
-          <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+          <span className="bg-gradient-to-r from-orange-400 to-blue-400 text-transparent bg-clip-text">
             Additional Notes
           </span>
         </h2>
         <div className="relative group">
-          <FileText className="absolute left-4 top-4 w-5 h-5 text-gray-500 group-focus-within:text-purple-400 transition-colors" />
+          <FileText className="absolute left-4 top-4 w-5 h-5 text-gray-500 group-focus-within:text-orange-400 transition-colors" />
           <textarea
             name="notes"
             value={formData.notes}
             onChange={onChange}
             rows="4"
-            className="w-full bg-white/5 border border-white/10 rounded-lg pl-12 pr-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/50 transition-all"
+            className="w-full bg-white/5 border border-white/10 rounded-lg pl-12 pr-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/50 transition-all"
             placeholder="Any special instructions or notes for your order..."
           />
         </div>
@@ -395,7 +365,7 @@ const CheckoutForm = ({ formData, errors, onChange, onSubmit, loading }) => {
         whileTap={{ scale: 0.98 }}
         type="submit"
         disabled={loading}
-        className="w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white py-5 rounded-xl font-bold text-lg disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden group"
+        className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-5 rounded-xl font-bold text-lg disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden group"
       >
         {loading ? (
           <span className="flex items-center justify-center gap-3">

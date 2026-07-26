@@ -11,7 +11,7 @@ const OrderFilters = ({ filters, setFilters, onClear }) => {
       className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-white/10 mb-6"
     >
       <div className="flex items-center gap-2 mb-4">
-        <Filter className="w-5 h-5 text-purple-400" />
+        <Filter className="w-5 h-5 text-blue-400" />
         <h2 className="text-lg font-semibold text-white">Filter Orders</h2>
       </div>
 
@@ -24,7 +24,7 @@ const OrderFilters = ({ filters, setFilters, onClear }) => {
           <select
             value={filters.status}
             onChange={(e) => setFilters({ ...filters, status: e.target.value })}
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors cursor-pointer"
+            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors cursor-pointer"
           >
             <option value="" className="bg-gray-800">
               All Statuses
@@ -57,7 +57,7 @@ const OrderFilters = ({ filters, setFilters, onClear }) => {
             onChange={(e) =>
               setFilters({ ...filters, paymentStatus: e.target.value })
             }
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors cursor-pointer"
+            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors cursor-pointer"
           >
             <option value="" className="bg-gray-800">
               All Payment Statuses
@@ -100,7 +100,7 @@ const OrderFilters = ({ filters, setFilters, onClear }) => {
         >
           <span className="text-sm text-gray-400">Active filters:</span>
           {filters.status && (
-            <span className="inline-flex items-center gap-1 bg-purple-500/20 text-purple-400 text-sm px-3 py-1 rounded-full border border-purple-500/30">
+            <span className="inline-flex items-center gap-1 bg-blue-500/20 text-blue-400 text-sm px-3 py-1 rounded-full border border-blue-500/30">
               Status: {filters.status}
               <button onClick={() => setFilters({ ...filters, status: "" })}>
                 <X size={14} />

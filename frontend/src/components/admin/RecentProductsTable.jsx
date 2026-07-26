@@ -14,8 +14,8 @@ const RecentProductsTable = ({ products }) => {
         transition={{ delay: 0.4 }}
         className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10 text-center"
       >
-        <div className="w-16 h-16 rounded-full bg-gradient-to-r from-purple-500/20 to-blue-500/20 flex items-center justify-center mx-auto mb-4">
-          <Package className="w-8 h-8 text-purple-400" />
+        <div className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-500/20 to-blue-500/20 flex items-center justify-center mx-auto mb-4">
+          <Package className="w-8 h-8 text-blue-400" />
         </div>
         <h3 className="text-xl font-bold text-white mb-2">No Products Yet</h3>
         <p className="text-gray-400 mb-6">
@@ -23,7 +23,7 @@ const RecentProductsTable = ({ products }) => {
         </p>
         <Link
           to="/admin/products/create"
-          className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all"
+          className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all"
         >
           Create Product
         </Link>
@@ -40,13 +40,13 @@ const RecentProductsTable = ({ products }) => {
     >
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-xl font-bold">
-          <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+          <span className="bg-gradient-to-r from-blue-400 to-blue-400 text-transparent bg-clip-text">
             Recent Products
           </span>
         </h2>
         <Link
           to="/admin/products"
-          className="text-sm text-gray-400 hover:text-purple-400 transition-colors"
+          className="text-sm text-gray-400 hover:text-blue-400 transition-colors"
         >
           View All
         </Link>
@@ -84,7 +84,7 @@ const RecentProductsTable = ({ products }) => {
               >
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg overflow-hidden bg-gradient-to-r from-purple-500/20 to-blue-500/20">
+                    <div className="w-10 h-10 rounded-lg overflow-hidden bg-gradient-to-r from-blue-500/20 to-blue-500/20">
                       {product.images?.[0] ? (
                         <img
                           src={getImageUrl(product.images[0])}
@@ -93,7 +93,7 @@ const RecentProductsTable = ({ products }) => {
                         />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center">
-                          <Package size={16} className="text-purple-400" />
+                          <Package size={16} className="text-blue-400" />
                         </div>
                       )}
                     </div>
@@ -113,7 +113,7 @@ const RecentProductsTable = ({ products }) => {
                   </span>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <span className="text-sm font-semibold text-purple-400">
+                  <span className="text-sm font-semibold text-blue-400">
                     $ {product.price?.toLocaleString()}
                   </span>
                 </td>
@@ -132,7 +132,7 @@ const RecentProductsTable = ({ products }) => {
                   <div className="flex items-center gap-2">
                     <Link
                       to={`/admin/products/edit/${product._id}`}
-                      className="p-2 text-gray-400 hover:text-purple-400 transition-colors"
+                      className="p-2 text-gray-400 hover:text-blue-400 transition-colors"
                     >
                       <Edit size={16} />
                     </Link>

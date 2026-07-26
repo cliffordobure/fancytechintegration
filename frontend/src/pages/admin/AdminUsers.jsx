@@ -81,7 +81,7 @@ const AdminUsers = () => {
           >
             <div>
               <h1 className="text-4xl font-bold mb-2">
-                <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 text-transparent bg-clip-text">
+                <span className="bg-gradient-to-r from-blue-400 via-blue-400 to-blue-400 text-transparent bg-clip-text">
                   Admin Users
                 </span>
               </h1>
@@ -96,7 +96,7 @@ const AdminUsers = () => {
                 transition={{ duration: 20, repeat: Infinity }}
                 className="hidden md:block"
               >
-                <Sparkles size={32} className="text-purple-400/30" />
+                <Sparkles size={32} className="text-blue-400/30" />
               </motion.div>
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -119,7 +119,7 @@ const AdminUsers = () => {
               className="mb-8 bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-white/10"
             >
               <h2 className="text-xl font-semibold mb-4 text-white flex items-center gap-2">
-                <Shield size={20} className="text-purple-400" />
+                <Shield size={20} className="text-blue-400" />
                 New Admin User
               </h2>
               <form
@@ -136,7 +136,7 @@ const AdminUsers = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500"
+                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500"
                     placeholder="Full name"
                   />
                 </div>
@@ -150,7 +150,7 @@ const AdminUsers = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500"
+                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500"
                     placeholder="admin@example.com"
                   />
                 </div>
@@ -165,7 +165,7 @@ const AdminUsers = () => {
                     onChange={handleChange}
                     required
                     minLength={6}
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500"
+                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500"
                     placeholder="••••••••"
                   />
                 </div>
@@ -201,7 +201,7 @@ const AdminUsers = () => {
           >
             <div className="p-6 border-b border-white/10">
               <h2 className="text-xl font-semibold text-white flex items-center gap-2">
-                <Users size={20} className="text-purple-400" />
+                <Users size={20} className="text-blue-400" />
                 Admin users ({adminUsers?.length ?? 0})
               </h2>
               <p className="text-sm text-gray-400 mt-1">
@@ -243,7 +243,7 @@ const AdminUsers = () => {
                           {user.email}
                         </td>
                         <td className="px-6 py-4">
-                          <span className="px-2 py-1 text-xs font-semibold rounded-full bg-purple-500/20 text-purple-400">
+                          <span className="px-2 py-1 text-xs font-semibold rounded-full bg-blue-500/20 text-blue-400">
                             {user.role}
                           </span>
                         </td>

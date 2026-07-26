@@ -19,7 +19,7 @@ const TermsOfService = () => {
         <Link to="/">
           <motion.div
             whileHover={{ x: -5 }}
-            className="inline-flex items-center gap-2 text-gray-400 hover:text-purple-400 transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors mb-8"
           >
             <ArrowLeft size={16} />
             Back to Home
@@ -32,9 +32,9 @@ const TermsOfService = () => {
           animate={{ opacity: 1, y: 0 }}
           className="mb-12"
         >
-          <div className="inline-flex items-center gap-2 bg-purple-500/10 px-4 py-2 rounded-full mb-4">
-            <FileText className="w-4 h-4 text-purple-400" />
-            <span className="text-sm font-medium text-purple-400">
+          <div className="inline-flex items-center gap-2 bg-blue-500/10 px-4 py-2 rounded-full mb-4">
+            <FileText className="w-4 h-4 text-blue-400" />
+            <span className="text-sm font-medium text-blue-400">
               Legal Agreement
             </span>
           </div>
@@ -56,7 +56,7 @@ const TermsOfService = () => {
           {/* Agreement to Terms */}
           <section>
             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-              <Scale className="w-5 h-5 text-purple-400" />
+              <Scale className="w-5 h-5 text-blue-400" />
               Agreement to Terms
             </h2>
             <p className="text-gray-300 leading-relaxed">
@@ -114,7 +114,7 @@ const TermsOfService = () => {
           {/* Payments */}
           <section>
             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-              <CreditCard className="w-5 h-5 text-purple-400" />
+              <CreditCard className="w-5 h-5 text-blue-400" />
               Payments and Billing
             </h2>
             <ul className="list-disc list-inside space-y-2 text-gray-300 ml-4">
@@ -138,7 +138,7 @@ const TermsOfService = () => {
           {/* Intellectual Property */}
           <section>
             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-              <Shield className="w-5 h-5 text-purple-400" />
+              <Shield className="w-5 h-5 text-blue-400" />
               Intellectual Property
             </h2>
             <p className="text-gray-300 leading-relaxed">
@@ -154,7 +154,7 @@ const TermsOfService = () => {
           {/* Limitation of Liability */}
           <section>
             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-              <AlertCircle className="w-5 h-5 text-purple-400" />
+              <AlertCircle className="w-5 h-5 text-blue-400" />
               Limitation of Liability
             </h2>
             <p className="text-gray-300 leading-relaxed">
@@ -191,7 +191,7 @@ const TermsOfService = () => {
           </section>
 
           {/* Contact Information */}
-          <section className="bg-purple-500/10 p-6 rounded-xl border border-purple-500/20">
+          <section className="bg-blue-500/10 p-6 rounded-xl border border-blue-500/20">
             <h2 className="text-xl font-bold text-white mb-3">Contact Us</h2>
             <p className="text-gray-300 mb-2">
               For questions about these Terms, please contact us:

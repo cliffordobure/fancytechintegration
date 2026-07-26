@@ -7,13 +7,12 @@ const ArticleHero = ({ article, categoryLabels, formatDate }) => {
   const categoryColors = {
     news: "from-blue-400 to-blue-500",
     tutorial: "from-green-400 to-green-500",
-    "product-review": "from-purple-400 to-purple-500",
+    "product-review": "from-blue-400 to-blue-500",
     "company-update": "from-orange-400 to-orange-500",
     "tech-tips": "from-pink-400 to-pink-500",
   };
 
-  const color =
-    categoryColors[article.category] || "from-purple-400 to-blue-400";
+  const color = categoryColors[article.category] || "from-blue-400 to-blue-400";
 
   return (
     <section className="relative pt-32 pb-16 overflow-hidden bg-gray-900">
@@ -34,7 +33,7 @@ const ArticleHero = ({ article, categoryLabels, formatDate }) => {
             rotate: [0, 45, 0],
           }}
           transition={{ duration: 20, repeat: Infinity }}
-          className="absolute top-20 -right-20 w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
+          className="absolute top-20 -right-20 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
         />
         <motion.div
           animate={{
@@ -81,7 +80,7 @@ const ArticleHero = ({ article, categoryLabels, formatDate }) => {
           className="flex flex-wrap items-center gap-6 text-gray-400"
         >
           <div className="flex items-center gap-2">
-            <User size={16} className="text-purple-400" />
+            <User size={16} className="text-blue-400" />
             <span>
               By{" "}
               <span className="text-white font-medium">

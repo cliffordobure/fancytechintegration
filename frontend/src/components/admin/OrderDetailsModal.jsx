@@ -31,7 +31,7 @@ const OrderDetailsModal = ({ order, isOpen, onClose, onUpdateStatus }) => {
     const colors = {
       pending: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30",
       processing: "bg-blue-500/20 text-blue-400 border-blue-500/30",
-      shipped: "bg-purple-500/20 text-purple-400 border-purple-500/30",
+      shipped: "bg-blue-500/20 text-blue-400 border-blue-500/30",
       delivered: "bg-green-500/20 text-green-400 border-green-500/30",
       cancelled: "bg-red-500/20 text-red-400 border-red-500/30",
     };
@@ -63,9 +63,9 @@ const OrderDetailsModal = ({ order, isOpen, onClose, onUpdateStatus }) => {
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-white/10">
                   <div className="flex items-center gap-3">
-                    <Package className="w-6 h-6 text-purple-400" />
+                    <Package className="w-6 h-6 text-blue-400" />
                     <h2 className="text-2xl font-bold">
-                      <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+                      <span className="bg-gradient-to-r from-blue-400 to-blue-400 text-transparent bg-clip-text">
                         Order Details
                       </span>
                     </h2>
@@ -167,7 +167,7 @@ const OrderDetailsModal = ({ order, isOpen, onClose, onUpdateStatus }) => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="bg-white/5 rounded-xl p-4">
                       <h3 className="text-sm font-semibold text-white mb-3 flex items-center gap-2">
-                        <User size={16} className="text-purple-400" />
+                        <User size={16} className="text-blue-400" />
                         Customer Details
                       </h3>
                       <div className="space-y-2">
@@ -191,7 +191,7 @@ const OrderDetailsModal = ({ order, isOpen, onClose, onUpdateStatus }) => {
 
                     <div className="bg-white/5 rounded-xl p-4">
                       <h3 className="text-sm font-semibold text-white mb-3 flex items-center gap-2">
-                        <MapPin size={16} className="text-purple-400" />
+                        <MapPin size={16} className="text-blue-400" />
                         Shipping Address
                       </h3>
                       <div className="space-y-1 text-sm text-gray-300">
@@ -212,7 +212,7 @@ const OrderDetailsModal = ({ order, isOpen, onClose, onUpdateStatus }) => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="bg-white/5 rounded-xl p-4">
                       <h3 className="text-sm font-semibold text-white mb-3 flex items-center gap-2">
-                        <CreditCard size={16} className="text-purple-400" />
+                        <CreditCard size={16} className="text-blue-400" />
                         Payment Method
                       </h3>
                       <p className="text-white capitalize">
@@ -222,7 +222,7 @@ const OrderDetailsModal = ({ order, isOpen, onClose, onUpdateStatus }) => {
 
                     <div className="bg-white/5 rounded-xl p-4">
                       <h3 className="text-sm font-semibold text-white mb-3 flex items-center gap-2">
-                        <Truck size={16} className="text-purple-400" />
+                        <Truck size={16} className="text-blue-400" />
                         Shipping Method
                       </h3>
                       <p className="text-white capitalize">
@@ -238,7 +238,7 @@ const OrderDetailsModal = ({ order, isOpen, onClose, onUpdateStatus }) => {
                   {/* Order Items */}
                   <div className="bg-white/5 rounded-xl p-4">
                     <h3 className="text-sm font-semibold text-white mb-3 flex items-center gap-2">
-                      <Package size={16} className="text-purple-400" />
+                      <Package size={16} className="text-blue-400" />
                       Order Items
                     </h3>
                     <div className="space-y-3">
@@ -255,7 +255,7 @@ const OrderDetailsModal = ({ order, isOpen, onClose, onUpdateStatus }) => {
                               Quantity: {item.quantity}
                             </p>
                           </div>
-                          <p className="text-purple-400 font-semibold">
+                          <p className="text-blue-400 font-semibold">
                             $ {(item.price * item.quantity).toLocaleString()}
                           </p>
                         </div>
@@ -264,7 +264,7 @@ const OrderDetailsModal = ({ order, isOpen, onClose, onUpdateStatus }) => {
                   </div>
 
                   {/* Order Summary */}
-                  <div className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-xl p-4">
+                  <div className="bg-gradient-to-r from-blue-500/20 to-blue-500/20 rounded-xl p-4">
                     <div className="space-y-2">
                       <div className="flex justify-between text-sm">
                         <span className="text-gray-400">Subtotal</span>
@@ -282,7 +282,7 @@ const OrderDetailsModal = ({ order, isOpen, onClose, onUpdateStatus }) => {
                       </div>
                       <div className="border-t border-white/10 pt-2 flex justify-between text-lg font-bold">
                         <span className="text-white">Total</span>
-                        <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+                        <span className="bg-gradient-to-r from-blue-400 to-blue-400 text-transparent bg-clip-text">
                           $ {order.total.toLocaleString()}
                         </span>
                       </div>
@@ -296,7 +296,7 @@ const OrderDetailsModal = ({ order, isOpen, onClose, onUpdateStatus }) => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={onClose}
-                    className="px-6 py-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg font-medium"
+                    className="px-6 py-2 bg-gradient-to-r from-blue-500 to-blue-500 text-white rounded-lg font-medium"
                   >
                     Close
                   </motion.button>

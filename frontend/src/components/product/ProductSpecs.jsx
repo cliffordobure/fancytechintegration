@@ -27,7 +27,7 @@ const ProductSpecs = ({ specifications, brand, model }) => {
       className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-white/10"
     >
       <h2 className="text-2xl font-bold mb-6">
-        <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+        <span className="bg-gradient-to-r from-blue-400 to-blue-400 text-transparent bg-clip-text">
           Technical Specifications
         </span>
       </h2>
@@ -64,8 +64,8 @@ const ProductSpecs = ({ specifications, brand, model }) => {
                   transition={{ delay: 0.1 + index * 0.05 }}
                   className="flex items-center gap-3 bg-white/5 rounded-lg p-4 group hover:bg-white/10 transition-colors"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-purple-500/20 to-blue-500/20 p-2 group-hover:scale-110 transition-transform">
-                    <Icon className="w-full h-full text-purple-400" />
+                  <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-blue-500/20 to-blue-500/20 p-2 group-hover:scale-110 transition-transform">
+                    <Icon className="w-full h-full text-blue-400" />
                   </div>
                   <div>
                     <p className="text-sm text-gray-400 capitalize">

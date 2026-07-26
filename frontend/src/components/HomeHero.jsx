@@ -13,10 +13,10 @@ import {
 
 const HomeHero = () => {
   return (
-    <section className="relative pt-8 md:pt-2 min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
+    <section className="relative pt-8 md:pt-2 min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 overflow-hidden">
       {/* Simple animated gradient orbs */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 -left-20 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" />
+        <div className="absolute top-20 -left-20 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" />
         <div className="absolute bottom-20 -right-20 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-1000" />
       </div>
 
@@ -25,14 +25,14 @@ const HomeHero = () => {
         <div className="max-w-4xl mx-auto text-center">
           {/* Brand badge — now solid white on a glass background, no star */}
           <div className="inline-block mb-8">
-            <span className="bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-2 rounded-full text-sm font-semibold text-white shadow-lg shadow-purple-500/20">
+            <span className="bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-2 rounded-full text-sm font-semibold text-white shadow-lg shadow-blue-500/20">
               POWERING THE FUTURE OF SOUTH SUDAN TECH
             </span>
           </div>
 
           {/* Main heading */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-transparent bg-clip-text">
+            <span className="bg-gradient-to-r from-blue-400 via-blue-400 to-pink-400 text-transparent bg-clip-text">
               Innovate
             </span>
             <span className="text-white">. Build.</span>
@@ -57,8 +57,8 @@ const HomeHero = () => {
                 whileTap={{ scale: 0.95 }}
                 className="group relative px-8 py-4 rounded-full font-semibold text-lg overflow-hidden"
               >
-                <span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600" />
-                <span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-600" />
+                <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <span className="relative text-white flex items-center gap-2">
                   Start Your Journey
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -70,7 +70,7 @@ const HomeHero = () => {
               <motion.button
                 whileHover={{ scale: 1.05, borderColor: "#8b5cf6" }}
                 whileTap={{ scale: 0.95 }}
-                className="group relative px-8 py-4 rounded-full font-semibold text-lg bg-transparent border-2 border-white/30 hover:border-purple-500 transition-all duration-300"
+                className="group relative px-8 py-4 rounded-full font-semibold text-lg bg-transparent border-2 border-white/30 hover:border-blue-500 transition-all duration-300"
               >
                 <span className="relative text-white flex items-center gap-2">
                   <Sparkles className="w-5 h-5" />
@@ -100,21 +100,21 @@ const HomeHero = () => {
           <div className="flex justify-center gap-4">
             <a
               href="#"
-              className="text-gray-400 hover:text-purple-400 transition-colors"
+              className="text-gray-400 hover:text-blue-400 transition-colors"
               aria-label="GitHub"
             >
               <Github size={20} />
             </a>
             <a
               href="#"
-              className="text-gray-400 hover:text-purple-400 transition-colors"
+              className="text-gray-400 hover:text-blue-400 transition-colors"
               aria-label="Twitter"
             >
               <Twitter size={20} />
             </a>
             <a
               href="#"
-              className="text-gray-400 hover:text-purple-400 transition-colors"
+              className="text-gray-400 hover:text-blue-400 transition-colors"
               aria-label="LinkedIn"
             >
               <Linkedin size={20} />

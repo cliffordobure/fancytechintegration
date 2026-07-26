@@ -18,7 +18,7 @@ const QuickActions = () => {
       icon: Package,
       label: "Manage Products",
       path: "/admin/products",
-      color: "from-purple-500 to-blue-500",
+      color: "from-blue-500 to-blue-500",
       description: "Add, edit or remove products",
     },
     {
@@ -66,7 +66,7 @@ const QuickActions = () => {
       className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-white/10"
     >
       <h2 className="text-xl font-bold mb-6">
-        <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+        <span className="bg-gradient-to-r from-blue-400 to-blue-400 text-transparent bg-clip-text">
           Quick Actions
         </span>
       </h2>
@@ -82,7 +82,7 @@ const QuickActions = () => {
           >
             <Link
               to={action.path}
-              className="block p-4 bg-white/5 rounded-xl border border-white/10 hover:border-purple-500/50 transition-all group"
+              className="block p-4 bg-white/5 rounded-xl border border-white/10 hover:border-blue-500/50 transition-all group"
             >
               <div className="flex items-center gap-3 mb-2">
                 <div
@@ -90,12 +90,12 @@ const QuickActions = () => {
                 >
                   <action.icon className="w-full h-full text-white" />
                 </div>
-                <span className="font-semibold text-white group-hover:text-purple-400 transition-colors">
+                <span className="font-semibold text-white group-hover:text-blue-400 transition-colors">
                   {action.label}
                 </span>
               </div>
               <p className="text-sm text-gray-400 mb-2">{action.description}</p>
-              <div className="flex items-center gap-1 text-xs text-purple-400 opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="flex items-center gap-1 text-xs text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">
                 Go to {action.label}
                 <ArrowRight size={12} />
               </div>

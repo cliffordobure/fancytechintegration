@@ -11,7 +11,7 @@ const ProductsGrid = ({ products, loading }) => {
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-          className="inline-block w-16 h-16 border-4 border-purple-500 border-t-transparent rounded-full"
+          className="inline-block w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full"
         />
         <p className="mt-4 text-gray-400">Loading amazing products...</p>
       </div>

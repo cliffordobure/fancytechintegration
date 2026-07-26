@@ -1,6 +1,5 @@
 // components/contact/ContactForm.jsx
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import {
   Send,
   User,
@@ -9,7 +8,6 @@ import {
   MessageSquare,
   CheckCircle,
   AlertCircle,
-  Sparkles,
 } from "lucide-react";
 import toast from "react-hot-toast";
 
@@ -37,10 +35,7 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      // In a real application, you would send this to your backend
-      // For now, we'll simulate an API call
       await new Promise((resolve) => setTimeout(resolve, 1000));
-
       toast.success(
         "Thank you for your message! We will get back to you soon.",
       );
@@ -61,7 +56,7 @@ const ContactForm = () => {
   return (
     <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
       <h2 className="text-3xl font-bold mb-2">
-        <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+        <span className="bg-gradient-to-r from-orange-400 to-blue-400 text-transparent bg-clip-text">
           Send us a Message
         </span>
       </h2>
@@ -71,7 +66,7 @@ const ContactForm = () => {
 
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Name Field */}
-        <div className="relative">
+        <div>
           <label className="block text-sm font-medium text-gray-400 mb-2">
             Full Name *
           </label>
@@ -85,23 +80,14 @@ const ContactForm = () => {
               onFocus={() => setFocusedField("name")}
               onBlur={() => setFocusedField(null)}
               required
-              className="w-full bg-white/5 border border-white/10 rounded-lg pl-12 pr-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 transition-colors"
+              className="w-full bg-white/5 border border-white/10 rounded-lg pl-12 pr-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
               placeholder="John Sebit"
             />
           </div>
-          {focusedField === "name" && (
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              className="absolute -right-2 -top-2"
-            >
-              <Sparkles className="w-4 h-4 text-purple-400" />
-            </motion.div>
-          )}
         </div>
 
         {/* Email Field */}
-        <div className="relative">
+        <div>
           <label className="block text-sm font-medium text-gray-400 mb-2">
             Email Address *
           </label>
@@ -115,14 +101,14 @@ const ContactForm = () => {
               onFocus={() => setFocusedField("email")}
               onBlur={() => setFocusedField(null)}
               required
-              className="w-full bg-white/5 border border-white/10 rounded-lg pl-12 pr-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 transition-colors"
+              className="w-full bg-white/5 border border-white/10 rounded-lg pl-12 pr-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
               placeholder="john@example.com"
             />
           </div>
         </div>
 
         {/* Phone Field */}
-        <div className="relative">
+        <div>
           <label className="block text-sm font-medium text-gray-400 mb-2">
             Phone Number
           </label>
@@ -135,14 +121,14 @@ const ContactForm = () => {
               onChange={handleChange}
               onFocus={() => setFocusedField("phone")}
               onBlur={() => setFocusedField(null)}
-              className="w-full bg-white/5 border border-white/10 rounded-lg pl-12 pr-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 transition-colors"
+              className="w-full bg-white/5 border border-white/10 rounded-lg pl-12 pr-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
               placeholder="+211 929 097 920"
             />
           </div>
         </div>
 
         {/* Subject Field */}
-        <div className="relative">
+        <div>
           <label className="block text-sm font-medium text-gray-400 mb-2">
             Subject *
           </label>
@@ -156,14 +142,14 @@ const ContactForm = () => {
               onFocus={() => setFocusedField("subject")}
               onBlur={() => setFocusedField(null)}
               required
-              className="w-full bg-white/5 border border-white/10 rounded-lg pl-12 pr-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 transition-colors"
+              className="w-full bg-white/5 border border-white/10 rounded-lg pl-12 pr-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
               placeholder="How can we help you?"
             />
           </div>
         </div>
 
         {/* Message Field */}
-        <div className="relative">
+        <div>
           <label className="block text-sm font-medium text-gray-400 mb-2">
             Message *
           </label>
@@ -176,41 +162,32 @@ const ContactForm = () => {
               onBlur={() => setFocusedField(null)}
               required
               rows="5"
-              className="w-full bg-white/5 border border-white/10 rounded-lg pl-4 pr-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 transition-colors"
+              className="w-full bg-white/5 border border-white/10 rounded-lg pl-4 pr-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
               placeholder="Tell us more about your needs..."
             />
           </div>
         </div>
 
-        {/* Submit Button */}
-        <motion.button
+        {/* Submit Button – static */}
+        <button
           type="submit"
           disabled={isSubmitting}
-          whileHover={!isSubmitting ? { scale: 1.02 } : {}}
-          whileTap={!isSubmitting ? { scale: 0.98 } : {}}
-          className={`w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-2 group relative overflow-hidden ${
+          className={`w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-2 ${
             isSubmitting ? "opacity-75 cursor-not-allowed" : ""
           }`}
         >
           {isSubmitting ? (
             <>
-              <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+              <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full" />
               Sending...
             </>
           ) : (
             <>
-              <span className="relative z-10 flex items-center gap-2">
-                Send Message
-                <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </span>
-              <motion.div
-                animate={{ x: ["0%", "200%"] }}
-                transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 2 }}
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12"
-              />
+              Send Message
+              <Send className="w-5 h-5" />
             </>
           )}
-        </motion.button>
+        </button>
       </form>
     </div>
   );

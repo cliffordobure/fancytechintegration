@@ -25,7 +25,7 @@ const ProductTable = ({ products, onEdit, onDelete, loading }) => {
 
   const getCategoryColor = (category) => {
     const colors = {
-      starlink: "bg-purple-500/20 text-purple-400 border-purple-500/30",
+      starlink: "bg-blue-500/20 text-blue-400 border-blue-500/30",
       networking: "bg-blue-500/20 text-blue-400 border-blue-500/30",
       laptops: "bg-green-500/20 text-green-400 border-green-500/30",
       phones: "bg-orange-500/20 text-orange-400 border-orange-500/30",
@@ -43,7 +43,7 @@ const ProductTable = ({ products, onEdit, onDelete, loading }) => {
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-          className="inline-block w-16 h-16 border-4 border-purple-500 border-t-transparent rounded-full"
+          className="inline-block w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full"
         />
       </div>
     );
@@ -94,7 +94,7 @@ const ProductTable = ({ products, onEdit, onDelete, loading }) => {
               >
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center gap-3">
-                    <div className="relative w-12 h-12 rounded-lg overflow-hidden bg-gradient-to-r from-purple-500/20 to-blue-500/20">
+                    <div className="relative w-12 h-12 rounded-lg overflow-hidden bg-gradient-to-r from-blue-500/20 to-blue-500/20">
                       {product.images && product.images.length > 0 ? (
                         <img
                           src={getImageUrl(product.images[0])}
@@ -103,7 +103,7 @@ const ProductTable = ({ products, onEdit, onDelete, loading }) => {
                         />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center">
-                          <Package size={20} className="text-purple-400" />
+                          <Package size={20} className="text-blue-400" />
                         </div>
                       )}
                     </div>
@@ -125,7 +125,7 @@ const ProductTable = ({ products, onEdit, onDelete, loading }) => {
                   </span>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="text-sm font-semibold text-purple-400">
+                  <div className="text-sm font-semibold text-blue-400">
                     $ {product.price?.toLocaleString()}
                   </div>
                   {product.originalPrice && (
@@ -175,7 +175,7 @@ const ProductTable = ({ products, onEdit, onDelete, loading }) => {
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                       onClick={() => onEdit(product)}
-                      className="p-2 text-gray-400 hover:text-purple-400 transition-colors"
+                      className="p-2 text-gray-400 hover:text-blue-400 transition-colors"
                       title="Edit Product"
                     >
                       <Edit size={16} />

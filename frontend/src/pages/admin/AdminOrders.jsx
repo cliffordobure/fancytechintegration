@@ -72,7 +72,7 @@ const AdminOrders = () => {
           >
             <div>
               <h1 className="text-4xl font-bold mb-2">
-                <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 text-transparent bg-clip-text">
+                <span className="bg-gradient-to-r from-blue-400 via-blue-400 to-blue-400 text-transparent bg-clip-text">
                   Order Management
                 </span>
               </h1>
@@ -85,7 +85,7 @@ const AdminOrders = () => {
               transition={{ duration: 20, repeat: Infinity }}
               className="hidden md:block"
             >
-              <ShoppingBag size={32} className="text-purple-400/30" />
+              <ShoppingBag size={32} className="text-blue-400/30" />
             </motion.div>
           </motion.div>
 
@@ -105,7 +105,7 @@ const AdminOrders = () => {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                className="inline-block w-16 h-16 border-4 border-purple-500 border-t-transparent rounded-full"
+                className="inline-block w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full"
               />
               <p className="mt-4 text-gray-400">Loading orders...</p>
             </div>
@@ -115,8 +115,8 @@ const AdminOrders = () => {
               animate={{ opacity: 1, y: 0 }}
               className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-16 text-center border border-white/10"
             >
-              <div className="w-20 h-20 rounded-full bg-gradient-to-r from-purple-500/20 to-blue-500/20 flex items-center justify-center mx-auto mb-4">
-                <ShoppingBag size={32} className="text-purple-400" />
+              <div className="w-20 h-20 rounded-full bg-gradient-to-r from-blue-500/20 to-blue-500/20 flex items-center justify-center mx-auto mb-4">
+                <ShoppingBag size={32} className="text-blue-400" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-2">
                 No Orders Found

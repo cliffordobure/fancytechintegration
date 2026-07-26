@@ -14,7 +14,7 @@ const StatCard = ({
   bgColor,
 }) => {
   const colorClasses = {
-    purple: "from-purple-500 to-purple-600",
+    blue: "from-blue-500 to-blue-600",
     blue: "from-blue-500 to-blue-600",
     green: "from-green-500 to-green-600",
     yellow: "from-yellow-500 to-yellow-600",
@@ -25,7 +25,7 @@ const StatCard = ({
   };
 
   const bgColorClasses = {
-    purple: "bg-purple-500/10",
+    blue: "bg-blue-500/10",
     blue: "bg-blue-500/10",
     green: "bg-green-500/10",
     yellow: "bg-yellow-500/10",
@@ -35,8 +35,8 @@ const StatCard = ({
     indigo: "bg-indigo-500/10",
   };
 
-  const gradient = colorClasses[color] || colorClasses.purple;
-  const bgClass = bgColorClasses[color] || bgColorClasses.purple;
+  const gradient = colorClasses[color] || colorClasses.blue;
+  const bgClass = bgColorClasses[color] || bgColorClasses.blue;
 
   return (
     <motion.div
@@ -70,7 +70,7 @@ const StatCard = ({
         {link && (
           <Link
             to={link}
-            className="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-purple-400 transition-colors group/link"
+            className="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-blue-400 transition-colors group/link"
           >
             {linkText}
             <ArrowRight

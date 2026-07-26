@@ -30,7 +30,7 @@ const OrderConfirmationPage = () => {
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-            className="inline-block w-16 h-16 border-4 border-purple-500 border-t-transparent rounded-full"
+            className="inline-block w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full"
           />
           <p className="mt-4 text-gray-400">Loading order details...</p>
         </div>
@@ -49,7 +49,7 @@ const OrderConfirmationPage = () => {
           <div className="w-24 h-24 rounded-full bg-red-500/20 flex items-center justify-center mx-auto mb-6">
             <span className="text-4xl">🔍</span>
           </div>
-          <h1 className="text-3xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+          <h1 className="text-3xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-blue-400 text-transparent bg-clip-text">
             Order Not Found
           </h1>
           <p className="text-gray-400 mb-8">
@@ -59,7 +59,7 @@ const OrderConfirmationPage = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-8 py-4 rounded-xl font-semibold"
+              className="bg-gradient-to-r from-blue-500 to-blue-500 text-white px-8 py-4 rounded-xl font-semibold"
             >
               Browse Products
             </motion.button>

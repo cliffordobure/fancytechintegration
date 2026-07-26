@@ -29,7 +29,7 @@ const ContactInfoCards = () => {
       details: ["Hai cinema, Yaro plaza", "Juba, South Sudan"],
       action: "https://maps.google.com",
       actionText: "Get Directions",
-      color: "from-purple-400 to-indigo-400",
+      color: "from-blue-400 to-indigo-400",
       delay: 0.3,
     },
     {
@@ -80,7 +80,7 @@ const ContactInfoCards = () => {
                 {info.action && (
                   <a
                     href={info.action}
-                    className="inline-block mt-4 text-sm text-purple-400 hover:text-purple-300 transition-colors"
+                    className="inline-block mt-4 text-sm text-blue-400 hover:text-blue-300 transition-colors"
                   >
                     {info.actionText} →
                   </a>

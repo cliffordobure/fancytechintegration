@@ -84,7 +84,7 @@ const SuccessMessage = ({ orderNumber, createdAt }) => {
           transition={{ delay: 0.5 }}
           className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-6 py-3"
         >
-          <Package size={18} className="text-purple-400" />
+          <Package size={18} className="text-blue-400" />
           <span className="text-white font-medium">Order #{orderNumber}</span>
           <span className="w-1 h-1 bg-gray-500 rounded-full" />
           <Clock size={18} className="text-blue-400" />

@@ -22,13 +22,14 @@ const AboutPage = () => {
 
       <AboutHero />
 
-      {/* Who We Are Section - Keep as is or transform with dark theme */}
+      {/* Who We Are Section */}
       <section className="relative py-24 overflow-hidden bg-gray-900">
+        {/* Background pattern – orange dots */}
         <div
           className="absolute inset-0 opacity-10"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 2px 2px, #8b5cf6 1px, transparent 0)",
+              "radial-gradient(circle at 2px 2px, #f97316 1px, transparent 0)",
             backgroundSize: "40px 40px",
           }}
         />
@@ -36,20 +37,20 @@ const AboutPage = () => {
         <div className="relative container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <span className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 backdrop-blur-sm border border-white/10 px-4 py-2 rounded-full text-sm font-semibold text-purple-400 inline-block mb-4">
+              <span className="bg-gradient-to-r from-orange-500/20 to-blue-500/20 backdrop-blur-sm border border-white/10 px-4 py-2 rounded-full text-sm font-semibold text-orange-400 inline-block mb-4">
                 ABOUT US
               </span>
               <h2 className="text-5xl font-bold mb-4">
-                <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+                <span className="bg-gradient-to-r from-orange-400 to-blue-400 text-transparent bg-clip-text">
                   Who We Are
                 </span>
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto rounded-full"></div>
+              <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-blue-500 mx-auto rounded-full" />
             </div>
 
             <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/10">
               <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-                <span className="font-semibold text-purple-400">
+                <span className="font-semibold text-orange-400">
                   Fancy Tech Integration (F.T.I.)
                 </span>{" "}
                 is a leading technology company that has been serving customers
@@ -59,7 +60,7 @@ const AboutPage = () => {
                 equipment, laptops, and mobile phones.
               </p>
 
-              <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 border-l-4 border-purple-500 p-6 rounded-r-lg">
+              <div className="bg-gradient-to-r from-orange-500/10 to-blue-500/10 border-l-4 border-orange-500 p-6 rounded-r-lg">
                 <p className="text-lg text-gray-200 font-medium">
                   Our mission is to bridge the digital divide in South Sudan by
                   making advanced technology accessible and affordable to

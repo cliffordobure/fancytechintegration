@@ -48,7 +48,7 @@ const ProductInfo = ({ product }) => {
     {
       icon: RotateCcw,
       text: "7-Day Returns",
-      color: "from-purple-400 to-purple-500",
+      color: "from-blue-400 to-blue-500",
     },
   ];
 
@@ -78,7 +78,7 @@ const ProductInfo = ({ product }) => {
         <motion.span
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="inline-block bg-gradient-to-r from-purple-500/20 to-blue-500/20 backdrop-blur-sm border border-white/10 px-4 py-2 rounded-full text-sm font-semibold text-purple-400 mb-4"
+          className="inline-block bg-gradient-to-r from-blue-500/20 to-blue-500/20 backdrop-blur-sm border border-white/10 px-4 py-2 rounded-full text-sm font-semibold text-blue-400 mb-4"
         >
           {categoryLabels[product.category] || product.category}
         </motion.span>
@@ -89,7 +89,7 @@ const ProductInfo = ({ product }) => {
           transition={{ delay: 0.1 }}
           className="text-4xl md:text-5xl font-bold mb-4"
         >
-          <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 text-transparent bg-clip-text">
+          <span className="bg-gradient-to-r from-blue-400 via-blue-400 to-blue-400 text-transparent bg-clip-text">
             {product.name}
           </span>
         </motion.h1>
@@ -101,7 +101,7 @@ const ProductInfo = ({ product }) => {
           transition={{ delay: 0.2 }}
           className="mb-4"
         >
-          <h3 className="text-sm font-semibold text-purple-400 mb-2 uppercase tracking-wider">
+          <h3 className="text-sm font-semibold text-blue-400 mb-2 uppercase tracking-wider">
             Overview
           </h3>
           <div
@@ -116,7 +116,7 @@ const ProductInfo = ({ product }) => {
         {product.features && Object.keys(product.features).length > 0 && (
           <motion.button
             onClick={() => setShowFeatures(!showFeatures)}
-            className="flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors mt-2 group"
+            className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors mt-2 group"
             whileHover={{ x: 5 }}
           >
             <span className="text-sm font-medium">
@@ -147,9 +147,9 @@ const ProductInfo = ({ product }) => {
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
-            <div className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-6 border border-purple-500/20">
+            <div className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-6 border border-blue-500/20">
               <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                <span className="w-1 h-6 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full" />
+                <span className="w-1 h-6 bg-gradient-to-r from-blue-400 to-blue-400 rounded-full" />
                 Technical Specifications
               </h3>
 
@@ -164,8 +164,8 @@ const ProductInfo = ({ product }) => {
                       transition={{ delay: index * 0.05 }}
                       className="flex items-center gap-3 bg-white/5 rounded-lg p-3 group hover:bg-white/10 transition-colors"
                     >
-                      <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-purple-500/20 to-blue-500/20 p-1.5 group-hover:scale-110 transition-transform">
-                        <Icon className="w-full h-full text-purple-400" />
+                      <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-blue-500/20 to-blue-500/20 p-1.5 group-hover:scale-110 transition-transform">
+                        <Icon className="w-full h-full text-blue-400" />
                       </div>
                       <div>
                         <p className="text-xs text-gray-400 capitalize">
@@ -192,7 +192,7 @@ const ProductInfo = ({ product }) => {
         className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-white/10"
       >
         <div className="flex items-baseline gap-4 mb-4">
-          <span className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+          <span className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-blue-400 text-transparent bg-clip-text">
             $ {product.price?.toLocaleString()}
           </span>
           {product.originalPrice && (
@@ -241,7 +241,7 @@ const ProductInfo = ({ product }) => {
           disabled={!product.inStock}
           className={`w-full py-4 rounded-xl font-semibold text-lg flex items-center justify-center gap-3 relative overflow-hidden group ${
             product.inStock
-              ? "bg-gradient-to-r from-purple-500 to-blue-500 text-white hover:shadow-lg hover:shadow-purple-500/30"
+              ? "bg-gradient-to-r from-blue-500 to-blue-500 text-white hover:shadow-lg hover:shadow-blue-500/30"
               : "bg-gray-700 cursor-not-allowed text-gray-400"
           } transition-all duration-300`}
         >

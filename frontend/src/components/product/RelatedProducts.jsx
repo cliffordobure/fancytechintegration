@@ -18,13 +18,13 @@ const RelatedProducts = ({ products, currentProductId }) => {
     <section className="mt-16">
       <div className="flex items-center justify-between mb-8">
         <h2 className="text-2xl font-bold">
-          <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+          <span className="bg-gradient-to-r from-blue-400 to-blue-400 text-transparent bg-clip-text">
             You Might Also Like
           </span>
         </h2>
         <Link
           to="/products"
-          className="group flex items-center gap-2 text-gray-400 hover:text-purple-400 transition-colors"
+          className="group flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors"
         >
           View All
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

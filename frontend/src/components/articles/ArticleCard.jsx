@@ -17,7 +17,7 @@ const ArticleCard = ({ article, index }) => {
   const categoryColors = {
     news: "from-blue-400 to-blue-500",
     tutorial: "from-green-400 to-green-500",
-    "product-review": "from-purple-400 to-purple-500",
+    "product-review": "from-blue-400 to-blue-500",
     "company-update": "from-orange-400 to-orange-500",
     "tech-tips": "from-pink-400 to-pink-500",
   };
@@ -37,8 +37,7 @@ const ArticleCard = ({ article, index }) => {
     return readTime || 3; // Default to 3 minutes if no content
   };
 
-  const color =
-    categoryColors[article.category] || "from-purple-400 to-blue-400";
+  const color = categoryColors[article.category] || "from-blue-400 to-blue-400";
 
   return (
     <motion.div

@@ -13,9 +13,9 @@ const OrderItems = ({ items }) => {
       className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-white/10"
     >
       <div className="flex items-center gap-2 mb-6">
-        <Package className="w-5 h-5 text-purple-400" />
+        <Package className="w-5 h-5 text-blue-400" />
         <h2 className="text-xl font-bold">
-          <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+          <span className="bg-gradient-to-r from-blue-400 to-blue-400 text-transparent bg-clip-text">
             Order Items
           </span>
         </h2>
@@ -31,7 +31,7 @@ const OrderItems = ({ items }) => {
             whileHover={{ scale: 1.02 }}
             className="group relative"
           >
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl opacity-0 group-hover:opacity-100 blur transition duration-500" />
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-blue-500 rounded-xl opacity-0 group-hover:opacity-100 blur transition duration-500" />
 
             <div className="relative bg-gray-900/90 backdrop-blur-sm rounded-xl p-4 border border-white/10 group-hover:border-transparent transition-all">
               <div className="flex gap-4">
@@ -44,18 +44,18 @@ const OrderItems = ({ items }) => {
                       className="w-full h-full object-cover"
                     />
                   ) : (
-                    <div className="w-full h-full bg-gradient-to-r from-purple-500/20 to-blue-500/20 flex items-center justify-center">
-                      <ShoppingBag size={24} className="text-purple-400" />
+                    <div className="w-full h-full bg-gradient-to-r from-blue-500/20 to-blue-500/20 flex items-center justify-center">
+                      <ShoppingBag size={24} className="text-blue-400" />
                     </div>
                   )}
-                  <div className="absolute top-0 right-0 bg-purple-500 text-white text-xs w-6 h-6 flex items-center justify-center rounded-bl-lg">
+                  <div className="absolute top-0 right-0 bg-blue-500 text-white text-xs w-6 h-6 flex items-center justify-center rounded-bl-lg">
                     {item.quantity}
                   </div>
                 </div>
 
                 {/* Product Details */}
                 <div className="flex-grow">
-                  <h3 className="font-semibold text-white group-hover:text-purple-400 transition-colors line-clamp-2">
+                  <h3 className="font-semibold text-white group-hover:text-blue-400 transition-colors line-clamp-2">
                     {item.name}
                   </h3>
                   <p className="text-sm text-gray-500 mt-1">

@@ -11,7 +11,7 @@ export const PRODUCT_TEMPLATES = {
 <h4>Display &amp; Convertible Design</h4>
 <p>The <strong>14-inch Full HD touchscreen</strong> delivers crisp visuals with 400 nits of brightness, making it usable even in bright outdoor environments. The 360° hinge allows four versatile modes — laptop, tablet, tent, and stand — giving you flexibility for presentations, note-taking, or media consumption.</p>
 <h4>Security &amp; Connectivity</h4>
-<p>Business-grade security comes standard with an integrated fingerprint reader, HP Sure View privacy screen options, and HP Sure Start BIOS protection. It also includes <strong>Wi-Fi 6</strong> and <strong>Bluetooth 5.0</strong> for fast, stable wireless connections.</p>
+<p>Business-grade security comes standard with an integrated fingerprint reader, HP Sure View privacy screen options, and HP Sure Start BIOS protection. It also includes <strong>Wi-Fi 6</strong> and <strong>bluetooth 5.0</strong> for fast, stable wireless connections.</p>
 <h4>Battery Life</h4>
 <p>With an all-day battery that delivers up to <strong>12 hours of mixed usage</strong>, you can leave your charger behind and stay productive from morning meetings to evening flights.</p>
 <h4>Best For:</h4>

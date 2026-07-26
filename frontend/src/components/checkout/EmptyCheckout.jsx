@@ -22,13 +22,13 @@ const EmptyCheckout = () => {
         transition={{ duration: 4, repeat: Infinity }}
         className="inline-block mb-6"
       >
-        <div className="w-32 h-32 rounded-full bg-gradient-to-r from-purple-500/20 to-blue-500/20 flex items-center justify-center">
-          <ShoppingBag size={64} className="text-purple-400" />
+        <div className="w-32 h-32 rounded-full bg-gradient-to-r from-blue-500/20 to-blue-500/20 flex items-center justify-center">
+          <ShoppingBag size={64} className="text-blue-400" />
         </div>
       </motion.div>
 
       <h2 className="text-3xl font-bold mb-4">
-        <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+        <span className="bg-gradient-to-r from-blue-400 to-blue-400 text-transparent bg-clip-text">
           Your cart is empty
         </span>
       </h2>
@@ -41,7 +41,7 @@ const EmptyCheckout = () => {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => navigate("/products")}
-        className="group inline-flex items-center gap-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl shadow-purple-500/30 hover:shadow-2xl transition-all"
+        className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-blue-500 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl shadow-blue-500/30 hover:shadow-2xl transition-all"
       >
         Browse Products
         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

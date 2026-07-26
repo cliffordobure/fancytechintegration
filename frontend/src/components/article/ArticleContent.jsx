@@ -46,7 +46,7 @@ const ArticleContent = ({ content, tags }) => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.05 }}
                 whileHover={{ scale: 1.05, y: -2 }}
-                className="px-4 py-2 bg-gradient-to-r from-purple-500/20 to-blue-500/20 text-purple-400 rounded-full text-sm border border-purple-500/30 hover:border-purple-500 transition-colors cursor-pointer"
+                className="px-4 py-2 bg-gradient-to-r from-blue-500/20 to-blue-500/20 text-blue-400 rounded-full text-sm border border-blue-500/30 hover:border-blue-500 transition-colors cursor-pointer"
               >
                 #{tag}
               </motion.span>
@@ -60,7 +60,7 @@ const ArticleContent = ({ content, tags }) => {
         <Link to="/articles">
           <motion.div
             whileHover={{ x: -5 }}
-            className="inline-flex items-center gap-2 text-gray-400 hover:text-purple-400 transition-colors"
+            className="inline-flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors"
           >
             <ArrowLeft size={16} />
             Back to Articles

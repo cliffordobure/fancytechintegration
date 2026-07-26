@@ -32,46 +32,6 @@ const HomePage = () => {
     dispatch(fetchArticles());
   }, [dispatch]);
 
-  // Category information
-  const categoryInfo = {
-    starlink: {
-      title: "Starlink Kits",
-      description: "High-speed satellite internet solutions for remote areas",
-      image: category1,
-      icon: "🛰️",
-    },
-    networking: {
-      title: "Networking",
-      description: "Professional networking equipment and accessories",
-      image: category2,
-      icon: "🌐",
-    },
-    laptops: {
-      title: "Laptops",
-      description: "Quality laptops from leading manufacturers",
-      image: category3,
-      icon: "💻",
-    },
-    phones: {
-      title: "Phones",
-      description: "Latest smartphones and mobile devices",
-      image: category4,
-      icon: "📱",
-    },
-    software: {
-      title: "Software",
-      description: "Custom software solutions for your business",
-      image: category1,
-      icon: "⚙️",
-    },
-    cctv: {
-      title: "CCTV Equipment",
-      description: "Professional surveillance and monitoring systems",
-      image: category2,
-      icon: "📹",
-    },
-  };
-
   // Group products by category
   const productsByCategory = {};
   if (products?.length) {
@@ -101,10 +61,8 @@ const HomePage = () => {
 
       <HomeHero />
       <Products products={products} />
-      <OurFeatures />
       <SoftwareServices />
-      <CategoriesSection categoryInfo={categoryInfo} />
-
+      <OurFeatures />
       <CTASection />
       <FloatingActions />
       <RecentArticles

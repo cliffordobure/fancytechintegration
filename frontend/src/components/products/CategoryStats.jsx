@@ -15,7 +15,7 @@ const CategoryStats = ({ products }) => {
     {
       name: "Starlink",
       icon: Satellite,
-      color: "from-purple-500 to-blue-500",
+      color: "from-blue-500 to-blue-500",
       count: products.filter((p) => p.category === "starlink").length,
     },
     {
@@ -57,7 +57,7 @@ const CategoryStats = ({ products }) => {
     {
       name: "Access Points",
       icon: Satellite,
-      color: "from-indigo-500 to-purple-500",
+      color: "from-indigo-500 to-blue-500",
       count: products.filter((p) => p.category === "accesspoint").length,
     },
   ].filter((cat) => cat.count > 0);
@@ -67,7 +67,7 @@ const CategoryStats = ({ products }) => {
   return (
     <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-white/10 mb-8">
       <div className="flex items-center gap-2 mb-4">
-        <Sparkles className="w-5 h-5 text-purple-400" />
+        <Sparkles className="w-5 h-5 text-blue-400" />
         <h3 className="text-lg font-semibold text-white">
           Quick Category Stats
         </h3>

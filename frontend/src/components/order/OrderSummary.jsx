@@ -15,7 +15,7 @@ const OrderSummary = ({ order }) => {
     const colors = {
       pending: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30",
       processing: "bg-blue-500/20 text-blue-400 border-blue-500/30",
-      shipped: "bg-purple-500/20 text-purple-400 border-purple-500/30",
+      shipped: "bg-blue-500/20 text-blue-400 border-blue-500/30",
       delivered: "bg-green-500/20 text-green-400 border-green-500/30",
       cancelled: "bg-red-500/20 text-red-400 border-red-500/30",
     };
@@ -59,7 +59,7 @@ const OrderSummary = ({ order }) => {
     >
       <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
         <h2 className="text-xl font-bold mb-6">
-          <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+          <span className="bg-gradient-to-r from-blue-400 to-blue-400 text-transparent bg-clip-text">
             Order Summary
           </span>
         </h2>
@@ -129,7 +129,7 @@ const OrderSummary = ({ order }) => {
 
           <div className="border-t border-white/10 pt-3 flex justify-between text-lg font-bold">
             <span className="text-white">Total</span>
-            <span className="text-2xl bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+            <span className="text-2xl bg-gradient-to-r from-blue-400 to-blue-400 text-transparent bg-clip-text">
               $ {order.total.toLocaleString()}
             </span>
           </div>
@@ -138,7 +138,7 @@ const OrderSummary = ({ order }) => {
         {/* Timeline/Next Steps */}
         <div className="pt-4 border-t border-white/10">
           <h3 className="font-semibold text-white mb-4 flex items-center gap-2">
-            <Clock size={16} className="text-purple-400" />
+            <Clock size={16} className="text-blue-400" />
             What's Next?
           </h3>
 
@@ -149,8 +149,8 @@ const OrderSummary = ({ order }) => {
               transition={{ delay: 0.2 }}
               className="flex items-start gap-3"
             >
-              <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <span className="text-xs text-purple-400">1</span>
+              <div className="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span className="text-xs text-blue-400">1</span>
               </div>
               <div>
                 <p className="text-sm text-white">Order Confirmation</p>

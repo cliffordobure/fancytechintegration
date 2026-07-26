@@ -17,14 +17,14 @@ const FeaturedProducts = ({ products }) => {
         className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-white/10"
       >
         <h2 className="text-xl font-bold mb-4">
-          <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+          <span className="bg-gradient-to-r from-blue-400 to-blue-400 text-transparent bg-clip-text">
             Featured Products
           </span>
         </h2>
         <p className="text-gray-400 mb-4">No featured products yet.</p>
         <Link
           to="/admin/products"
-          className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors"
+          className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
         >
           Manage Products
           <ArrowRight size={16} />
@@ -42,13 +42,13 @@ const FeaturedProducts = ({ products }) => {
     >
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-xl font-bold">
-          <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+          <span className="bg-gradient-to-r from-blue-400 to-blue-400 text-transparent bg-clip-text">
             Featured Products
           </span>
         </h2>
         <Link
           to="/admin/products"
-          className="text-sm text-gray-400 hover:text-purple-400 transition-colors"
+          className="text-sm text-gray-400 hover:text-blue-400 transition-colors"
         >
           View All
         </Link>
@@ -61,7 +61,7 @@ const FeaturedProducts = ({ products }) => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.1 * index }}
-            className="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/10 group hover:border-purple-500/50 transition-all"
+            className="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/10 group hover:border-blue-500/50 transition-all"
           >
             <div className="relative w-12 h-12 rounded-lg overflow-hidden flex-shrink-0">
               {product.images?.[0] ? (
@@ -71,8 +71,8 @@ const FeaturedProducts = ({ products }) => {
                   className="w-full h-full object-cover"
                 />
               ) : (
-                <div className="w-full h-full bg-gradient-to-r from-purple-500/20 to-blue-500/20 flex items-center justify-center">
-                  <Star size={16} className="text-purple-400" />
+                <div className="w-full h-full bg-gradient-to-r from-blue-500/20 to-blue-500/20 flex items-center justify-center">
+                  <Star size={16} className="text-blue-400" />
                 </div>
               )}
               <div className="absolute top-0 right-0 bg-yellow-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-bl">
@@ -83,7 +83,7 @@ const FeaturedProducts = ({ products }) => {
             <div className="flex-grow">
               <Link
                 to={`/admin/products/edit/${product._id}`}
-                className="font-semibold text-white group-hover:text-purple-400 transition-colors line-clamp-1"
+                className="font-semibold text-white group-hover:text-blue-400 transition-colors line-clamp-1"
               >
                 {product.name}
               </Link>

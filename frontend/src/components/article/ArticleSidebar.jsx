@@ -44,7 +44,7 @@ const ArticleSidebar = ({ article, formatDate }) => {
           About the Author
         </h3>
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center text-white font-bold text-xl">
+          <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-blue-500 flex items-center justify-center text-white font-bold text-xl">
             {article.author?.name?.charAt(0) || "A"}
           </div>
           <div>
@@ -71,7 +71,7 @@ const ArticleSidebar = ({ article, formatDate }) => {
         <div className="space-y-3">
           <div className="flex items-center justify-between text-sm">
             <span className="text-gray-400 flex items-center gap-2">
-              <Calendar size={14} className="text-purple-400" />
+              <Calendar size={14} className="text-blue-400" />
               Published
             </span>
             <span className="text-white">
@@ -114,7 +114,7 @@ const ArticleSidebar = ({ article, formatDate }) => {
             <ThumbsUp
               size={20}
               className={
-                liked ? "text-purple-400 fill-purple-400" : "text-gray-400"
+                liked ? "text-blue-400 fill-blue-400" : "text-gray-400"
               }
             />
             <span className="text-xs text-gray-400">
@@ -176,7 +176,7 @@ const ArticleSidebar = ({ article, formatDate }) => {
                 whileHover={{ x: 5 }}
                 className="group cursor-pointer"
               >
-                <p className="text-sm text-white group-hover:text-purple-400 transition-colors line-clamp-2">
+                <p className="text-sm text-white group-hover:text-blue-400 transition-colors line-clamp-2">
                   {item.title}
                 </p>
                 <p className="text-xs text-gray-500 mt-1">

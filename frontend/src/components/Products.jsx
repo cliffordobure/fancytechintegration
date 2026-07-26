@@ -37,7 +37,7 @@ const Products = ({ products = [] }) => {
           </div>
 
           {/* Static decorative element */}
-          <div className="absolute top-20 right-20 text-purple-500/10">
+          <div className="absolute top-20 right-20 text-blue-500/10">
             <Star size={80} />
           </div>
 
@@ -95,19 +95,19 @@ const Products = ({ products = [] }) => {
           />
 
           {/* Static decorative orb */}
-          <div className="absolute top-20 left-10 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20" />
+          <div className="absolute top-20 left-10 w-64 h-64 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20" />
 
           <div className="relative container mx-auto px-4">
             {/* Section Header */}
             <div className="text-center mb-12">
               <div className="inline-block mb-4">
-                <span className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 backdrop-blur-sm border border-white/10 px-4 py-2 rounded-full text-sm font-semibold text-purple-400">
+                <span className="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 backdrop-blur-sm border border-white/10 px-4 py-2 rounded-full text-sm font-semibold text-yellow-400">
                   OUR COLLECTION
                 </span>
               </div>
 
               <h2 className="text-5xl md:text-6xl font-bold mb-4">
-                <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 text-transparent bg-clip-text">
+                <span className="bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-400 text-transparent bg-clip-text">
                   Our Products
                 </span>
               </h2>
@@ -119,7 +119,7 @@ const Products = ({ products = [] }) => {
             {productsLoading ? (
               <div className="text-center py-20">
                 {/* Static loader – no spinning */}
-                <div className="inline-block w-16 h-16 border-4 border-purple-500 border-t-transparent rounded-full" />
+                <div className="inline-block w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full" />
                 <p className="mt-4 text-gray-400">Loading products...</p>
               </div>
             ) : (
@@ -134,7 +134,7 @@ const Products = ({ products = [] }) => {
                 <div className="text-center">
                   <Link
                     to="/products"
-                    className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl shadow-purple-500/30"
+                    className="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl shadow-yellow-500/30"
                   >
                     Browse All Products
                     <ArrowRight className="w-5 h-5" />

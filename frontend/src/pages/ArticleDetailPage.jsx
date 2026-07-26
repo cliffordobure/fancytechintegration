@@ -44,7 +44,7 @@ const ArticleDetailPage = () => {
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-            className="inline-block w-16 h-16 border-4 border-purple-500 border-t-transparent rounded-full"
+            className="inline-block w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full"
           />
           <p className="mt-4 text-gray-400">Loading article...</p>
         </div>
@@ -60,7 +60,7 @@ const ArticleDetailPage = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-center"
         >
-          <h1 className="text-3xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+          <h1 className="text-3xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-blue-400 text-transparent bg-clip-text">
             Article Not Found
           </h1>
           <p className="text-gray-400 mb-6">
@@ -68,7 +68,7 @@ const ArticleDetailPage = () => {
           </p>
           <a
             href="/articles"
-            className="inline-block bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all"
+            className="inline-block bg-gradient-to-r from-blue-500 to-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all"
           >
             Back to Articles
           </a>

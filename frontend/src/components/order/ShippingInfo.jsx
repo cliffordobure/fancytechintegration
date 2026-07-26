@@ -12,9 +12,9 @@ const ShippingInfo = ({ customer, address }) => {
       className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-white/10"
     >
       <div className="flex items-center gap-2 mb-6">
-        <MapPin className="w-5 h-5 text-purple-400" />
+        <MapPin className="w-5 h-5 text-blue-400" />
         <h2 className="text-xl font-bold">
-          <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+          <span className="bg-gradient-to-r from-blue-400 to-blue-400 text-transparent bg-clip-text">
             Shipping Information
           </span>
         </h2>
@@ -32,7 +32,7 @@ const ShippingInfo = ({ customer, address }) => {
               whileHover={{ x: 5 }}
               className="flex items-start gap-3"
             >
-              <User size={16} className="text-purple-400 mt-1" />
+              <User size={16} className="text-blue-400 mt-1" />
               <div>
                 <p className="text-sm text-gray-400">Full Name</p>
                 <p className="text-white font-medium">{customer.name}</p>
@@ -43,7 +43,7 @@ const ShippingInfo = ({ customer, address }) => {
               whileHover={{ x: 5 }}
               className="flex items-start gap-3"
             >
-              <Mail size={16} className="text-purple-400 mt-1" />
+              <Mail size={16} className="text-blue-400 mt-1" />
               <div>
                 <p className="text-sm text-gray-400">Email</p>
                 <p className="text-white">{customer.email}</p>
@@ -54,7 +54,7 @@ const ShippingInfo = ({ customer, address }) => {
               whileHover={{ x: 5 }}
               className="flex items-start gap-3"
             >
-              <Phone size={16} className="text-purple-400 mt-1" />
+              <Phone size={16} className="text-blue-400 mt-1" />
               <div>
                 <p className="text-sm text-gray-400">Phone</p>
                 <p className="text-white">{customer.phone}</p>
@@ -74,7 +74,7 @@ const ShippingInfo = ({ customer, address }) => {
               whileHover={{ x: 5 }}
               className="flex items-start gap-3"
             >
-              <Home size={16} className="text-purple-400 mt-1" />
+              <Home size={16} className="text-blue-400 mt-1" />
               <div>
                 <p className="text-sm text-gray-400">Street Address</p>
                 <p className="text-white">{address.street}</p>
@@ -85,7 +85,7 @@ const ShippingInfo = ({ customer, address }) => {
               whileHover={{ x: 5 }}
               className="flex items-start gap-3"
             >
-              <MapPin size={16} className="text-purple-400 mt-1" />
+              <MapPin size={16} className="text-blue-400 mt-1" />
               <div>
                 <p className="text-sm text-gray-400">City / County</p>
                 <p className="text-white">
@@ -99,7 +99,7 @@ const ShippingInfo = ({ customer, address }) => {
                 whileHover={{ x: 5 }}
                 className="flex items-start gap-3"
               >
-                <MapPin size={16} className="text-purple-400 mt-1" />
+                <MapPin size={16} className="text-blue-400 mt-1" />
                 <div>
                   <p className="text-sm text-gray-400">Postal Code</p>
                   <p className="text-white">{address.postalCode}</p>
@@ -111,7 +111,7 @@ const ShippingInfo = ({ customer, address }) => {
               whileHover={{ x: 5 }}
               className="flex items-start gap-3"
             >
-              <MapPin size={16} className="text-purple-400 mt-1" />
+              <MapPin size={16} className="text-blue-400 mt-1" />
               <div>
                 <p className="text-sm text-gray-400">Country</p>
                 <p className="text-white">{address.country || "South Sudan"}</p>

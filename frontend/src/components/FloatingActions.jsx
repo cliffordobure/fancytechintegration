@@ -219,7 +219,7 @@ const FloatingActions = () => {
               onClick={scrollToTop}
               whileHover={{ scale: 1.1, y: -5 }}
               whileTap={{ scale: 0.9 }}
-              className="bg-purple-600 hover:bg-purple-700 text-white rounded-full p-3 shadow-lg shadow-purple-600/25 group relative"
+              className="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-3 shadow-lg shadow-blue-600/25 group relative"
               aria-label="Back to top"
             >
               <ChevronUp className="w-5 h-5 md:w-6 md:h-6" />
