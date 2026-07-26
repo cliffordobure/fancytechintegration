@@ -92,7 +92,7 @@ const ContactInfo = () => {
     },
     {
       icon: InstagramIcon,
-      href: "https://www.instagram.com/fancy_tech_juba?igsh=cWI2c3QxYjJjZWpp&utm_source=qr_code_scanner",
+      href: "https://www.instagram.com/fancy_tech_integration?igsh=bjdkaGhkbzNxamxr&utm_source=qr_code&utm_medium=referral",
       label: "Instagram",
     },
     {

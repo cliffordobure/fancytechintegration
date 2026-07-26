@@ -315,7 +315,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm flex items-center gap-2">
               © {currentYear} Fancy Tech Integration.
-              <span className="hidden md:inline">All rights reserved.</span>
+              <span className="hidden md:inline">All rights reserved. </span>
               Proudly South Sudanese Tech.
             </p>
 
