@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { motion } from "framer-motion";
-import {
-  fetchAdminUsers,
-  createAdminUser,
-} from "../../store/slices/authSlice";
+import { fetchAdminUsers, createAdminUser } from "../../store/slices/authSlice";
 import toast from "react-hot-toast";
 import SEO from "../../components/SEO";
 import { Users, Plus, Sparkles, Shield } from "lucide-react";
@@ -47,7 +44,7 @@ const AdminUsers = () => {
           name: formData.name.trim(),
           email: formData.email.trim(),
           password: formData.password,
-        })
+        }),
       ).unwrap();
       toast.success("Admin user created successfully");
       setFormData({ name: "", email: "", password: "" });
@@ -89,7 +86,8 @@ const AdminUsers = () => {
                 </span>
               </h1>
               <p className="text-gray-400">
-                Add and manage admin users with full access to products, articles, and orders
+                Add and manage admin users with full access to products,
+                articles, and orders
               </p>
             </div>
             <div className="flex items-center gap-4">
@@ -124,7 +122,10 @@ const AdminUsers = () => {
                 <Shield size={20} className="text-purple-400" />
                 New Admin User
               </h2>
-              <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <form
+                onSubmit={handleSubmit}
+                className="grid grid-cols-1 md:grid-cols-3 gap-4"
+              >
                 <div>
                   <label className="block text-sm font-medium text-gray-400 mb-2">
                     Name *
@@ -204,12 +205,14 @@ const AdminUsers = () => {
                 Admin users ({adminUsers?.length ?? 0})
               </h2>
               <p className="text-sm text-gray-400 mt-1">
-                These users can manage products, articles, orders, and add other admins.
+                These users can manage products, articles, orders, and add other
+                admins.
               </p>
             </div>
             {adminUsers?.length === 0 ? (
               <div className="p-12 text-center text-gray-400">
-                No admin users yet. Use &quot;Add Admin User&quot; to create one.
+                No admin users yet. Use &quot;Add Admin User&quot; to create
+                one.
               </div>
             ) : (
               <div className="overflow-x-auto">

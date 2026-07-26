@@ -17,6 +17,7 @@ import toast from "react-hot-toast";
 // 👇 Import the rich-text editor and its styles
 import { RichTextEditor } from "@tolipovjs/rich-text";
 import "@tolipovjs/rich-text/styles.css";
+import { PRODUCT_TEMPLATES } from "../../constants/productTemplates";
 
 const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
   const [formData, setFormData] = useState({
@@ -39,6 +40,7 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
   });
   const [uploading, setUploading] = useState(false);
   const [activeTab, setActiveTab] = useState("basic");
+  const [selectedTemplate, setSelectedTemplate] = useState("");
 
   // Update formData when product changes or modal opens
   useEffect(() => {
@@ -64,27 +66,6 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
       setActiveTab("basic");
     }
   }, [product, isOpen]);
-
-  // HTML template for product description
-  const DESCRIPTION_TEMPLATE = `
-<h3>Ultra-Light Premium Convertible for Executives &amp; Frequent Travelers</h3>
-<p>The HP Elite Dragonfly x360 redefines mobility. Weighing just under 1kg, this ultra-premium convertible is crafted from recycled ocean-bound plastics and magnesium, making it as sustainable as it is stylish. It’s the ultimate companion for C-suite executives, consultants, and professionals who live on the move.</p>
-<h4>Performance &amp; Memory</h4>
-<p>Powered by the <strong>11th Generation Intel Core i7</strong> processor (up to 3.0GHz), this laptop handles heavy multitasking, large spreadsheets, and virtual meetings with ease. With <strong>16GB of RAM</strong> and a <strong>512GB NVMe SSD</strong>, you get lightning-fast boot times, quick file access, and ample storage for your entire digital workspace.</p>
-<h4>Display &amp; Convertible Design</h4>
-<p>The <strong>14-inch Full HD touchscreen</strong> delivers crisp visuals with 400 nits of brightness, making it usable even in bright outdoor environments. The 360° hinge allows four versatile modes — laptop, tablet, tent, and stand — giving you flexibility for presentations, note-taking, or media consumption.</p>
-<h4>Security &amp; Connectivity</h4>
-<p>Business-grade security comes standard with an integrated fingerprint reader, HP Sure View privacy screen options, and HP Sure Start BIOS protection. It also includes <strong>Wi-Fi 6</strong> and <strong>Bluetooth 5.0</strong> for fast, stable wireless connections.</p>
-<h4>Battery Life</h4>
-<p>With an all-day battery that delivers up to <strong>12 hours of mixed usage</strong>, you can leave your charger behind and stay productive from morning meetings to evening flights.</p>
-<h4>Best For:</h4>
-<ul>
-  <li>Executives</li>
-  <li>Frequent travelers</li>
-  <li>Remote professionals</li>
-  <li>Anyone who demands premium build quality in an ultra-light package</li>
-</ul>
-`;
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -340,18 +321,47 @@ const ProductModal = ({ isOpen, onClose, product, onSubmit }) => {
                             <label className="block text-sm font-medium text-gray-400">
                               Description *
                             </label>
-                            <button
-                              type="button"
-                              onClick={() =>
-                                setFormData((prev) => ({
-                                  ...prev,
-                                  description: DESCRIPTION_TEMPLATE,
-                                }))
-                              }
-                              className="text-xs text-purple-400 hover:text-purple-300 transition-colors flex items-center gap-1"
-                            >
-                              <span>📄</span> Use Product Template
-                            </button>
+
+                            <div>
+                              <label className="block text-sm font-medium text-gray-400 mb-2">
+                                Product Template (optional)
+                              </label>
+                              <select
+                                value={selectedTemplate}
+                                onChange={(e) => {
+                                  const key = e.target.value;
+                                  setSelectedTemplate(key);
+                                  if (key && PRODUCT_TEMPLATES[key]) {
+                                    setFormData((prev) => ({
+                                      ...prev,
+                                      description:
+                                        PRODUCT_TEMPLATES[key].description,
+                                      // Optionally auto‑fill name, category, etc.
+                                      // name: PRODUCT_TEMPLATES[key].name || prev.name,
+                                      // category: PRODUCT_TEMPLATES[key].category || prev.category,
+                                    }));
+                                  }
+                                }}
+                                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                              >
+                                <option value="">Select a template…</option>
+                                {Object.entries(PRODUCT_TEMPLATES).map(
+                                  ([key, template]) => (
+                                    <option
+                                      key={key}
+                                      value={key}
+                                      className="bg-gray-800"
+                                    >
+                                      {template.label}
+                                    </option>
+                                  ),
+                                )}
+                              </select>
+                              <p className="text-xs text-gray-500 mt-1">
+                                Choose a template to pre‑fill the description.
+                                You can still edit it afterwards.
+                              </p>
+                            </div>
                           </div>
                           <div className="bg-gray-900/50 border border-white/10 rounded-lg overflow-hidden">
                             <RichTextEditor
